@@ -5,8 +5,6 @@
 ![Fedora](https://img.shields.io/badge/Fedora-51A2DA?style=flat&logo=fedora&logoColor=white)
 ![Niri](https://img.shields.io/badge/Niri-Wayland-blue?style=flat)
 ![Neovim](https://img.shields.io/badge/Neovim-LazyVim-green?style=flat&logo=neovim)
-![License](https://img.shields.io/badge/License-Apache%202.0-orange?style=flat)
-
 ---
 
 ## 📦 What's Included
