@@ -189,8 +189,3 @@ dotfiles/
 - **Gaps:** 7px in Niri, 4px with DMS layout override
 - **Corner radius:** 10-12px on windows
 
----
-
-## 📄 License
-
-[Apache 2.0](LICENSE)
