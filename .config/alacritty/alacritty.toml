@@ -25,7 +25,7 @@ style = "SemiBold"
 
 [font.offset]
 x = 0
-y = 2  # Aumenta lo spazio tra le righe (o prova 1 se è troppo)
+y = 2
 
 [font.glyph_offset]
 x = 0

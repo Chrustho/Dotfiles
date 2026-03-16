@@ -1,4 +1,3 @@
-# --- Aspetto Globale ---
 font=IosevkaTerm Nerd Font 14
 background-color=#282828
 text-color=#ddc7a1
@@ -6,36 +5,25 @@ border-size=4
 border-radius=0
 progress-color=source #ea6962
 
-# --- Dimensioni e Spaziature ---
 width=450
 height=250
-# margin definisce la distanza dai bordi dello schermo (sopra/sotto, destra/sinistra)
 margin=15,20
-# padding definisce lo spazio interno tra il testo e il bordo della notifica
 padding=15
 max-icon-size=64
 
-# --- Comportamento ---
-# default-timeout è in millisecondi (5000 = 5 secondi)
 default-timeout=5000
-# Se ci passi sopra col mouse, il timer si ferma e la notifica non sparisce
 ignore-timeout=1
 max-visible=5
 
-# --- Regole Avanzate (Basate sull'urgenza) ---
 
-# Notifiche normali (Bordo Giallo)
 [urgency=normal]
 border-color=#d8a657
 
-# Notifiche di sistema/chat silenziate (Bordo Blu)
 [urgency=low]
 border-color=#7daea3
 
-# Notifiche Critiche (Es. Batteria scarica)
 [urgency=high]
 border-color=#ea6962
 background-color=#ea6962
 text-color=#282828
-# default-timeout=0 significa che la notifica NON sparisce finché non la chiudi tu
 default-timeout=0

@@ -2,16 +2,14 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
     vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
     
     float v = 0.0;
-    vec2 p = uv * 1.5; // Zoom
+    vec2 p = uv * 1.5; 
     
-    // Creiamo una distorsione spaziale molto complessa (Domain Warping iterativo)
     for(float i = 1.0; i <= 4.0; i++) {
         p.x += sin(p.y * i + iTime * 0.5) * 0.4;
         p.y += cos(p.x * i - iTime * 0.3) * 0.4;
-        // Accumuliamo le onde per creare "alture" e "depressioni" circolari
         v += sin(length(p) * 3.0 - iTime) * 0.5 + 0.5;
     }
-    v /= 4.0; // Normalizziamo il risultato tra 0 e 1
+    v /= 4.0; 
     
     // Estraiamo le linee topografiche dal rumore fluido
     float linee = abs(fract(v * 6.0) - 0.5);

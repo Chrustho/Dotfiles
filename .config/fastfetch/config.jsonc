@@ -3,7 +3,6 @@
     "logo": {
         "type": "file-raw",
         "source": "$(find ~/.config/fastfetch/sprites -name '*.txt' | shuf -n 1)",
-        //"width": 20,  // Opzionale: forza la larghezza per non spostare le stats
         "padding": {
             "top": 5,
             "right": 5,
@@ -20,7 +19,7 @@
         {
             "type": "os",
             "key": " OS",
-            "keyColor": "#E6C384",  // Era yellow
+            "keyColor": "#E6C384",  
             "format": "{2}"
         },
         {
@@ -48,7 +47,7 @@
         {
             "type": "wm",
             "key": " DE/WM",
-            "keyColor": "#7E9CD8"   // Era blue (ora è Crystal Blue)
+            "keyColor": "#7E9CD8"   
         },
         {
             "type": "lm",
@@ -80,7 +79,7 @@
         {
             "type": "host",
             "key": "󰌢 PC",
-            "keyColor": "#98BB6C"   // Era green (ora è Spring Green)
+            "keyColor": "#98BB6C"  
         },
         {
             "type": "cpu",

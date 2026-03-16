@@ -1,6 +1,3 @@
-/* =========================================================
-   Tema Rofi - Clipboard (Gruvbox Material Overlay)
-   ========================================================= */
 
 configuration {
     show-icons: false;
@@ -10,7 +7,6 @@ configuration {
 }
 
 * {
-    /* Palette Gruvbox */
     bg:          #282828;
     bg-alt:      #32302f;
     base-bg:     #1d2021;
@@ -22,17 +18,14 @@ configuration {
     font: "IosevkaTerm Nerd Font 13";
 }
 
-/* --- Finestra a Schermo Intero (Sfondo Oscurato) --- */
 window {
     transparency: "real";
     fullscreen: true;
-    /* a6 = ~65% di opacità. Meno scuro del powermenu! */
     background-color: #1d2021a6; 
     border: 0px;
     padding: 0px;
 }
 
-/* --- Contenitore Principale Invisibile --- */
 mainbox {
     background-color: transparent;
     children: [ dummy, wrapper, dummy ];
@@ -42,12 +35,10 @@ dummy {
     expand: true;
 }
 
-/* --- Il vero box della Clipboard --- */
 wrapper {
     orientation: vertical;
     expand: false;
     
-    /* Centra perfettamente un menu largo 850px (50% - 425px) */
     margin: 0px calc(50% - 425px);
     
     background-color: @base-bg;
@@ -59,7 +50,6 @@ wrapper {
     children: [ inputbar, listview ];
 }
 
-/* --- Barra di Ricerca --- */
 inputbar {
     background-color: @bg-alt;
     padding: 15px 20px;
@@ -71,9 +61,8 @@ inputbar {
 
 prompt {
     text-color: @orange;
-    font: "IosevkaTerm Nerd Font Bold 16"; /* Font icona un pelo più grande */
+    font: "IosevkaTerm Nerd Font Bold 16"; 
     vertical-align: 0.5;
-    /* FONDAMENTALE: Diamo margine a destra così l'icona NerdFont non viene tagliata */
     margin: 0px 8px 0px 0px;
 }
 
@@ -84,10 +73,9 @@ entry {
     vertical-align: 0.5;
 }
 
-/* --- Lista degli Appunti --- */
 listview {
-    columns: 1; /* Colonna singola per massimizzare la lunghezza leggibile */
-    lines: 10;  /* Mostra gli ultimi 10 appunti */
+    columns: 1; 
+    lines: 10;  
     spacing: 4px;
     padding: 10px;
     scrollbar: true;
@@ -100,7 +88,6 @@ scrollbar {
     background-color: @bg-alt;
 }
 
-/* --- Singolo Appunto --- */
 element {
     padding: 10px 15px;
     border-radius: 6px;
@@ -118,9 +105,8 @@ element selected.normal, element selected.active {
     border-color: @orange;
 }
 
-/* --- Testo dell'Appunto --- */
 element-text {
     vertical-align: 0.5;
     text-color: inherit;
-    highlight: bold #e78a4e; /* Evidenzia in arancione le parole che cerchi */
+    highlight: bold #e78a4e; 
 }
