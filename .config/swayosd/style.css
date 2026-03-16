@@ -1,0 +1,37 @@
+/* --- Tema SwayOSD: Kanagawa Dragon (Peach & Gold Soft) - COMPACT --- */
+
+window {
+    background: rgba(31, 31, 40, 1); 
+    border: 2px solid #FF9E3B; 
+    border-radius: 0px; 
+}
+
+#osd {
+    /* Meno spazio vuoto tra il bordo e gli elementi interni */
+    padding: 2px 6px; 
+    margin: 0;
+}
+
+image {
+    color: #DCD7BA; 
+    margin-right: 10px; 
+    opacity: 1.0;
+}
+
+label {
+    color: #DCD7BA;
+    font-weight: bold;
+}
+
+progressbar trough {
+    background: #54546D; 
+    border-radius: 0px;
+    /* Barra più sottile e meno larga */
+    min-height: 4px; 
+    min-width: 140px; 
+}
+
+progressbar progress {
+    background: #C34043; 
+    border-radius: 0px;
+}

@@ -1,0 +1,88 @@
+/* =========================================================
+   Tema Rofi - Powermenu Fullscreen Overlay
+   ========================================================= */
+
+configuration {
+    show-icons: false;
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+* {
+    /* Palette Gruvbox Material */
+    bg:          #282828;
+    bg-alt:      #32302f;
+    base-bg:     #1d2021;
+    fg-light:    #ddc7a1;
+    red:         #ea6962;
+
+    background-color: transparent;
+    text-color: @fg-light;
+    font: "IosevkaTerm Nerd Font 14";
+}
+
+/* --- Finestra a Schermo Intero (Sfondo Oscurato) --- */
+window {
+    transparency: "real";
+    fullscreen: true;
+    background-color: #1d2021ee; /* Overlay scuro al 93% */
+    border: 0px;
+    padding: 0px;
+}
+
+/* --- Contenitore Principale --- */
+mainbox {
+    /* Le molle 'dummy' sopra e sotto spingono la lista perfettamente al centro */
+    children: [ dummy, listview, dummy ];
+}
+
+dummy {
+    expand: true;
+}
+
+/* --- Il Box del Menu (Applicato direttamente alla lista) --- */
+listview {
+    expand: false; /* Non allungarti oltre le 5 opzioni! */
+    columns: 1;
+    lines: 5;
+    
+    /* Il margine laterale decide la larghezza del box rosso (es. 38% a sinistra e destra) */
+    margin: 0px 38%; 
+    padding: 15px;
+    
+    /* Colori e bordi del box */
+    background-color: @bg;
+    border: 4px solid;
+    border-color: @red;
+    border-radius: 0px;
+    
+    spacing: 8px;
+    scrollbar: false;
+    fixed-height: true;
+}
+
+/* --- Singolo Pulsante --- */
+element {
+    padding: 12px 15px;
+    border-radius: 0px;
+}
+
+element normal.normal, element alternate.normal {
+    background-color: transparent;
+    text-color: @fg-light;
+}
+
+element selected.normal, element selected.active {
+    background-color: @bg-alt;
+    text-color: @red;
+    border: 3px solid;
+    border-color: @red;
+}
+
+/* --- Testo Centrato --- */
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    text-color: inherit;
+}

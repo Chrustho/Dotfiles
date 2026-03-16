@@ -1,0 +1,140 @@
+/**
+ * @name system24
+ * @description a tui-style discord theme.
+ * @author refact0r
+ * @version 2.0.0
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/system24
+ * @source https://github.com/refact0r/system24/blob/master/theme/system24.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
+
+/* import theme modules */
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+body {
+    /* font: applicato IosevkaTerm Nerd Font per matchare Rofi */
+    --font: 'IosevkaTerm Nerd Font', 'DM Mono', monospace; 
+    --code-font: 'IosevkaTerm Nerd Font', 'DM Mono', monospace; 
+    font-weight: 300; /* text font weight. 300 is light, 400 is normal. DOES NOT AFFECT BOLD TEXT */
+    letter-spacing: -0.05ch; /* decreases letter spacing for better readability. recommended on monospace fonts.*/
+
+    /* sizes */
+    --gap: 12px; /* spacing between panels */
+    --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+    --border-thickness: 2px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
+    --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
+
+    /* animation/transition options */
+    --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
+    --list-item-transition: 0.2s ease; /* transition for list items */
+    --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+
+    /* top bar options */
+    --top-bar-height: var(--gap); /* height of the top bar */
+    --top-bar-button-position: titlebar; 
+    --top-bar-title-position: off; 
+    --subtle-top-bar-title: off; 
+
+    /* window controls */
+    --custom-window-controls: off; 
+    --window-control-size: 14px; 
+
+    /* dms button options */
+    --custom-dms-icon: off; 
+    --dms-icon-svg-url: url(''); 
+    --dms-icon-svg-size: 90%; 
+    --dms-icon-color-before: var(--icon-subtle); 
+    --dms-icon-color-after: var(--white); 
+    --custom-dms-background: off; 
+    --dms-background-image-url: url(''); 
+    --dms-background-image-size: cover; 
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2)); 
+
+    /* background image options */
+    --background-image: off; 
+    --background-image-url: url(''); 
+
+    /* transparency/blur options */
+    --transparency-tweaks: off; 
+    --remove-bg-layer: off; 
+    --panel-blur: off; 
+    --blur-amount: 12px; 
+    --bg-floating: var(--bg-3); 
+
+    /* other options */
+    --small-user-panel: on; 
+
+    /* unrounding options */
+    --unrounding: on; 
+
+    /* styling options */
+    --custom-spotify-bar: on; 
+    --ascii-titles: on; 
+    --ascii-loader: system24; 
+
+    /* panel labels */
+    --panel-labels: on; 
+    --label-color: var(--text-muted); 
+    --label-font-weight: 500; 
+}
+
+/* color options - Gruvbox Material OLED Edition */
+:root {
+    --colors: on; 
+
+    /* text colors (Colori pastello crema della Gruvbox, meno affaticanti del bianco puro) */
+    --text-0: #000000; /* Testo scuro su sfondi colorati */
+    --text-1: #fbf1c7; /* Testo evidenziato/titoli forti */
+    --text-2: #ebdbb2; /* Intestazioni */
+    --text-3: #ddc7a1; /* Testo normale dei messaggi */
+    --text-4: #a89984; /* Testo mutato/icone */
+    --text-5: #7c6f64; /* Timestamp e canali mutati */
+
+    /* background and dark colors (Transizione morbida per OLED) */
+    --bg-1: #32302f; /* Bottoni attivi (Il tuo bg-alt di Rofi) */
+    --bg-2: #282828; /* Sfondo bottoni base (Il tuo bg principale) */
+    --bg-3: #141617; /* Sfondo secondario/pannelli: scurissimo ma non nero */
+    --bg-4: #000000; /* NERO PURO OLED */
+    
+    /* Effetti di passaggio del mouse morbidi per non accecare */
+    --hover: rgba(235, 219, 178, 0.05); 
+    --active: rgba(235, 219, 178, 0.1); 
+    --active-2: rgba(235, 219, 178, 0.15); 
+    --message-hover: var(--hover); 
+
+    /* accent colors (Usiamo i toni caldi Arancio/Giallo del tuo setup Waybar/Rofi) */
+    --accent-1: #e78a4e; /* Arancione principale */
+    --accent-2: #d8a657; /* Giallo morbido */
+    --accent-3: #e78a4e; /* Bottoni accento */
+    --accent-4: #d8a657; /* Bottoni accento hover */
+    --accent-5: #ea6962; /* Bottoni accento click (Rosso) */
+    --accent-new: #ea6962; /* Avvisi / Badge rossi */
+    
+    /* Gradienti per menzioni e risposte (Leggermente tinti di arancione/crema) */
+    --mention: linear-gradient(to right, rgba(231, 138, 78, 0.15) 40%, transparent); 
+    --mention-hover: linear-gradient(to right, rgba(231, 138, 78, 0.2) 40%, transparent); 
+    --reply: linear-gradient(to right, rgba(221, 199, 161, 0.08) 40%, transparent); 
+    --reply-hover: linear-gradient(to right, rgba(221, 199, 161, 0.12) 40%, transparent); 
+
+    /* status indicator colors (Palette Gruvbox) */
+    --online: #a9b665; 
+    --dnd: #ea6962; 
+    --idle: #d8a657; 
+    --streaming: #d3869b; 
+    --offline: #7c6f64; 
+
+    /* border colors */
+    --border-light: var(--hover); 
+    --border: var(--active); 
+    --border-hover: #e78a4e; /* Bordo arancione al passaggio del mouse, identico a Rofi! */
+    --button-border: rgba(235, 219, 178, 0.05); 
+
+    /* base colors (Forziamo le variabili di base sulla palette Gruvbox Material) */
+    --red-1: #ea6962; --red-2: #ea6962; --red-3: #ea6962; --red-4: #ea6962; --red-5: #ea6962;
+    --green-1: #a9b665; --green-2: #a9b665; --green-3: #a9b665; --green-4: #a9b665; --green-5: #a9b665;
+    --blue-1: #7daea3; --blue-2: #7daea3; --blue-3: #7daea3; --blue-4: #7daea3; --blue-5: #7daea3;
+    --yellow-1: #d8a657; --yellow-2: #d8a657; --yellow-3: #d8a657; --yellow-4: #d8a657; --yellow-5: #d8a657;
+    --purple-1: #d3869b; --purple-2: #d3869b; --purple-3: #d3869b; --purple-4: #d3869b; --purple-5: #d3869b;
+}

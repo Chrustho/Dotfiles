@@ -1,0 +1,98 @@
+/* Palette Gruvbox Material (Colori Soffici e meno accesi) */
+@define-color bg #282828;
+@define-color bg_alt #32302f;
+@define-color fg_dark #282828; 
+@define-color fg_light #ddc7a1; 
+@define-color base_bg #1d2021; /* Sfondo scuro assoluto per l'intera barra */
+@define-color red #ea6962;
+@define-color orange #e78a4e;
+@define-color yellow #d8a657;
+@define-color green #a9b665;
+@define-color aqua #89b482;
+@define-color blue #7daea3;
+@define-color purple #d3869b;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "IosevkaTerm Nerd Font", "SpaceMono Nerd Font", sans-serif;
+    font-size: 12pt; /* Font più piccolo per la nuova barra */
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: @base_bg;
+}
+
+/* --- DIMENSIONI MODULI E COLORI TESTO DEFAULT --- */
+#custom-launcher, #workspaces, #clock, #custom-nightmode, #custom-clipboard, #custom-mako, #cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon, #network, #battery, #tray {
+    color: @fg_dark; 
+    padding: 0 4px;
+}
+
+#window {
+    color: @fg_light;
+    background: transparent;
+    padding-left: 8px;
+}
+
+#workspaces button {
+    color: @fg_light;
+    padding: 0 4px;
+}
+#workspaces button.active {
+    color: #ffffff; 
+}
+
+/* --- COLORI DEGLI SFONDI --- */
+#custom-launcher { background: @blue; }
+#workspaces { background: @bg_alt; }
+#clock { background: @yellow; }
+
+#custom-nightmode { background: @purple; }
+#custom-clipboard { background: @orange; }
+#custom-mako { background: @red; }
+#cpu { background: @green; }
+#memory { background: @aqua; }
+#pulseaudio { background: @blue; }
+#backlight { background: @yellow; }
+#power-profiles-daemon { background: @orange; }
+#network { background: @red; }
+#battery { background: @green; }
+#tray { background: @bg_alt; padding: 0 10px; }
+
+/* --- MAGIA DELLE FRECCE POWERLINE --- */
+#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-c_arrow1, #custom-c_arrow2, #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5, #custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
+    font-size: 16pt; 
+}
+
+/* Frecce Sinistre (Punta a destra ) */
+#custom-l_arrow1 { color: @blue; background: @bg_alt; } /* Launcher (Blu) -> Workspaces (Grigio) */
+#custom-l_arrow2 { color: @bg_alt; background: @purple; } /* Workspaces (Grigio) -> Nightmode (Viola) */
+#custom-l_arrow3 { color: @purple; background: @red; } /* Nightmode (Viola) -> Mako (Rosso) */
+#custom-l_arrow4 { color: @red; background: transparent; } /* Mako (Rosso) -> Finestra (Trasparente) */
+
+/* Frecce Centrali */
+#custom-c_arrow1 { color: @yellow; background: transparent; }
+#custom-c_arrow2 { color: @yellow; background: transparent; }
+
+/* Frecce Destre (Punta a sinistra ) */
+#custom-r_arrow1 { color: @orange; background: transparent; } /* Trasparente <- Clipboard (Arancione) */
+#custom-r_arrow2 { color: @green; background: @orange; } /* Clipboard (Arancione) <- CPU (Verde) */
+#custom-r_arrow3 { color: @aqua; background: @green; } /* CPU (Verde) <- Memoria (Acqua) */
+#custom-r_arrow4 { color: @blue; background: @aqua; } /* Memoria (Acqua) <- Audio (Blu) */
+#custom-r_arrow5 { color: @yellow; background: @blue; } /* Audio (Blu) <- Luminosità (Giallo) */
+#custom-r_arrow6 { color: @orange; background: @yellow; } /* Luminosità (Giallo) <- Power Profiles (Arancione) */
+#custom-r_arrow7 { color: @red; background: @orange; } /* Power Profiles (Arancione) <- Rete (Rosso) */
+#custom-r_arrow8 { color: @green; background: @red; } /* Rete (Rosso) <- Batteria (Verde) */
+#custom-r_arrow9 { color: @bg_alt; background: @green; } /* Batteria (Verde) <- Tray (Grigio) */
+#custom-r_arrow10 { color: @red; background: @bg_alt; } /* Tray (Grigio) <- Power (Rosso) */
+
+/* --- Colore del pulsante Power --- */
+#custom-power { 
+    background: @red; 
+    color: @bg; 
+    padding-right: 8px; 
+}
