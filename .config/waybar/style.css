@@ -16,7 +16,7 @@
     border: none;
     border-radius: 0;
     font-family: "IosevkaTerm Nerd Font", "SpaceMono Nerd Font", sans-serif;
-    font-size: 12pt; /* Font più piccolo per la nuova barra */
+    font-size: 12pt;
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -27,7 +27,8 @@ window#waybar {
 }
 
 /* --- DIMENSIONI MODULI E COLORI TESTO DEFAULT --- */
-#custom-launcher, #workspaces, #clock, #custom-nightmode, #custom-clipboard, #custom-mako, #cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon, #network, #battery, #tray {
+/* Ho aggiunto #idle_inhibitor in questa lista per la spaziatura corretta */
+#custom-launcher, #workspaces, #clock, #custom-nightmode, #custom-clipboard, #custom-mako, #idle_inhibitor, #cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon, #network, #battery, #tray {
     color: @fg_dark; 
     padding: 0 4px;
 }
@@ -54,6 +55,8 @@ window#waybar {
 #custom-nightmode { background: @purple; }
 #custom-clipboard { background: @orange; }
 #custom-mako { background: @red; }
+#idle_inhibitor { background: @yellow; } /* Sfondo giallo per la caffeina */
+
 #cpu { background: @green; }
 #memory { background: @aqua; }
 #pulseaudio { background: @blue; }
@@ -64,7 +67,8 @@ window#waybar {
 #tray { background: @bg_alt; padding: 0 10px; }
 
 /* --- MAGIA DELLE FRECCE POWERLINE --- */
-#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-c_arrow1, #custom-c_arrow2, #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5, #custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
+/* Ho aggiunto #custom-l_arrow5 in questa lista per ingrandirlo */
+#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5, #custom-c_arrow1, #custom-c_arrow2, #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5, #custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
     font-size: 16pt; 
 }
 
@@ -72,7 +76,8 @@ window#waybar {
 #custom-l_arrow1 { color: @blue; background: @bg_alt; } /* Launcher (Blu) -> Workspaces (Grigio) */
 #custom-l_arrow2 { color: @bg_alt; background: @purple; } /* Workspaces (Grigio) -> Nightmode (Viola) */
 #custom-l_arrow3 { color: @purple; background: @red; } /* Nightmode (Viola) -> Mako (Rosso) */
-#custom-l_arrow4 { color: @red; background: transparent; } /* Mako (Rosso) -> Finestra (Trasparente) */
+#custom-l_arrow4 { color: @red; background: @yellow; } /* Mako (Rosso) -> Caffeina (Giallo) */
+#custom-l_arrow5 { color: @yellow; background: transparent; } /* Caffeina (Giallo) -> Finestra (Trasparente) */
 
 /* Frecce Centrali */
 #custom-c_arrow1 { color: @yellow; background: transparent; }

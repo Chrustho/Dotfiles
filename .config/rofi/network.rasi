@@ -1,31 +1,33 @@
+/* =========================================================
+   Tema Rofi - Network Manager (Gruvbox Material Acqua)
+   ========================================================= */
+
+configuration {
+    show-icons: false;
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
 
 * {
-    bg:          #282828; /* Sfondo principale lista */
-    bg-alt:      #32302f; /* Sfondo ricerca / selezione */
-    base-bg:     #1d2021; /* Sfondo scuro assoluto per i bordi */
-    fg-light:    #ddc7a1; /* Testo principale */
-    fg-dark:     #282828; 
+    /* Palette Gruvbox */
+    bg:          #282828;
+    bg-alt:      #32302f;
+    base-bg:     #1d2021;
+    fg-light:    #ddc7a1;
     
-    /* Accenti */
-    red:          #ea6962;
-    orange:       #e78a4e;
-    yellow:       #d8a657;
-    green:        #a9b665;
-    aqua:         #89b482;
-    blue:         #7daea3;
-    purple:       #d3869b;
-
+    /* Colore Accento: Acqua (perfetto per il Wi-Fi) */
+    accent:      #89b482; 
+    
     background-color: transparent;
     text-color: @fg-light;
-    font: "IosevkaTerm Nerd Font 14"; 
+    font: "IosevkaTerm Nerd Font 13";
 }
 
 window {
     transparency: "real";
     fullscreen: true;
-    
-    background-color: #1d2021a6; 
-    
+    background-color: #1d2021a6; /* Overlay sfumato al 65% */
     border: 0px;
     padding: 0px;
 }
@@ -41,23 +43,23 @@ dummy {
 
 wrapper {
     orientation: vertical;
-    expand: false; /* Non allungarsi più del necessario in verticale */
+    expand: false;
     
-    margin: 0px calc(50% - 200px);
+    /* Centra un menu largo 500px (50% - 250px) */
+    margin: 0px calc(50% - 250px);
     
     background-color: @base-bg;
     border: 4px solid;
-    border-color: @orange; 
-    border-radius: 0px;   
+    border-color: @accent; 
+    border-radius: 0px;
     padding: 0px;
     
     children: [ inputbar, listview ];
 }
 
-/* --- Barra di Ricerca (Header) --- */
 inputbar {
     background-color: @bg-alt;
-    padding: 20px 25px;
+    padding: 15px 20px;
     spacing: 15px;
     border-bottom: 2px solid;
     border-color: @base-bg;
@@ -65,61 +67,47 @@ inputbar {
 }
 
 prompt {
-    /* Ho cambiato l'icona con una Wi-Fi, colore blu come richiesto */
-    text-color: @blue; 
-    font: "IosevkaTerm Nerd Font Bold 16";
+    text-color: @accent;
+    font: "IosevkaTerm Nerd Font Bold 15";
     vertical-align: 0.5;
+    margin: 0px 8px 0px 0px;
 }
 
 entry {
-    placeholder: "Cerca rete..."; /* Placeholder adatto */
-    placeholder-color: #7c6f64; /* Grigio Gruvbox */
+    placeholder: "Cerca rete...";
+    placeholder-color: #7c6f64;
     text-color: @fg-light;
     vertical-align: 0.5;
-    font: "IosevkaTerm Nerd Font 14";
 }
 
-/* --- Lista dei Risultati (Reti) --- */
 listview {
-    background-color: @bg;
-    padding: 15px;
-    columns: 1; /* Layout a colonna singola per le reti! */
-    lines: 10;   /* Mostra 10 reti in totale per schermata */
-    spacing: 5px;
+    columns: 1; 
+    lines: 8;  /* Mostra 8 reti alla volta */
+    spacing: 4px;
+    padding: 10px;
     scrollbar: false;
-    fixed-height: false;
 }
 
-/* --- Singolo Elemento (Rete/Risultato) --- */
 element {
-    padding: 8px 15px;
-    spacing: 10px;
-    border-radius: 0px;
+    padding: 10px 15px;
+    border-radius: 6px;
 }
 
-/* Stato Normale */
 element normal.normal, element alternate.normal {
     background-color: transparent;
     text-color: @fg-light;
 }
 
-/* Stato Selezionato */
 element selected.normal, element selected.active {
     background-color: @bg-alt;
-    text-color: @yellow; /* Testo giallo per risaltare */
+    text-color: @accent;
     border: 1px solid;
-    border-color: @orange; /* Bordino arancione per incorniciare la selezione */
+    border-color: @accent;
 }
 
-/* Nascondiamo le icone (non ci sono icone per le app qui) */
-element-icon {
-    size: 0px;
-}
-
-/* Testo dell'elemento */
 element-text {
     vertical-align: 0.5;
     text-color: inherit;
-    /* Evidenziazione delle lettere che digiti in Rosso Gruvbox */
-    highlight: bold #ea6962; 
+    /* Highlight di ricerca nello stesso colore */
+    highlight: bold #89b482;
 }

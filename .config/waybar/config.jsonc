@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 32, // Altezza ripristinata
+    "height": 32,
     "spacing": 0,
     // Ordine dei moduli
     "modules-left": [
@@ -13,6 +13,8 @@
         "custom/l_arrow3",
         "custom/mako",
         "custom/l_arrow4",
+        "idle_inhibitor",
+        "custom/l_arrow5",
         "niri/window"
     ],
     "modules-center": [
@@ -49,12 +51,13 @@
     "custom/l_arrow2": { "format": "", "tooltip": false },
     "custom/l_arrow3": { "format": "", "tooltip": false },
     "custom/l_arrow4": { "format": "", "tooltip": false },
+    "custom/l_arrow5": { "format": "", "tooltip": false },
     
     // Centro
     "custom/c_arrow1": { "format": "", "tooltip": false },
     "custom/c_arrow2": { "format": "", "tooltip": false },
-    
-    // Destra (Puntano a sinistra - Ne servono solo 10 ora)
+  
+    // Destra (Puntano a sinistra)
     "custom/r_arrow1": { "format": "", "tooltip": false },
     "custom/r_arrow2": { "format": "", "tooltip": false },
     "custom/r_arrow3": { "format": "", "tooltip": false },
@@ -65,7 +68,17 @@
     "custom/r_arrow8": { "format": "", "tooltip": false },
     "custom/r_arrow9": { "format": "", "tooltip": false },
     "custom/r_arrow10": { "format": "", "tooltip": false },
-        // --- MODULI NORMALI ---
+
+    // --- MODULI NORMALI ---
+    "idle_inhibitor": {
+        "format": " {icon} ",
+        "format-icons": {
+            "activated": "",
+            "deactivated": "󰒲" 
+        },
+        "tooltip-format-activated": "Caffeina Attiva: Lo schermo non si spegnerà",
+        "tooltip-format-deactivated": "Caffeina Disattivata: Sospensione automatica in uso"
+    },
     "custom/launcher": {
         "format": "  ",
         "on-click": "rofi -show drun",
@@ -93,7 +106,7 @@
     },
     "custom/clipboard": {
         "format": "  ",
-"on-click": "cliphist list | rofi -dmenu -i -p '' -theme ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy",
+        "on-click": "cliphist list | rofi -dmenu -i -p '' -theme ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy",
         "tooltip": false
     },
     "custom/mako": {
@@ -118,7 +131,6 @@
         "format-icons": { "default": ["", "", ""] },
         "on-click": "pavucontrol"
     },
-    
     "backlight": {
         "format": " {icon}  {percent}% ",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
@@ -131,7 +143,7 @@
         "format-wifi": "   {essid} ",
         "format-ethernet": "   {ipaddr} ",
         "format-disconnected": " ⚠ Offline ",
-        "on-click": "alacritty -e nmtui" // APRE LA GUI DEL WI-FI
+        "on-click": "alacritty -e nmtui"
     },
     "battery": {
         "states": { "warning": 30, "critical": 15 },
@@ -143,7 +155,7 @@
     "tray": {
         "spacing": 8
     },
-  "custom/power": {
+    "custom/power": {
         "format": "   ",
         "on-click": "~/.local/bin/powermenu.sh",
         "tooltip": false
