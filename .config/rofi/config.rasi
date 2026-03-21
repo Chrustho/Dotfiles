@@ -15,13 +15,12 @@ configuration {
 }
 
 * {
-    bg:          #282828; /* Sfondo principale lista */
-    bg-alt:      #32302f; /* Sfondo ricerca / selezione */
-    base-bg:     #1d2021; /* Sfondo scuro assoluto per i bordi */
-    fg-light:    #ddc7a1; /* Testo principale */
+    bg:          #282828; 
+    bg-alt:      #32302f; 
+    base-bg:     #1d2021; 
+    fg-light:    #ddc7a1; 
     fg-dark:     #282828; 
     
-    /* Accenti */
     red:         #ea6962;
     orange:      #e78a4e;
     yellow:      #d8a657;

@@ -1,6 +1,3 @@
-/* =========================================================
-   Tema Rofi - Powermenu Fullscreen Overlay
-   ========================================================= */
 
 configuration {
     show-icons: false;
@@ -10,7 +7,6 @@ configuration {
 }
 
 * {
-    /* Palette Gruvbox Material */
     bg:          #282828;
     bg-alt:      #32302f;
     base-bg:     #1d2021;
@@ -22,18 +18,15 @@ configuration {
     font: "IosevkaTerm Nerd Font 14";
 }
 
-/* --- Finestra a Schermo Intero (Sfondo Oscurato) --- */
 window {
     transparency: "real";
     fullscreen: true;
-    background-color: #1d2021ee; /* Overlay scuro al 93% */
+    background-color: #1d2021ee; 
     border: 0px;
     padding: 0px;
 }
 
-/* --- Contenitore Principale --- */
 mainbox {
-    /* Le molle 'dummy' sopra e sotto spingono la lista perfettamente al centro */
     children: [ dummy, listview, dummy ];
 }
 
@@ -41,17 +34,14 @@ dummy {
     expand: true;
 }
 
-/* --- Il Box del Menu (Applicato direttamente alla lista) --- */
 listview {
-    expand: false; /* Non allungarti oltre le 5 opzioni! */
+    expand: false; 
     columns: 1;
     lines: 5;
     
-    /* Il margine laterale decide la larghezza del box rosso (es. 38% a sinistra e destra) */
     margin: 0px 38%; 
     padding: 15px;
     
-    /* Colori e bordi del box */
     background-color: @bg;
     border: 4px solid;
     border-color: @red;
@@ -62,7 +52,6 @@ listview {
     fixed-height: true;
 }
 
-/* --- Singolo Pulsante --- */
 element {
     padding: 12px 15px;
     border-radius: 0px;
@@ -80,7 +69,6 @@ element selected.normal, element selected.active {
     border-color: @red;
 }
 
-/* --- Testo Centrato --- */
 element-text {
     vertical-align: 0.5;
     horizontal-align: 0.5;

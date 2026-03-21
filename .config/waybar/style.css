@@ -1,9 +1,8 @@
-/* Palette Gruvbox Material (Colori Soffici e meno accesi) */
 @define-color bg #282828;
 @define-color bg_alt #32302f;
 @define-color fg_dark #282828; 
 @define-color fg_light #ddc7a1; 
-@define-color base_bg #1d2021; /* Sfondo scuro assoluto per l'intera barra */
+@define-color base_bg #1d2021; 
 @define-color red #ea6962;
 @define-color orange #e78a4e;
 @define-color yellow #d8a657;
@@ -26,8 +25,6 @@ window#waybar {
     background-color: @base_bg;
 }
 
-/* --- DIMENSIONI MODULI E COLORI TESTO DEFAULT --- */
-/* Ho aggiunto #idle_inhibitor in questa lista per la spaziatura corretta */
 #custom-launcher, #workspaces, #clock, #custom-nightmode, #custom-clipboard, #custom-mako, #idle_inhibitor, #cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon, #network, #battery, #tray {
     color: @fg_dark; 
     padding: 0 4px;

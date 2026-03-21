@@ -3,7 +3,6 @@
     "position": "top",
     "height": 32,
     "spacing": 0,
-    // Ordine dei moduli
     "modules-left": [
         "custom/launcher",
         "custom/l_arrow1",
@@ -45,19 +44,15 @@
         "custom/power"
     ],
 
-    // --- FRECCE POWERLINE ---
-    // Sinistra (Puntano a destra)
     "custom/l_arrow1": { "format": "", "tooltip": false },
     "custom/l_arrow2": { "format": "", "tooltip": false },
     "custom/l_arrow3": { "format": "", "tooltip": false },
     "custom/l_arrow4": { "format": "", "tooltip": false },
     "custom/l_arrow5": { "format": "", "tooltip": false },
     
-    // Centro
     "custom/c_arrow1": { "format": "", "tooltip": false },
     "custom/c_arrow2": { "format": "", "tooltip": false },
   
-    // Destra (Puntano a sinistra)
     "custom/r_arrow1": { "format": "", "tooltip": false },
     "custom/r_arrow2": { "format": "", "tooltip": false },
     "custom/r_arrow3": { "format": "", "tooltip": false },
@@ -69,7 +64,6 @@
     "custom/r_arrow9": { "format": "", "tooltip": false },
     "custom/r_arrow10": { "format": "", "tooltip": false },
 
-    // --- MODULI NORMALI ---
     "idle_inhibitor": {
         "format": " {icon} ",
         "format-icons": {
@@ -118,12 +112,12 @@
     "cpu": {
         "interval": 2,
         "format": "   {usage}% ",
-        "on-click": "alacritty -e btop"
+        "on-click": "ghostty -e btop"
     },
     "memory": {
         "interval": 2,
         "format": "   {percentage}% ",
-        "on-click": "alacritty -e btop"
+        "on-click": "ghostty -e btop"
     },
     "pulseaudio": {
         "format": " {icon}  {volume}% ",
@@ -143,7 +137,7 @@
         "format-wifi": "   {essid} ",
         "format-ethernet": "   {ipaddr} ",
         "format-disconnected": " ⚠ Offline ",
-        "on-click": "alacritty -e nmtui"
+        "on-click": "ghostty -e nmtui"
     },
     "battery": {
         "states": { "warning": 30, "critical": 15 },
