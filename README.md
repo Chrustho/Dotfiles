@@ -1,6 +1,6 @@
 <div align="center">
 
-```
+```text
 ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
 ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝
 ██║  ██║██║   ██║   ██║   █████╗  ██║██║     █████╗  ███████╗
@@ -9,7 +9,7 @@
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
 
-*A Wayland-first, keyboard-driven setup forged in the embers of Kanagawa Dragon*
+*Personal Wayland dotfiles based on Niri and the Kanagawa Dragon colorscheme.*
 
 ---
 
@@ -23,17 +23,13 @@
 
 ---
 
-## 🐉 Overview
+## Overview
 
-A carefully crafted dotfiles collection built around **[Niri](https://github.com/YaLTeR/niri)** — a scrollable, tiling Wayland compositor — wrapped in the warm, dark aesthetic of the **Kanagawa Dragon** colorscheme. Every tool in the stack is configured to work as a cohesive, keyboard-first environment for development and daily use.
+This repository contains the configuration files for my daily driver setup. It is a keyboard-centric Wayland environment built around the **Niri** compositor. The entire system is unified under the **Kanagawa Dragon** color palette for visual consistency across all applications. 
 
-The setup favors **precision over bloat**: minimal RAM overhead, fast startup times, and a consistent visual language across every application — from the terminal to the lock screen.
+## Structure
 
----
-
-## 🗂️ Structure
-
-```
+```text
 ~
 ├── .config/
 │   ├── niri/           # Compositor config (KDL)
@@ -50,13 +46,9 @@ The setup favors **precision over bloat**: minimal RAM overhead, fast startup ti
     └── bin/            # Custom shell scripts
 ```
 
----
+## Colorscheme
 
-## 🎨 Colorscheme — Kanagawa Dragon
-
-> *"The mountains are distant, the fog is thick, the dragon stirs."*
-
-The entire setup is themed around **[Kanagawa Dragon](https://github.com/rebelot/kanagawa.nvim)** — a dark, earthy palette inspired by the colors of Katsushika Hokusai's paintings.
+The system uses the **[Kanagawa Dragon](https://github.com/rebelot/kanagawa.nvim)** palette.
 
 | Role        | Color     | Preview |
 |-------------|-----------|---------|
@@ -69,140 +61,51 @@ The entire setup is themed around **[Kanagawa Dragon](https://github.com/rebelot
 | Teal        | `#6A9589` | ![#6A9589](https://placehold.co/14x14/6A9589/6A9589.png) |
 | Violet      | `#957FB8` | ![#957FB8](https://placehold.co/14x14/957FB8/957FB8.png) |
 
----
+## Programs & Tools
 
-## 🧩 The Stack
+Here is a breakdown of the core components configured in this repository and what they do:
 
-### 🪟 Niri — Window Manager
-A **scrollable, tiling Wayland compositor** where windows are arranged in an infinite horizontal strip. No overlapping, no chaos — just clean, predictable tiling with buttery-smooth animations.
+* **[Niri](https://github.com/YaLTeR/niri):** The core window manager / Wayland compositor. Instead of standard grids, it tiles windows dynamically in an infinite horizontal strip that you can scroll through. It handles workspaces, window placement, and keyboard shortcuts.
+* **Neovim:** A terminal-based text editor. It is configured via Lua to act as a full IDE, utilizing LSP for code completion and diagnostics, Treesitter for syntax highlighting, and Telescope for fuzzy finding files.
+* **Waybar:** The system status bar. It displays real-time information such as active Niri workspaces, CPU/RAM usage, temperatures, network status, and a system tray.
+* **Hyprlock:** A Wayland screen locker. It locks the session when the system is idle or sleeping. This config includes custom GLSL shaders to render a dynamic background while locked.
+* **Rofi (rofi-wayland):** An application launcher. Triggered via keyboard shortcut, it provides a menu to search for and launch installed programs or execute commands.
+* **Ghostty:** A GPU-accelerated terminal emulator. It provides the command-line interface where all shell commands, Neovim, and Yazi are run.
+* **Mako:** A lightweight notification daemon for Wayland. It catches desktop notifications sent by applications and displays them as popups on the screen.
+* **Yazi:** A terminal-based file manager written in Rust. Used for fast file system navigation, file manipulation, and features built-in image and text previews.
+* **Fastfetch:** A command-line system information tool. It fetches and displays OS, hardware, and uptime details alongside an ASCII logo in the terminal.
+* **Custom Scripts (`.local/bin`):** Various POSIX-compliant shell scripts that handle repetitive tasks, volume/brightness control hooks, and system automation.
 
-- Gesture-based workspace navigation
-- Per-window rules for floating & sizing
-- Deep integration with the Wayland ecosystem
+## Installation
 
----
+**Note:** Dotfiles are inherently personal. It is highly recommended to read through the configuration files before applying them to your system to understand the keybindings and behaviors.
 
-### ✏️ Neovim — Editor
-A full Lua-configured Neovim setup built for speed and ergonomics. The config is modular and plugin-managed for fast startup.
-
-**Highlights:**
-- LSP-first workflow with autocompletion, diagnostics, and formatting
-- Treesitter for accurate syntax highlighting
-- Telescope for fuzzy finding across files, buffers, and git history
-- Full Kanagawa Dragon theming
-
----
-
-### 📊 Waybar — Status Bar
-A pixel-perfect status bar styled with custom CSS to match the Kanagawa Dragon palette.
-
-**Modules:**
-- Niri workspaces integration
-- CPU, RAM, temperature monitoring
-- Network status
-- PipeWire audio control
-- Date & time with calendar popup
-
----
-
-### 🔒 Hyprlock — Lock Screen
-A GPU-accelerated lock screen with custom **GLSL shaders** — the heaviest and most visually distinctive part of the setup. The shaders produce a dynamic background that fits the Dragon aesthetic perfectly.
-
-> GLSL accounts for **61.5%** of the repository — because the lock screen deserves to be art.
-
----
-
-### 🚀 Rofi — Application Launcher
-A minimal, keyboard-driven launcher styled to blend seamlessly with the rest of the desktop. Fast, distraction-free, and themed consistently with Kanagawa Dragon colors.
-
----
-
-### 👻 Ghostty — Terminal
-[Ghostty](https://ghostty.org) is a modern, GPU-accelerated terminal emulator with native performance and a clean configuration format. Configured with:
-- Kanagawa Dragon colors
-- Optimized font rendering
-- Minimal chrome — the focus is on your work
-
----
-
-### 🔔 Mako — Notifications
-A lightweight Wayland notification daemon. Styled to be unobtrusive: notifications appear, deliver their message, and get out of the way.
-
----
-
-### 📁 Yazi — File Manager
-A terminal file manager written in Rust, built for speed. Configured with:
-- Preview support (images, text, archives)
-- Custom keybindings
-- Kanagawa Dragon theme
-
----
-
-### 📸 Fastfetch — System Info
-A fast, highly customizable system info tool. Because `neofetch` is tradition, but speed matters.
-
----
-
-### 🛠️ `.local/bin` — Custom Scripts
-A collection of shell scripts that automate common tasks and glue the desktop environment together. Kept minimal and POSIX-compliant where possible.
-
----
-
-## 🚀 Installation
-
-> **⚠️ Warning:** These dotfiles are personal and opinionated. Review every file before applying. No install script is provided intentionally — understanding your config is part of owning it.
-
-### Prerequisites
-
-Make sure the following packages are installed on your Arch system:
+### Dependencies (Arch Linux)
 
 ```bash
-# Core
+# Core packages
 sudo pacman -S niri waybar hyprlock rofi-wayland mako ghostty yazi fastfetch neovim
 
-# Optional but recommended
+# Utilities
 sudo pacman -S xdg-desktop-portal-gnome playerctl brightnessctl pipewire wireplumber
 ```
 
-### Deploying
+### Deployment
 
-Clone the repo and stow (or symlink) the configs:
+Clone the repository and deploy the files. GNU Stow is recommended for managing symlinks.
 
 ```bash
-git clone https://github.com/Chrustho/Dotfiles.git ~/Dotfiles
+git clone [https://github.com/Chrustho/Dotfiles.git](https://github.com/Chrustho/Dotfiles.git) ~/Dotfiles
 cd ~/Dotfiles
 
-# Option A — using GNU Stow (recommended)
+# Using GNU Stow (Recommended)
 stow --target=$HOME .
 
-# Option B — manual copy
+# Manual Copy Alternative
 cp -r .config/* ~/.config/
 cp -r .local/bin/* ~/.local/bin/
 chmod +x ~/.local/bin/*
 ```
 
----
-
-## ⌨️ Key Philosophy
-
-> **"A tool should disappear in your hands."**
-
-Every configuration decision here follows three rules:
-
-1. **Keyboard-first** — mouse is optional, never required
-2. **Consistent** — same colors, same fonts, same feel everywhere
-3. **Fast** — if it's slow, it's wrong
-
----
-
-## 📄 License
-
-MIT — take what you need, build something yours.
-
----
-
-<div align="center">
-
-*Made with 🐉 and too many late nights on Arch*
-
-</div>
+## License
+MIT
