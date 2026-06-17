@@ -54,14 +54,11 @@ output "HDMI-A-1" {
     position x=0 y=0
 }
 
-// --- Geometria layout (COSTANTE su tutti i temi) ---
-// L'estetica (focus-ring, border, shadow, background-color) e' nel file tema
-// incluso in fondo a questo config. Qui resta solo cio' che NON deve cambiare,
-// inclusa la distanza tra le tile (gaps).
 layout {
     gaps 37.5
     center-focused-column "never"
     always-center-single-column
+    background-color "transparent"
 
     preset-column-widths {
         proportion 0.33333
@@ -69,6 +66,24 @@ layout {
         proportion 0.66667
     }
     default-column-width { proportion 0.5; }
+
+    focus-ring {
+        width 4
+        active-gradient from="#FF9E3B" to="#C34043" angle=180
+        inactive-color "#54546D"
+    }
+
+    border {
+        off
+    }
+
+    shadow {
+        softness 95
+        spread 8
+        offset x=0 y=0
+        color "#C3404340"
+        inactive-color "transparent"
+    }
 
     struts {}
 }
@@ -80,13 +95,140 @@ hotkey-overlay {
 prefer-no-csd
 screenshot-path "~/Immagini/Schermate/Schermata del %Y-%m-%d %H-%M-%S.png"
 
-// --- Animazioni base (COSTANTI) ---
-// Le animazioni window-open / window-close sono definite per-tema nel file incluso.
 animations {
     slowdown 1.50
 
     window-movement {
         spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    window-open {
+        duration-ms 850
+        curve "ease-out-quad"
+        custom-shader r#"
+        float rand(vec2 co){
+            return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+        } 
+
+        vec4 open_color(vec3 coords_geo, vec3 size_geo) {
+            if (coords_geo.x < 0.0 || coords_geo.x > 1.0 || coords_geo.y < 0.0 || coords_geo.y > 1.0) {
+                return vec4(0.0);
+            }
+
+            float progress = niri_clamped_progress;
+            float ease = progress;
+            float inv_ease = 1.0 - ease;
+            float linear_fade = 1.0 - progress;
+            vec3 coords_tex = niri_geo_to_tex * coords_geo;
+            
+            float time_seed = progress * 10.0;
+            float flicker_noise = rand(vec2(time_seed, coords_geo.y * 0.01));
+            float intensity_glitch = mix(1.0, 0.85 + 0.3 * flicker_noise, inv_ease);
+            float jump_noise = rand(vec2(floor(coords_geo.y * 20.0), time_seed));
+            
+            float line_jump = step(0.95, jump_noise) * sin(coords_geo.y * 100.0) * 0.01 * inv_ease;
+            float color_shift = (jump_noise > 0.90 ? 0.04 : 0.008) * linear_fade;
+            
+            vec2 shift_vector = vec2(color_shift, color_shift * (flicker_noise - 0.5) * 1.0);
+            vec2 coords_r = coords_tex.st + shift_vector;
+            vec2 coords_b = coords_tex.st - shift_vector;
+            
+            float r = texture2D(niri_tex, coords_r).r;
+            float g = texture2D(niri_tex, coords_tex.st).g;
+            float b = texture2D(niri_tex, coords_b).b;
+            float a = texture2D(niri_tex, coords_tex.st).a;
+            
+            vec4 retro_color = vec4(r, g, b, a);
+            vec4 perfect_color = texture2D(niri_tex, coords_tex.st);
+
+            float scan_freq = size_geo.y * 0.5; 
+            float scan_offset = (1.0 - progress) * 8.0; 
+            float scan_sin = sin(coords_geo.y * scan_freq + scan_offset + line_jump * 10.0);
+            float scanline_mult = mix(0.5, 1.0, (scan_sin + 1.0) * 0.5);
+            retro_color.rgb *= scanline_mult;
+
+            vec3 static_color = vec3(
+                rand(coords_geo.xy * (1.0 + progress * 100.0)),
+                rand(coords_geo.xy * (2.0 + progress * 100.0)),
+                rand(coords_geo.xy * (3.0 + progress * 100.0))
+            );
+            retro_color.rgb += (static_color - 0.5) * 0.25 * inv_ease;
+
+            float bar_pos = ease; 
+            float dist_to_bar = abs(coords_geo.y - bar_pos);
+            float scan_bar = smoothstep(0.15, 0.0, dist_to_bar);
+            vec3 glow = vec3(0.9, 0.95, 1.0) * scan_bar * 0.4 * inv_ease;
+            
+            retro_color.rgb += glow;
+            float scanned = smoothstep(bar_pos + 0.05, bar_pos, coords_geo.y);
+            retro_color.rgb *= mix(0.2, 1.0, scanned);
+            retro_color.rgb *= intensity_glitch;
+
+            vec4 final_color = mix(retro_color, perfect_color, progress);
+            final_color *= ease;
+
+            return final_color;
+        }
+        "#
+    }
+
+    window-close {
+        duration-ms 300
+        curve "ease-out-expo" 
+        custom-shader r#"
+        float rand(vec2 co){
+            return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+        }
+
+        vec4 close_color(vec3 coords_geo, vec3 size_geo) {
+            if (coords_geo.x < 0.0 || coords_geo.x > 1.0 || coords_geo.y < 0.0 || coords_geo.y > 1.0) {
+                return vec4(0.0);
+            }
+
+            float progress = niri_clamped_progress;
+            vec3 coords_tex = niri_geo_to_tex * coords_geo;
+            
+            float time_seed = progress * 10.0;
+            float flicker_noise = rand(vec2(time_seed, coords_geo.y * 0.01));
+            float jump_noise = rand(vec2(floor(coords_geo.y * 20.0), time_seed));
+            
+            float color_shift = (jump_noise > 0.90 ? 0.04 : 0.008) * progress;
+            vec2 shift_vector = vec2(color_shift, color_shift * (flicker_noise - 0.5) * 1.0);
+            
+            vec2 coords_r = coords_tex.st + shift_vector;
+            vec2 coords_b = coords_tex.st - shift_vector;
+            
+            float r = texture2D(niri_tex, coords_r).r;
+            float g = texture2D(niri_tex, coords_tex.st).g;
+            float b = texture2D(niri_tex, coords_b).b;
+            float a = texture2D(niri_tex, coords_tex.st).a;
+            
+            vec4 retro_color = vec4(r, g, b, a);
+            vec4 perfect_color = texture2D(niri_tex, coords_tex.st);
+
+            float scan_freq = size_geo.y * 0.5; 
+            float scan_offset = progress * 8.0; 
+            float scan_sin = sin(coords_geo.y * scan_freq - scan_offset);
+            retro_color.rgb *= mix(0.5, 1.0, (scan_sin + 1.0) * 0.5);
+
+            vec3 static_color = vec3(
+                rand(coords_geo.xy * (1.0 + progress * 100.0)),
+                rand(coords_geo.xy * (2.0 + progress * 100.0)),
+                rand(coords_geo.xy * (3.0 + progress * 100.0))
+            );
+            retro_color.rgb += (static_color - 0.5) * 0.3 * progress;
+
+            float bar_pos = 1.0 - progress; 
+            float dist_to_bar = abs(coords_geo.y - bar_pos);
+            float scan_bar = smoothstep(0.15, 0.0, dist_to_bar);
+            retro_color.rgb += vec3(0.9, 0.95, 1.0) * scan_bar * 0.5;
+
+            vec4 final_color = mix(perfect_color, retro_color, progress);
+            final_color.a *= smoothstep(bar_pos + 0.02, bar_pos, coords_geo.y);
+
+            return final_color;
+        }
+        "#
     }
 }
 
@@ -102,6 +244,11 @@ window-rule {
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
 }
 
 window-rule {
@@ -126,9 +273,6 @@ binds {
     // System UI
     Super+Escape hotkey-overlay-title="Lock Screen" { spawn "hyprlock"; }
     Mod+Alt+W hotkey-overlay-title="Sfondo" { spawn "~/.local/bin/toggle_sfondo.sh"; }
-    Mod+Alt+T hotkey-overlay-title="Cambia tema Niri" { spawn "~/.local/bin/niri-theme.sh"; }
-    Mod+Alt+R hotkey-overlay-title="Cambia tema Rofi" { spawn "~/.local/bin/rofi-theme.sh"; }
-    Mod+Alt+B hotkey-overlay-title="Cambia tema Waybar" { spawn "~/.local/bin/waybar-theme.sh"; }
     Mod+A hotkey-overlay-title="Waybar" { spawn "killall" "-SIGUSR1" "waybar"; }
     Mod+Shift+B hotkey-overlay-title="Bluetooth Manager" { spawn "blueman-manager"; }
     Mod+Shift+N hotkey-overlay-title="Network Manager" { spawn "networkmanager_dmenu"; }
@@ -270,9 +414,3 @@ binds {
     Ctrl+Alt+Delete { quit; }
     Mod+Shift+P { power-off-monitors; }
 }
-
-// --- Tema estetico attivo ---
-// Temi disponibili: original | cyberdeck | aero | ink | everforest | rosepine | oxocarbon | synthwave | deathstranding | dune | matrix | win95
-// Cambia il nome del file per switchare. Niri ricarica automaticamente.
-// Oppure usa Mod+Alt+T (selettore rofi).
-include "themes/deathstranding.kdl"

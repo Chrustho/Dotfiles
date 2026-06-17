@@ -1,0 +1,45 @@
+// === Tema: Frutiger Aero (revival) ===
+// Glossy/glass: ring ciano luminoso + glow, angoli arrotondati, animazioni morbide.
+// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+
+layout {
+    background-color "transparent"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        on
+        width 3
+        active-gradient from="#9BE7FF" to="#2FC4B2" angle=135 in="oklch shorter hue"
+        inactive-color "#5A7A85"
+        urgent-color "#FF6B6B"
+    }
+
+    shadow {
+        on
+        draw-behind-window true
+        softness 40
+        spread 6
+        offset x=0 y=8
+        color "#2FC4B255"           // glow ciano luminoso
+        inactive-color "#2FC4B225"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 18
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 350
+        curve "ease-out-expo"
+    }
+    window-close {
+        duration-ms 250
+        curve "ease-out-quad"
+    }
+}

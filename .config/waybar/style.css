@@ -1,100 +1,83 @@
-@define-color bg #282828;
-@define-color bg_alt #32302f;
-@define-color fg_dark #282828; 
-@define-color fg_light #ddc7a1; 
-@define-color base_bg #1d2021; 
-@define-color red #ea6962;
-@define-color orange #e78a4e;
-@define-color yellow #d8a657;
-@define-color green #a9b665;
-@define-color aqua #89b482;
-@define-color blue #7daea3;
-@define-color purple #d3869b;
+/* === Waybar: win95 (90s OS brutalist, dark) === */
+/* Barra scura, blocchi HUD grigi con bevel 3D, accenti teal/navy. Niente bianchi pieni. */
+
+@define-color w_base   #15191a;
+@define-color w_panel  #313737;
+@define-color w_text   #c7c7bd;
+@define-color w_muted  #6e7373;
+@define-color w_chrome #9a9a93;
+@define-color w_teal   #2f9e9e;
+@define-color w_navy   #3a5fb0;
+@define-color w_danger #b5443a;
+@define-color w_bevel_l #c4c4ba;
+@define-color w_bevel_d #20201d;
 
 * {
     border: none;
     border-radius: 0;
-    font-family: "IosevkaTerm Nerd Font", "SpaceMono Nerd Font", sans-serif;
-    font-size: 12pt;
+    font-family: "W95FA", "IosevkaTerm Nerd Font", monospace;
+    font-size: 11pt;
+    font-weight: 700;
     min-height: 0;
     margin: 0;
     padding: 0;
+    box-shadow: none;
 }
 
 window#waybar {
-    background-color: @base_bg;
+    background-color: @w_base;
+    color: @w_text;
+    border-bottom: 2px solid @w_panel;
 }
 
-#custom-launcher, #workspaces, #clock, #custom-nightmode, #custom-clipboard, #custom-mako, #idle_inhibitor, #cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon, #network, #battery, #tray {
-    color: @fg_dark; 
-    padding: 0 4px;
+/* Nasconde le frecce powerline -> look flat, ordine widget invariato */
+#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
+#custom-c_arrow1, #custom-c_arrow2,
+#custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
+#custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
+    color: transparent;
+    background: transparent;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#custom-nightmode, #custom-mako, #custom-clipboard, #idle_inhibitor,
+#cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon,
+#network, #battery, #tray, #workspaces {
+    background-color: transparent;
+    color: @w_text;
+    padding: 0 8px;
 }
 
 #window {
-    color: @fg_light;
+    color: @w_muted;
     background: transparent;
-    padding-left: 8px;
+    padding-left: 10px;
 }
 
 #workspaces button {
-    color: @fg_light;
-    padding: 0 4px;
+    color: @w_muted;
+    padding: 0 6px;
 }
 #workspaces button.active {
-    color: #ffffff; 
+    color: @w_teal;
 }
 
-/* --- COLORI DEGLI SFONDI --- */
-#custom-launcher { background: @blue; }
-#workspaces { background: @bg_alt; }
-#clock { background: @yellow; }
-
-#custom-nightmode { background: @purple; }
-#custom-clipboard { background: @orange; }
-#custom-mako { background: @red; }
-#idle_inhibitor { background: @yellow; } /* Sfondo giallo per la caffeina */
-
-#cpu { background: @green; }
-#memory { background: @aqua; }
-#pulseaudio { background: @blue; }
-#backlight { background: @yellow; }
-#power-profiles-daemon { background: @orange; }
-#network { background: @red; }
-#battery { background: @green; }
-#tray { background: @bg_alt; padding: 0 10px; }
-
-/* --- MAGIA DELLE FRECCE POWERLINE --- */
-/* Ho aggiunto #custom-l_arrow5 in questa lista per ingrandirlo */
-#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5, #custom-c_arrow1, #custom-c_arrow2, #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5, #custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
-    font-size: 16pt; 
+/* Blocchi HUD grigi con bevel 3D (alto-sinistra chiaro, basso-destra scuro) */
+#custom-launcher, #clock, #custom-power {
+    background-color: @w_chrome;
+    color: #15191a;
+    font-weight: 700;
+    padding: 0 13px;
+    border-top: 2px solid @w_bevel_l;
+    border-left: 2px solid @w_bevel_l;
+    border-bottom: 2px solid @w_bevel_d;
+    border-right: 2px solid @w_bevel_d;
 }
 
-/* Frecce Sinistre (Punta a destra ) */
-#custom-l_arrow1 { color: @blue; background: @bg_alt; } /* Launcher (Blu) -> Workspaces (Grigio) */
-#custom-l_arrow2 { color: @bg_alt; background: @purple; } /* Workspaces (Grigio) -> Nightmode (Viola) */
-#custom-l_arrow3 { color: @purple; background: @red; } /* Nightmode (Viola) -> Mako (Rosso) */
-#custom-l_arrow4 { color: @red; background: @yellow; } /* Mako (Rosso) -> Caffeina (Giallo) */
-#custom-l_arrow5 { color: @yellow; background: transparent; } /* Caffeina (Giallo) -> Finestra (Trasparente) */
-
-/* Frecce Centrali */
-#custom-c_arrow1 { color: @yellow; background: transparent; }
-#custom-c_arrow2 { color: @yellow; background: transparent; }
-
-/* Frecce Destre (Punta a sinistra ) */
-#custom-r_arrow1 { color: @orange; background: transparent; } /* Trasparente <- Clipboard (Arancione) */
-#custom-r_arrow2 { color: @green; background: @orange; } /* Clipboard (Arancione) <- CPU (Verde) */
-#custom-r_arrow3 { color: @aqua; background: @green; } /* CPU (Verde) <- Memoria (Acqua) */
-#custom-r_arrow4 { color: @blue; background: @aqua; } /* Memoria (Acqua) <- Audio (Blu) */
-#custom-r_arrow5 { color: @yellow; background: @blue; } /* Audio (Blu) <- Luminosità (Giallo) */
-#custom-r_arrow6 { color: @orange; background: @yellow; } /* Luminosità (Giallo) <- Power Profiles (Arancione) */
-#custom-r_arrow7 { color: @red; background: @orange; } /* Power Profiles (Arancione) <- Rete (Rosso) */
-#custom-r_arrow8 { color: @green; background: @red; } /* Rete (Rosso) <- Batteria (Verde) */
-#custom-r_arrow9 { color: @bg_alt; background: @green; } /* Batteria (Verde) <- Tray (Grigio) */
-#custom-r_arrow10 { color: @red; background: @bg_alt; } /* Tray (Grigio) <- Power (Rosso) */
-
-/* --- Colore del pulsante Power --- */
-#custom-power { 
-    background: @red; 
-    color: @bg; 
-    padding-right: 8px; 
+/* Stati di allarme */
+#battery.warning { color: @w_navy; }
+#battery.critical, #pulseaudio.muted, #network.disconnected {
+    color: @w_danger;
 }

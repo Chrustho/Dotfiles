@@ -5,5 +5,14 @@ mode=fill
 cycle_index=0
 cycle_total=0
 status=active
-timestamp=1774100713
+timestamp=1781731552
+
+[output]
+name=HDMI-A-1
+wallpaper=topo.glsl
+mode=fill
+cycle_index=0
+cycle_total=0
+status=active
+timestamp=1780516002
 

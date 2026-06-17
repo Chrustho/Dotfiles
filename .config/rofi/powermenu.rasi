@@ -1,3 +1,4 @@
+@import "colors.rasi"
 
 configuration {
     show-icons: false;
@@ -7,12 +8,6 @@ configuration {
 }
 
 * {
-    bg:          #282828;
-    bg-alt:      #32302f;
-    base-bg:     #1d2021;
-    fg-light:    #ddc7a1;
-    red:         #ea6962;
-
     background-color: transparent;
     text-color: @fg-light;
     font: "IosevkaTerm Nerd Font 14";
@@ -21,7 +16,7 @@ configuration {
 window {
     transparency: "real";
     fullscreen: true;
-    background-color: #1d2021ee; 
+    background-color: @window-bg;
     border: 0px;
     padding: 0px;
 }
@@ -35,18 +30,18 @@ dummy {
 }
 
 listview {
-    expand: false; 
+    expand: false;
     columns: 1;
     lines: 5;
-    
-    margin: 0px 38%; 
+
+    margin: 0px 38%;
     padding: 15px;
-    
+
     background-color: @bg;
     border: 4px solid;
     border-color: @red;
     border-radius: 0px;
-    
+
     spacing: 8px;
     scrollbar: false;
     fixed-height: true;

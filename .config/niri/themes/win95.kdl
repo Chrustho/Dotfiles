@@ -1,0 +1,45 @@
+// === Tema: win95 (90s OS brutalist) ===
+// Cromatura finestre: bordo grigio spesso, attiva navy (come una title bar 90s),
+// drop-shadow dura, angoli netti, animazioni snappy. Niente bianchi accecanti.
+// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+
+layout {
+    background-color "transparent"
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 4
+        active-color "#3a5fb0"      // navy: finestra attiva (title bar)
+        inactive-color "#4a4f4f"    // grigio cromatura inattiva
+        urgent-color "#b5443a"
+    }
+
+    shadow {
+        on
+        softness 0
+        spread 0
+        offset x=5 y=5
+        color "#000000d0"           // drop-shadow dura brutalista
+        inactive-color "#00000060"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 150
+        curve "ease-out-quad"
+    }
+    window-close {
+        duration-ms 120
+        curve "ease-out-quad"
+    }
+}

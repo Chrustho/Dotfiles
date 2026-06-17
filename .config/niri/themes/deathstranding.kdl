@@ -1,0 +1,83 @@
+// === Tema: Death Stranding (Beach / Timefall) ===
+// Desaturato e malinconico: tan/taupe, oro tenue + chiral cyan smorzato, ombra nebbiosa.
+// Apertura finestre: "chiral materialize" (rivelazione a scansione cyan + desaturazione->colore).
+// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+
+layout {
+    background-color "transparent"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        on
+        width 4
+        active-gradient from="#b5985f" to="#6f9ba3" angle=135 in="oklch shorter hue"
+        inactive-color "#4a4a52"
+        urgent-color "#b5564f"
+    }
+
+    shadow {
+        on
+        softness 35
+        spread 4
+        offset x=0 y=4
+        color "#12161a80"
+        inactive-color "transparent"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 4
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 600
+        curve "ease-out-quad"
+        custom-shader r#"
+        float rand(vec2 co){
+            return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+        }
+
+        vec4 open_color(vec3 coords_geo, vec3 size_geo) {
+            if (coords_geo.x < 0.0 || coords_geo.x > 1.0 || coords_geo.y < 0.0 || coords_geo.y > 1.0) {
+                return vec4(0.0);
+            }
+
+            float progress = niri_clamped_progress;
+            float inv = 1.0 - progress;
+            vec3 coords_tex = niri_geo_to_tex * coords_geo;
+            vec4 tex = texture2D(niri_tex, coords_tex.st);
+
+            // rivelazione verticale dall'alto verso il basso
+            float bar_pos = progress;
+            float revealed = smoothstep(bar_pos + 0.05, bar_pos - 0.05, coords_geo.y);
+
+            // desaturazione che si risolve col progresso
+            float gray = dot(tex.rgb, vec3(0.299, 0.587, 0.114));
+            vec3 col = mix(vec3(gray), tex.rgb, progress);
+
+            // glow chiral cyan smorzato vicino alla linea di scansione
+            vec3 chiral = vec3(0.40, 0.78, 0.85);
+            float dist = abs(coords_geo.y - bar_pos);
+            float glow = smoothstep(0.10, 0.0, dist) * inv;
+            col += chiral * glow * 0.5;
+
+            // particelle chiral sottili
+            float n = rand(coords_geo.xy * (1.0 + progress * 50.0));
+            col += chiral * (n - 0.5) * 0.15 * inv;
+
+            float a = tex.a * revealed;
+            return vec4(col, 1.0) * a;
+        }
+        "#
+    }
+
+    window-close {
+        duration-ms 300
+        curve "ease-out-quad"
+    }
+}

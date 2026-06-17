@@ -1,0 +1,45 @@
+// === Tema: Synthwave / Outrun ===
+// Neon anni 80: gradiente magenta->ciano con glow, base scura, angoli medi.
+// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+
+layout {
+    background-color "transparent"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        on
+        width 3
+        active-gradient from="#f92aad" to="#03edf9" angle=135 in="oklch shorter hue"
+        inactive-color "#463465"
+        urgent-color "#ff2975"
+    }
+
+    shadow {
+        on
+        draw-behind-window true
+        softness 50
+        spread 8
+        offset x=0 y=0
+        color "#f92aad55"           // alone neon magenta
+        inactive-color "#03edf922"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 300
+        curve "ease-out-expo"
+    }
+    window-close {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+}

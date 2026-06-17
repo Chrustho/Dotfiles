@@ -1,0 +1,44 @@
+// === Tema: Flexoki / Ink (analog) ===
+// Inchiostro-su-carta: caldo, basso contrasto, bordo sottile, angoli morbidi.
+// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+
+layout {
+    background-color "transparent"
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 2
+        active-color "#D14D41"      // rosso Flexoki
+        inactive-color "#575653"
+        urgent-color "#DA702C"
+    }
+
+    shadow {
+        on
+        softness 30
+        spread 3
+        offset x=0 y=4
+        color "#100F0F70"           // ombra calda bassa
+        inactive-color "transparent"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 300
+        curve "ease-out-quad"
+    }
+    window-close {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+}

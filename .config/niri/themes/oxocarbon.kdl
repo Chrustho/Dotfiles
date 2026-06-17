@@ -1,0 +1,45 @@
+// === Tema: Oxocarbon (IBM Carbon) ===
+// Tech ad alto contrasto: nero profondo + accent IBM blu/magenta, ring gradiente,
+// ombra crisp, angoli medi, animazioni snappy.
+// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+
+layout {
+    background-color "transparent"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        on
+        width 3
+        active-gradient from="#33b1ff" to="#ff7eb6" angle=135 in="oklch shorter hue"
+        inactive-color "#525252"
+        urgent-color "#ee5396"
+    }
+
+    shadow {
+        on
+        softness 12
+        spread 2
+        offset x=0 y=4
+        color "#000000aa"
+        inactive-color "transparent"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 250
+        curve "ease-out-expo"
+    }
+    window-close {
+        duration-ms 180
+        curve "ease-out-quad"
+    }
+}

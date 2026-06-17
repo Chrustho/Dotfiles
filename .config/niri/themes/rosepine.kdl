@@ -1,0 +1,45 @@
+// === Tema: Rose Pine ===
+// Elegante e smorzato: rosa/iris su base notturna, ring gradiente delicato,
+// ombra viola morbida, angoli arrotondati.
+// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+
+layout {
+    background-color "transparent"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        on
+        width 2
+        active-gradient from="#ebbcba" to="#c4a7e7" angle=135 in="oklch shorter hue"
+        inactive-color "#6e6a86"
+        urgent-color "#eb6f92"
+    }
+
+    shadow {
+        on
+        softness 30
+        spread 3
+        offset x=0 y=5
+        color "#19172480"
+        inactive-color "transparent"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 300
+        curve "ease-out-quad"
+    }
+    window-close {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+}

@@ -1,0 +1,165 @@
+// === Tema: Cyberdeck / Neo-brutalist ===
+// Grezzo/tecnico: bordo spesso ad alto contrasto, ombra dura, angoli netti.
+// Mantiene gli shader CRT glitch/scanline di apertura/chiusura finestre.
+// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+
+layout {
+    background-color "transparent"
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 3
+        active-color "#FFB000"      // ambra fosforo
+        inactive-color "#3A352B"
+        urgent-color "#FF3B3B"
+    }
+
+    shadow {
+        on
+        softness 0
+        spread 0
+        offset x=6 y=6
+        color "#000000FF"           // drop shadow dura (firma brutalista)
+        inactive-color "#00000080"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 850
+        curve "ease-out-quad"
+        custom-shader r#"
+        float rand(vec2 co){
+            return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+        }
+
+        vec4 open_color(vec3 coords_geo, vec3 size_geo) {
+            if (coords_geo.x < 0.0 || coords_geo.x > 1.0 || coords_geo.y < 0.0 || coords_geo.y > 1.0) {
+                return vec4(0.0);
+            }
+
+            float progress = niri_clamped_progress;
+            float ease = progress;
+            float inv_ease = 1.0 - ease;
+            float linear_fade = 1.0 - progress;
+            vec3 coords_tex = niri_geo_to_tex * coords_geo;
+
+            float time_seed = progress * 10.0;
+            float flicker_noise = rand(vec2(time_seed, coords_geo.y * 0.01));
+            float intensity_glitch = mix(1.0, 0.85 + 0.3 * flicker_noise, inv_ease);
+            float jump_noise = rand(vec2(floor(coords_geo.y * 20.0), time_seed));
+
+            float line_jump = step(0.95, jump_noise) * sin(coords_geo.y * 100.0) * 0.01 * inv_ease;
+            float color_shift = (jump_noise > 0.90 ? 0.04 : 0.008) * linear_fade;
+
+            vec2 shift_vector = vec2(color_shift, color_shift * (flicker_noise - 0.5) * 1.0);
+            vec2 coords_r = coords_tex.st + shift_vector;
+            vec2 coords_b = coords_tex.st - shift_vector;
+
+            float r = texture2D(niri_tex, coords_r).r;
+            float g = texture2D(niri_tex, coords_tex.st).g;
+            float b = texture2D(niri_tex, coords_b).b;
+            float a = texture2D(niri_tex, coords_tex.st).a;
+
+            vec4 retro_color = vec4(r, g, b, a);
+            vec4 perfect_color = texture2D(niri_tex, coords_tex.st);
+
+            float scan_freq = size_geo.y * 0.5;
+            float scan_offset = (1.0 - progress) * 8.0;
+            float scan_sin = sin(coords_geo.y * scan_freq + scan_offset + line_jump * 10.0);
+            float scanline_mult = mix(0.5, 1.0, (scan_sin + 1.0) * 0.5);
+            retro_color.rgb *= scanline_mult;
+
+            vec3 static_color = vec3(
+                rand(coords_geo.xy * (1.0 + progress * 100.0)),
+                rand(coords_geo.xy * (2.0 + progress * 100.0)),
+                rand(coords_geo.xy * (3.0 + progress * 100.0))
+            );
+            retro_color.rgb += (static_color - 0.5) * 0.25 * inv_ease;
+
+            float bar_pos = ease;
+            float dist_to_bar = abs(coords_geo.y - bar_pos);
+            float scan_bar = smoothstep(0.15, 0.0, dist_to_bar);
+            vec3 glow = vec3(0.9, 0.95, 1.0) * scan_bar * 0.4 * inv_ease;
+
+            retro_color.rgb += glow;
+            float scanned = smoothstep(bar_pos + 0.05, bar_pos, coords_geo.y);
+            retro_color.rgb *= mix(0.2, 1.0, scanned);
+            retro_color.rgb *= intensity_glitch;
+
+            vec4 final_color = mix(retro_color, perfect_color, progress);
+            final_color *= ease;
+
+            return final_color;
+        }
+        "#
+    }
+
+    window-close {
+        duration-ms 300
+        curve "ease-out-expo"
+        custom-shader r#"
+        float rand(vec2 co){
+            return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+        }
+
+        vec4 close_color(vec3 coords_geo, vec3 size_geo) {
+            if (coords_geo.x < 0.0 || coords_geo.x > 1.0 || coords_geo.y < 0.0 || coords_geo.y > 1.0) {
+                return vec4(0.0);
+            }
+
+            float progress = niri_clamped_progress;
+            vec3 coords_tex = niri_geo_to_tex * coords_geo;
+
+            float time_seed = progress * 10.0;
+            float flicker_noise = rand(vec2(time_seed, coords_geo.y * 0.01));
+            float jump_noise = rand(vec2(floor(coords_geo.y * 20.0), time_seed));
+
+            float color_shift = (jump_noise > 0.90 ? 0.04 : 0.008) * progress;
+            vec2 shift_vector = vec2(color_shift, color_shift * (flicker_noise - 0.5) * 1.0);
+
+            vec2 coords_r = coords_tex.st + shift_vector;
+            vec2 coords_b = coords_tex.st - shift_vector;
+
+            float r = texture2D(niri_tex, coords_r).r;
+            float g = texture2D(niri_tex, coords_tex.st).g;
+            float b = texture2D(niri_tex, coords_b).b;
+            float a = texture2D(niri_tex, coords_tex.st).a;
+
+            vec4 retro_color = vec4(r, g, b, a);
+            vec4 perfect_color = texture2D(niri_tex, coords_tex.st);
+
+            float scan_freq = size_geo.y * 0.5;
+            float scan_offset = progress * 8.0;
+            float scan_sin = sin(coords_geo.y * scan_freq - scan_offset);
+            retro_color.rgb *= mix(0.5, 1.0, (scan_sin + 1.0) * 0.5);
+
+            vec3 static_color = vec3(
+                rand(coords_geo.xy * (1.0 + progress * 100.0)),
+                rand(coords_geo.xy * (2.0 + progress * 100.0)),
+                rand(coords_geo.xy * (3.0 + progress * 100.0))
+            );
+            retro_color.rgb += (static_color - 0.5) * 0.3 * progress;
+
+            float bar_pos = 1.0 - progress;
+            float dist_to_bar = abs(coords_geo.y - bar_pos);
+            float scan_bar = smoothstep(0.15, 0.0, dist_to_bar);
+            retro_color.rgb += vec3(0.9, 0.95, 1.0) * scan_bar * 0.5;
+
+            vec4 final_color = mix(perfect_color, retro_color, progress);
+            final_color.a *= smoothstep(bar_pos + 0.02, bar_pos, coords_geo.y);
+
+            return final_color;
+        }
+        "#
+    }
+}

@@ -1,0 +1,44 @@
+// === Tema: Everforest ===
+// Foresta calma: verdi naturali, basso contrasto, ombra morbida, angoli arrotondati.
+// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+
+layout {
+    background-color "transparent"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        on
+        width 3
+        active-gradient from="#a7c080" to="#83c092" angle=135 in="oklch shorter hue"
+        inactive-color "#4f5b58"
+        urgent-color "#e67e80"
+    }
+
+    shadow {
+        on
+        softness 25
+        spread 4
+        offset x=0 y=6
+        color "#00000055"
+        inactive-color "transparent"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 300
+        curve "ease-out-quad"
+    }
+    window-close {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+}
