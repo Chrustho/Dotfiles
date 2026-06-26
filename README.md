@@ -70,7 +70,6 @@ Waybar ha 11 temi propri più le varianti `bridges/` e `gruvbox/`.
 
 ## Installazione
 
-I dotfiles sono gestiti come repository git "bare", così i file restano nelle loro posizioni dentro `$HOME`.
 
 ```sh
 git clone --bare git@github.com:Chrustho/Dotfiles.git "$HOME/.dotfiles"
@@ -81,6 +80,34 @@ dotfiles config status.showUntrackedFiles no
 
 Se `checkout` segnala dei file già esistenti, spostali altrove e ripeti il comando.
 
-## Note
+## Gestione quotidiana
 
-I file in `.config/niri/dms/` sono generati da DankMaterialShell e non vanno modificati a mano.
+Con l'alias `dotfiles` ci si lavora come una repo normale, ma con `$HOME` come work tree:
+
+```sh
+dotfiles status
+dotfiles add .config/niri/config.kdl
+dotfiles commit -m "messaggio"
+dotfiles push
+```
+
+`status.showUntrackedFiles no` tiene nascosto il resto di `$HOME`, quindi `status` mostra solo i file già tracciati. Per aggiungere un file nuovo va indicato per percorso esplicito.
+
+## Dipendenze principali
+
+Pacchetti attesi nella sessione (avviati da `niri/config.kdl`):
+
+- `niri`, `waybar`, `rofi`, `mako`, `swayosd`
+- `xwayland-satellite` per le app X11
+- `neowall` e `awww` (con `awww-daemon`) per lo sfondo
+- `hypridle` e `hyprlock` per idle e lock
+- `cliphist` + `wl-clipboard` per la cronologia degli appunti
+- `blueman` per il bluetooth applet
+- terminali: `ghostty`, `alacritty`
+
+I temi assumono il font **IosevkaTerm Nerd Font**.
+
+## Aggiungere un tema
+
+Un tema vive in una variante per programma: `niri/themes/<nome>.kdl`, `rofi/themes/<nome>.rasi`, `mako/themes/<nome>.conf` e, se serve, `waybar/themes/<nome>.css`. Dopo aver creato i file va aggiunto il nome alla lista dentro lo switcher corrispondente in `.local/bin/`.
+
