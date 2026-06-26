@@ -1,4 +1,5 @@
-/* Rofi palette: bauhaus (primari su carta, cornice rossa) */
+/* Rofi: tema bauhaus */
+
 * {
     bg:        #EFE7D6;
     bg-alt:    #E2D7C0;

@@ -1,5 +1,4 @@
-/* === Waybar: Death Stranding (Beach / Timefall) === */
-/* Flat HUD desaturato: near-black, blocchi oro tenue, accenti chiral cyan. */
+/* Waybar: tema deathstranding */
 
 @define-color ds_base   #1d1d22;
 @define-color ds_panel  #34343c;
@@ -27,7 +26,6 @@ window#waybar {
     border-bottom: 1px solid @ds_panel;
 }
 
-/* Nasconde le frecce powerline -> look flat, ordine widget invariato */
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
 #custom-c_arrow1, #custom-c_arrow2,
 #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
@@ -39,7 +37,6 @@ window#waybar {
     margin: 0;
 }
 
-/* Moduli testuali piatti */
 #custom-nightmode, #custom-mako, #custom-clipboard, #idle_inhibitor,
 #cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon,
 #network, #battery, #tray, #workspaces {
@@ -62,7 +59,6 @@ window#waybar {
     color: @ds_cyan;
 }
 
-/* Blocchi HUD solidi alle estremita' e centro (richiamo agli elementi del gioco) */
 #custom-launcher, #clock, #custom-power {
     background-color: @ds_gold;
     color: @ds_base;
@@ -72,7 +68,6 @@ window#waybar {
 #custom-power { padding-right: 16px; }
 #custom-launcher { padding-left: 16px; }
 
-/* Stati di allarme */
 #battery.warning { color: @ds_gold; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {
     color: @ds_danger;

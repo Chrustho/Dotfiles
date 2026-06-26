@@ -1,4 +1,5 @@
-/* Rofi palette: poimandres (notturno teal-menta, cornice mint) */
+/* Rofi: tema poimandres */
+
 * {
     bg:        #1B1E28;
     bg-alt:    #303340;

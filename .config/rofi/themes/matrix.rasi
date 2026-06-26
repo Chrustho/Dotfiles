@@ -1,4 +1,5 @@
-/* Rofi palette: Matrix (verde fosforo) */
+/* Rofi: tema matrix */
+
 * {
     bg:        #050d05;
     bg-alt:    #0a1f0a;

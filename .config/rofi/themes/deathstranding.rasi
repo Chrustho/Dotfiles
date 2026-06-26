@@ -1,4 +1,5 @@
-/* Rofi palette: Death Stranding (Beach / Timefall, desaturato) */
+/* Rofi: tema deathstranding */
+
 * {
     bg:        #2a2a31;
     bg-alt:    #34343c;

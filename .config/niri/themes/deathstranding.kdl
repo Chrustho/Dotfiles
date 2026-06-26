@@ -1,7 +1,4 @@
-// === Tema: Death Stranding (Beach / Timefall) ===
-// Desaturato e malinconico: tan/taupe, oro tenue + chiral cyan smorzato, ombra nebbiosa.
-// Apertura finestre: "chiral materialize" (rivelazione a scansione cyan + desaturazione->colore).
-// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+// Niri: tema deathstranding
 
 layout {
     background-color "transparent"

@@ -1,6 +1,4 @@
-// === Tema: Everforest ===
-// Foresta calma: verdi naturali, basso contrasto, ombra morbida, angoli arrotondati.
-// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+// Niri: tema everforest
 
 layout {
     background-color "transparent"

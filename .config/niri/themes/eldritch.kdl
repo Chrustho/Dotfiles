@@ -1,7 +1,4 @@
-// === Tema: Eldritch / Cosmic-horror neon ===
-// Indaco profondo con neon verde/ciano/viola. Focus-ring vivido green->cyan,
-// angoli arrotondati, ombra con tinta indaco. Vivace e di carattere.
-// NB: i gaps (30) li applica niri-theme.sh sul config base.
+// Niri: tema eldritch
 
 layout {
     background-color "transparent"

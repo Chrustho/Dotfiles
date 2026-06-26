@@ -1,9 +1,11 @@
+// Waybar (bridges): configurazione
+
 {
     "layer": "top",
     "position": "top",
     "height": 34,
     "spacing": 0,
-    
+
     "modules-left": [
         "custom/os_label",
         "custom/spacer",
@@ -24,7 +26,6 @@
         "clock"
     ],
 
-    /* --- BLOCCO SINISTRO --- */
     "custom/os_label": {
         "format": " ❖ BRIDGES_OS ",
         "on-click": "rofi -show drun",
@@ -36,7 +37,6 @@
         "icon": false
     },
 
-    /* --- BLOCCO CENTRALE --- */
     "network": {
         "format-wifi": "<span color='#4dd0e1'>● CHIRAL_LINK: OPTIMAL</span>   <span color='#666666'>{essid}</span>",
         "format-ethernet": "<span color='#4dd0e1'>● UCA_LINK: STABLE</span>   <span color='#666666'>{ipaddr}</span>",
@@ -44,7 +44,6 @@
         "tooltip": false
     },
 
-    /* --- BLOCCO DESTRO --- */
     "cpu": {
         "interval": 2,
         "format": "<span color='#666666'>CPU</span> {usage}%",
@@ -65,15 +64,13 @@
         "format-muted": "<span color='#d32f2f'>MUTED</span>",
         "tooltip": false
     },
-    
-    /* Il blocco orologio come nella reference 2: Giallo solido, doppia riga */
+
     "clock": {
         "interval": 1,
         "format": "{:%H:%M:%S\n<span size='7pt' weight='bold'>%Y.%m.%d</span>}",
         "tooltip": false
     },
 
-    /* Spaziatore per dividere i testi senza usare margini complessi */
     "custom/spacer": {
         "format": "   |   ",
         "tooltip": false

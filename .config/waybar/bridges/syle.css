@@ -1,13 +1,14 @@
-/* --- BRIDGES UCA ROOT ESTHETICS --- */
-@define-color ds_bg #0a0a0c;        /* Sfondo principale, quasi nero */
-@define-color ds_yellow #f0c808;    /* Giallo oro Bridges */
-@define-color ds_text #d0d0d0;      /* Testo standard chiaro */
-@define-color ds_muted #444444;     /* Grigio scuro per separatori e label inattive */
+/* Waybar (bridges): stile */
+
+@define-color ds_bg #0a0a0c;
+@define-color ds_yellow #f0c808;
+@define-color ds_text #d0d0d0;
+@define-color ds_muted #444444;
 
 * {
     border: none;
     border-radius: 0;
-    /* IL FONT È CRUCIALE. Se non hai un font tecnico installato, sembrerà sempre sbagliato. */
+
     font-family: "Share Tech Mono", "Rajdhani", "SpaceMono Nerd Font", monospace;
     font-size: 10pt;
     font-weight: 700;
@@ -17,27 +18,21 @@
     box-shadow: none;
 }
 
-/* La barra di base: Piatta, scura, con un micro-bordo inferiore */
 window#waybar {
     background-color: @ds_bg;
     color: @ds_text;
     border-bottom: 1px solid #1a1a1a;
 }
 
-/* Moduli di testo normali (trasparenti) */
 #window, #network, #cpu, #memory, #battery, #pulseaudio {
     background-color: transparent;
     padding: 0;
 }
 
-/* Spaziatori */
 #custom-spacer {
     color: @ds_muted;
     background-color: transparent;
 }
-
-/* --- I BLOCCHI GIALLE DI ESTREMITÀ --- */
-/* Replica esatta degli elementi HUD del gioco */
 
 #custom-os_label {
     background-color: @ds_yellow;

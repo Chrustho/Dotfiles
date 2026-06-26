@@ -1,4 +1,5 @@
-/* Rofi palette: mocha (espresso caldo, cornice caramello) */
+/* Rofi: palette attiva */
+
 * {
     bg:        #211C19;
     bg-alt:    #2E2823;

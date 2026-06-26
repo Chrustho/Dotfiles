@@ -1,4 +1,5 @@
-/* Rofi palette: cyberdeck (amber phosphor su nero) */
+/* Rofi: tema cyberdeck */
+
 * {
     bg:        #0d0d0d;
     bg-alt:    #1a1712;

@@ -1,6 +1,4 @@
-// === Tema: Dune ===
-// Deserto sci-fi: spice gold + spice-blue (occhi Fremen) su sabbia scura, ombra calda.
-// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+// Niri: tema dune
 
 layout {
     background-color "transparent"

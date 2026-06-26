@@ -1,7 +1,7 @@
-/** Size of TFT "pixels" */
+// Shader Ghostty: tft
+
 float resolution = 4.0;
 
-/** Strength of effect */
 float strength = 0.5;
 
 void _scanline(inout vec3 color, vec2 uv)

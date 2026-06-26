@@ -1,6 +1,4 @@
-// === Tema: Synthwave / Outrun ===
-// Neon anni 80: gradiente magenta->ciano con glow, base scura, angoli medi.
-// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+// Niri: tema synthwave
 
 layout {
     background-color "transparent"
@@ -23,7 +21,7 @@ layout {
         softness 50
         spread 8
         offset x=0 y=0
-        color "#f92aad55"           // alone neon magenta
+        color "#f92aad55"
         inactive-color "#03edf922"
     }
 }

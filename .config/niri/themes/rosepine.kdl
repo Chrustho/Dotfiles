@@ -1,7 +1,4 @@
-// === Tema: Rose Pine ===
-// Elegante e smorzato: rosa/iris su base notturna, ring gradiente delicato,
-// ombra viola morbida, angoli arrotondati.
-// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+// Niri: tema rosepine
 
 layout {
     background-color "transparent"

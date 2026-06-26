@@ -1,3 +1,5 @@
+# Configurazione neowall
+
 default {
   shader topo.glsl
   shader_speed 1.0

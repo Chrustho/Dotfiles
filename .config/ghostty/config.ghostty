@@ -1,29 +1,22 @@
+# Configurazione Ghostty
 
-# --- Theme ---
-# Tema integrato in Ghostty
 theme = Kanagawa Dragon
 
-# --- Environment Variables ---
 env = TERM=xterm-256color
 
-# --- Base Font ---
 font-family = "IosevkaTerm Nerd Font"
 font-size = 16
 font-style = "SemiBold"
 
-# --- Bold Font ---
 font-family-bold = "IosevkaTerm Nerd Font Mono"
 font-style-bold = "Heavy"
 
-# --- Italic Font ---
 font-family-italic = "IosevkaTerm Nerd Font Mono"
 font-style-italic = "SemiBold Italic"
 
-# --- Bold Italic Font ---
 font-family-bold-italic = "IosevkaTerm Nerd Font Mono"
 font-style-bold-italic = "Bold Italic"
 
-# --- Offsets & Spacing ---
 adjust-cell-height = 2
 adjust-font-baseline = 1
 

@@ -1,5 +1,4 @@
-/* === Waybar: editorial (soft greige raffinato, chiaro) === */
-/* Barra greige, blocchi HUD terracotta arrotondati, look editoriale. */
+/* Waybar: tema editorial */
 
 @define-color e_base   #EAE6DF;
 @define-color e_panel  #DCD6CB;
@@ -27,7 +26,6 @@ window#waybar {
     border-bottom: 1px solid @e_panel;
 }
 
-/* Nasconde le frecce powerline -> look flat, ordine widget invariato */
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
 #custom-c_arrow1, #custom-c_arrow2,
 #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
@@ -61,7 +59,6 @@ window#waybar {
     color: @e_terra;
 }
 
-/* Blocchi HUD terracotta arrotondati (tocco soft) */
 #custom-launcher, #clock, #custom-power {
     background-color: @e_terra;
     color: @e_base;
@@ -73,7 +70,6 @@ window#waybar {
 #custom-power { margin-right: 6px; }
 #custom-launcher { margin-left: 6px; }
 
-/* Stati di allarme */
 #battery.warning { color: @e_terra; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {
     color: @e_danger;

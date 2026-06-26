@@ -1,5 +1,4 @@
-/* === Waybar: concrete (brutalismo grezzo denso, scuro) === */
-/* Barra cemento, blocchi HUD grigio chrome con bevel 3D, accento arancio. */
+/* Waybar: tema concrete */
 
 @define-color c_base    #161616;
 @define-color c_panel   #2B2B2B;
@@ -29,7 +28,6 @@ window#waybar {
     border-bottom: 2px solid @c_panel;
 }
 
-/* Nasconde le frecce powerline -> look flat, ordine widget invariato */
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
 #custom-c_arrow1, #custom-c_arrow2,
 #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
@@ -63,7 +61,6 @@ window#waybar {
     color: @c_orange;
 }
 
-/* Blocchi HUD grigi con bevel 3D (alto-sinistra chiaro, basso-destra scuro) */
 #custom-launcher, #clock, #custom-power {
     background-color: @c_chrome;
     color: #161616;
@@ -75,7 +72,6 @@ window#waybar {
     border-right: 2px solid @c_bevel_d;
 }
 
-/* Stati di allarme */
 #battery.warning { color: @c_orange; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {
     color: @c_danger;

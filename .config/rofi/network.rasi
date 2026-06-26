@@ -1,3 +1,5 @@
+/* Rofi: menu rete */
+
 @import "colors.rasi"
 
 configuration {

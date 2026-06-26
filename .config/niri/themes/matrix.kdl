@@ -1,7 +1,4 @@
-// === Tema: Matrix ===
-// Verde fosforo su nero, glow verde. Apertura finestre: "code rain" (rivelazione
-// a colonne verticali con testa luminosa, contenuto verde -> normale).
-// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+// Niri: tema matrix
 
 layout {
     background-color "transparent"

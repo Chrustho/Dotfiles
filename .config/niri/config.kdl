@@ -1,4 +1,4 @@
-// --- Niri Configuration File ---
+// Configurazione Niri
 
 spawn-at-startup "swayosd-server"
 spawn-at-startup "xwayland-satellite"
@@ -17,19 +17,19 @@ xwayland-satellite {
 
 input {
     focus-follows-mouse max-scroll-amount="10%"
-    
+
     keyboard {
         xkb {
             layout "it"
         }
         numlock
     }
-    
+
     touchpad {
         tap
         natural-scroll
     }
-    
+
     mouse {}
 }
 
@@ -54,11 +54,6 @@ output "HDMI-A-1" {
     position x=0 y=0
 }
 
-// --- Geometria layout ---
-// L'estetica (focus-ring, border, shadow, background-color) e' nel file tema
-// incluso in fondo a questo config. Il valore 'gaps' qui sotto e' il DEFAULT:
-// alcuni temi (bauhaus/concrete/editorial/mocha) impostano gap dedicati tramite
-// niri-theme.sh, che riscrive questa riga; gli altri temi tornano a 37.5.
 layout {
     gaps 37.5
     center-focused-column "never"
@@ -81,8 +76,6 @@ hotkey-overlay {
 prefer-no-csd
 screenshot-path "~/Immagini/Schermate/Schermata del %Y-%m-%d %H-%M-%S.png"
 
-// --- Animazioni base (COSTANTI) ---
-// Le animazioni window-open / window-close sono definite per-tema nel file incluso.
 animations {
     slowdown 1.50
 
@@ -114,17 +107,15 @@ window-rule {
 
 binds {
     Mod+Shift+Apostrophe { show-hotkey-overlay; }
-    
-    // Applications
+
     Mod+T hotkey-overlay-title="Terminal" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Launcher" { spawn "rofi" "-show" "drun"; }
     Mod+B hotkey-overlay-title="Browser" { spawn "firefox"; }
     Mod+X hotkey-overlay-title="Power Menu" { spawn "sh" "-c" "~/.local/bin/powermenu.sh"; }
-    Mod+Shift+C hotkey-overlay-title="Clipboard" { spawn "sh" "-c" "cliphist list | rofi -dmenu -i -p ' ' -theme ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy"; } 
+    Mod+Shift+C hotkey-overlay-title="Clipboard" { spawn "sh" "-c" "cliphist list | rofi -dmenu -i -p ' ' -theme ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy"; }
     Mod+W { spawn "neovide"; }
     Mod+Y { spawn "ghostty" "-e" "yazi"; }
-    
-    // System UI
+
     Super+Escape hotkey-overlay-title="Lock Screen" { spawn "hyprlock"; }
     Mod+Alt+W hotkey-overlay-title="Sfondo" { spawn "~/.local/bin/toggle_sfondo.sh"; }
     Mod+Alt+T hotkey-overlay-title="Cambia tema Niri" { spawn "~/.local/bin/niri-theme.sh"; }
@@ -133,8 +124,7 @@ binds {
     Mod+A hotkey-overlay-title="Waybar" { spawn "killall" "-SIGUSR1" "waybar"; }
     Mod+Shift+B hotkey-overlay-title="Bluetooth Manager" { spawn "blueman-manager"; }
     Mod+Shift+N hotkey-overlay-title="Network Manager" { spawn "networkmanager_dmenu"; }
-    
-    // Audio & Media
+
     XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
     XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
@@ -144,17 +134,14 @@ binds {
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
 
-    // Brightness
     XF86MonBrightnessUp   allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }   
-    
-    // Layout & Windows
+    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
+
     Mod+O repeat=false { toggle-overview; }
     Mod+Q repeat=false { close-window; }
     Mod+V { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-    // Focus Navigation
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
     Mod+Up    { focus-window-up; }
@@ -166,7 +153,6 @@ binds {
     Mod+Home  { focus-column-first; }
     Mod+End   { focus-column-last; }
 
-    // Move Windows
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
     Mod+Ctrl+Up    { move-window-up; }
@@ -178,7 +164,6 @@ binds {
     Mod+Ctrl+Home  { move-column-to-first; }
     Mod+Ctrl+End   { move-column-to-last; }
 
-    // Monitor Navigation
     Mod+Shift+Left  { focus-monitor-left; }
     Mod+Shift+Down  { focus-monitor-down; }
     Mod+Shift+Up    { focus-monitor-up; }
@@ -197,23 +182,21 @@ binds {
     Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
 
-    // Workspace Navigation
     Mod+Page_Down { focus-workspace-down; }
     Mod+Page_Up   { focus-workspace-up; }
     Mod+U         { focus-workspace-down; }
     Mod+I         { focus-workspace-up; }
-    
+
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
     Mod+Ctrl+U         { move-column-to-workspace-down; }
     Mod+Ctrl+I         { move-column-to-workspace-up; }
-    
+
     Mod+Shift+Page_Down { move-workspace-down; }
     Mod+Shift+Page_Up   { move-workspace-up; }
     Mod+Shift+U         { move-workspace-down; }
     Mod+Shift+I         { move-workspace-up; }
 
-    // Mouse Scroll
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
@@ -232,7 +215,7 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    
+
     Mod+Ctrl+1 { move-column-to-workspace 1; }
     Mod+Ctrl+2 { move-column-to-workspace 2; }
     Mod+Ctrl+3 { move-column-to-workspace 3; }
@@ -247,7 +230,7 @@ binds {
     Mod+BracketRight { consume-or-expel-window-right; }
     Mod+Comma        { consume-window-into-column; }
     Mod+Period       { expel-window-from-column; }
-    
+
     Mod+R       { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R  { reset-window-height; }
@@ -256,7 +239,7 @@ binds {
     Mod+Ctrl+F  { expand-column-to-available-width; }
     Mod+C       { center-column; }
     Mod+Ctrl+C  { center-visible-columns; }
-    
+
     Mod+Minus       { set-column-width "-10%"; }
     Mod+Equal       { set-column-width "+10%"; }
     Mod+Shift+Minus { set-window-height "-10%"; }
@@ -272,8 +255,4 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-// --- Tema estetico attivo ---
-// Temi disponibili: original | cyberdeck | aero | ink | everforest | rosepine | oxocarbon | synthwave | deathstranding | dune | matrix | win95 | bauhaus | concrete | editorial | mocha | poimandres | eldritch
-// Cambia il nome del file per switchare. Niri ricarica automaticamente.
-// Oppure usa Mod+Alt+T (selettore rofi).
 include "themes/original.kdl"

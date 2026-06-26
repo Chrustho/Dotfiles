@@ -1,7 +1,4 @@
-// === Tema: Cyberdeck / Neo-brutalist ===
-// Grezzo/tecnico: bordo spesso ad alto contrasto, ombra dura, angoli netti.
-// Mantiene gli shader CRT glitch/scanline di apertura/chiusura finestre.
-// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+// Niri: tema cyberdeck
 
 layout {
     background-color "transparent"
@@ -13,7 +10,7 @@ layout {
     border {
         on
         width 3
-        active-color "#FFB000"      // ambra fosforo
+        active-color "#FFB000"
         inactive-color "#3A352B"
         urgent-color "#FF3B3B"
     }
@@ -23,7 +20,7 @@ layout {
         softness 0
         spread 0
         offset x=6 y=6
-        color "#000000FF"           // drop shadow dura (firma brutalista)
+        color "#000000FF"
         inactive-color "#00000080"
     }
 }

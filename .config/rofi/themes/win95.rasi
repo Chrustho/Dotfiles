@@ -1,4 +1,5 @@
-/* Rofi palette: win95 (90s OS brutalist, dark) */
+/* Rofi: tema win95 */
+
 * {
     bg:        #232828;
     bg-alt:    #313737;

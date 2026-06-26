@@ -1,7 +1,4 @@
-// === Tema: Original (Kanagawa/Gruvbox retro-CRT) ===
-// Il tuo setup originale: focus-ring gradiente arancio->rosso, glow rosso morbido,
-// niente bordo, angoli netti, shader CRT glitch/scanline.
-// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+// Niri: tema original
 
 layout {
     background-color "transparent"

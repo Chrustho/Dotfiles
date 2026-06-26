@@ -1,6 +1,4 @@
-// === Tema: Flexoki / Ink (analog) ===
-// Inchiostro-su-carta: caldo, basso contrasto, bordo sottile, angoli morbidi.
-// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+// Niri: tema ink
 
 layout {
     background-color "transparent"
@@ -12,7 +10,7 @@ layout {
     border {
         on
         width 2
-        active-color "#D14D41"      // rosso Flexoki
+        active-color "#D14D41"
         inactive-color "#575653"
         urgent-color "#DA702C"
     }
@@ -22,7 +20,7 @@ layout {
         softness 30
         spread 3
         offset x=0 y=4
-        color "#100F0F70"           // ombra calda bassa
+        color "#100F0F70"
         inactive-color "transparent"
     }
 }

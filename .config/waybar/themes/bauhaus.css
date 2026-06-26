@@ -1,5 +1,4 @@
-/* === Waybar: bauhaus (neo-brutalist geometrico, chiaro) === */
-/* Barra carta, blocchi HUD blu con bordo nero, accenti primari. */
+/* Waybar: tema bauhaus */
 
 @define-color b_base   #EFE7D6;
 @define-color b_panel  #E2D7C0;
@@ -28,7 +27,6 @@ window#waybar {
     border-bottom: 2px solid @b_ink;
 }
 
-/* Nasconde le frecce powerline -> look flat, ordine widget invariato */
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
 #custom-c_arrow1, #custom-c_arrow2,
 #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
@@ -40,7 +38,6 @@ window#waybar {
     margin: 0;
 }
 
-/* Moduli testuali piatti */
 #custom-nightmode, #custom-mako, #custom-clipboard, #idle_inhibitor,
 #cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon,
 #network, #battery, #tray, #workspaces {
@@ -63,7 +60,6 @@ window#waybar {
     color: @b_red;
 }
 
-/* Blocchi HUD blu con bordo nero (firma bauhaus) */
 #custom-launcher, #clock, #custom-power {
     background-color: @b_blue;
     color: @b_base;
@@ -75,7 +71,6 @@ window#waybar {
 #custom-power { padding-right: 16px; }
 #custom-launcher { padding-left: 16px; }
 
-/* Stati di allarme */
 #battery.warning { color: @b_yellow; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {
     color: @b_red;

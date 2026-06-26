@@ -1,5 +1,4 @@
-/* === Waybar: eldritch (cosmic neon) === */
-/* Barra indaco, blocchi HUD viola arrotondati, accenti neon verde/ciano. */
+/* Waybar: tema eldritch */
 
 @define-color el_base   #212337;
 @define-color el_panel  #3B4261;
@@ -27,7 +26,6 @@ window#waybar {
     border-bottom: 1px solid @el_panel;
 }
 
-/* Nasconde le frecce powerline -> look flat, ordine widget invariato */
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
 #custom-c_arrow1, #custom-c_arrow2,
 #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
@@ -61,7 +59,6 @@ window#waybar {
     color: @el_green;
 }
 
-/* Blocchi HUD viola arrotondati */
 #custom-launcher, #clock, #custom-power {
     background-color: @el_purple;
     color: @el_base;
@@ -73,7 +70,6 @@ window#waybar {
 #custom-power { margin-right: 6px; }
 #custom-launcher { margin-left: 6px; }
 
-/* Stati di allarme */
 #battery.warning { color: @el_green; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {
     color: @el_danger;

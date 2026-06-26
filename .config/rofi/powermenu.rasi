@@ -1,3 +1,5 @@
+/* Rofi: menu power */
+
 @import "colors.rasi"
 
 configuration {

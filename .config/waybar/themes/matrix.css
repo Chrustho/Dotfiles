@@ -1,5 +1,4 @@
-/* === Waybar: Matrix === */
-/* Flat verde fosforo su nero, glow verde via text-shadow. */
+/* Waybar: tema matrix */
 
 @define-color mx_base   #000000;
 @define-color mx_panel  #0a3f1a;
@@ -61,7 +60,6 @@ window#waybar {
     color: @mx_bright;
 }
 
-/* Blocchi HUD: verde pieno, testo nero */
 #custom-launcher, #clock, #custom-power {
     background-color: @mx_text;
     color: @mx_base;

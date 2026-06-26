@@ -1,3 +1,5 @@
+/* Configurazione Rofi */
+
 @import "colors.rasi"
 
 configuration {

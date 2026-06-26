@@ -1,6 +1,6 @@
 #!/bin/sh
-# Switcher palette rofi: copia themes/<nome>.rasi su colors.rasi.
-# Rofi rilegge il tema a ogni avvio, quindi il prossimo menu usa la nuova palette.
+
+# Switcher palette rofi
 
 THEME=$(printf 'original\ncyberdeck\naero\nink\neverforest\nrosepine\noxocarbon\nsynthwave\ndeathstranding\ndune\nmatrix\nwin95\nbauhaus\nconcrete\neditorial\nmocha\npoimandres\neldritch' \
     | rofi -dmenu -i -p ' Rofi theme')

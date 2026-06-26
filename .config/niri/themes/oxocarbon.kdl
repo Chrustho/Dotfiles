@@ -1,7 +1,4 @@
-// === Tema: Oxocarbon (IBM Carbon) ===
-// Tech ad alto contrasto: nero profondo + accent IBM blu/magenta, ring gradiente,
-// ombra crisp, angoli medi, animazioni snappy.
-// NB: la geometria (gaps 37.5 ecc.) resta nel config.kdl base e NON viene toccata qui.
+// Niri: tema oxocarbon
 
 layout {
     background-color "transparent"

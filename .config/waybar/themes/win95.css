@@ -1,5 +1,4 @@
-/* === Waybar: win95 (90s OS brutalist, dark) === */
-/* Barra scura, blocchi HUD grigi con bevel 3D, accenti teal/navy. Niente bianchi pieni. */
+/* Waybar: tema win95 */
 
 @define-color w_base   #15191a;
 @define-color w_panel  #313737;
@@ -30,7 +29,6 @@ window#waybar {
     border-bottom: 2px solid @w_panel;
 }
 
-/* Nasconde le frecce powerline -> look flat, ordine widget invariato */
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
 #custom-c_arrow1, #custom-c_arrow2,
 #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
@@ -64,7 +62,6 @@ window#waybar {
     color: @w_teal;
 }
 
-/* Blocchi HUD grigi con bevel 3D (alto-sinistra chiaro, basso-destra scuro) */
 #custom-launcher, #clock, #custom-power {
     background-color: @w_chrome;
     color: #15191a;
@@ -76,7 +73,6 @@ window#waybar {
     border-right: 2px solid @w_bevel_d;
 }
 
-/* Stati di allarme */
 #battery.warning { color: @w_navy; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {
     color: @w_danger;

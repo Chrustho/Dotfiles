@@ -1,4 +1,5 @@
-/* Rofi palette: synthwave / outrun */
+/* Rofi: tema synthwave */
+
 * {
     bg:        #241b2f;
     bg-alt:    #2d213f;

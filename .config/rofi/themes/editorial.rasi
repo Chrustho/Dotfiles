@@ -1,4 +1,5 @@
-/* Rofi palette: editorial (greige raffinato, cornice terracotta) */
+/* Rofi: tema editorial */
+
 * {
     bg:        #EAE6DF;
     bg-alt:    #DCD6CB;

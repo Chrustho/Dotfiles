@@ -1,3 +1,5 @@
+// Waybar (gruvbox): configurazione
+
 {
     "layer": "top",
     "position": "top",
@@ -49,10 +51,10 @@
     "custom/l_arrow3": { "format": "", "tooltip": false },
     "custom/l_arrow4": { "format": "", "tooltip": false },
     "custom/l_arrow5": { "format": "", "tooltip": false },
-    
+
     "custom/c_arrow1": { "format": "", "tooltip": false },
     "custom/c_arrow2": { "format": "", "tooltip": false },
-  
+
     "custom/r_arrow1": { "format": "", "tooltip": false },
     "custom/r_arrow2": { "format": "", "tooltip": false },
     "custom/r_arrow3": { "format": "", "tooltip": false },
@@ -68,7 +70,7 @@
         "format": " {icon} ",
         "format-icons": {
             "activated": "",
-            "deactivated": "󰒲" 
+            "deactivated": "󰒲"
         },
         "tooltip-format-activated": "Caffeina Attiva: Lo schermo non si spegnerà",
         "tooltip-format-deactivated": "Caffeina Disattivata: Sospensione automatica in uso"

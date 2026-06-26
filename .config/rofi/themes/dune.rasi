@@ -1,4 +1,5 @@
-/* Rofi palette: Dune (deserto sci-fi) */
+/* Rofi: tema dune */
+
 * {
     bg:        #221a10;
     bg-alt:    #2e2519;

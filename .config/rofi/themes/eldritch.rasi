@@ -1,4 +1,5 @@
-/* Rofi palette: eldritch (cosmic neon, cornice viola) */
+/* Rofi: tema eldritch */
+
 * {
     bg:        #212337;
     bg-alt:    #2D2F4A;

@@ -1,7 +1,4 @@
-// === Tema: Editorial / Soft greige raffinato ===
-// Chiaro e minimale: greige caldo, accento terracotta, focus-ring morbido,
-// angoli arrotondati, ombra soffusa. Look "design studio".
-// NB: i gaps (38) li applica niri-theme.sh sul config base.
+// Niri: tema editorial
 
 layout {
     background-color "transparent"
@@ -23,7 +20,7 @@ layout {
         softness 28
         spread 2
         offset x=0 y=5
-        color "#2A272433"           // ombra morbida traslucida
+        color "#2A272433"
         inactive-color "transparent"
     }
 }
@@ -33,7 +30,6 @@ window-rule {
     clip-to-geometry true
 }
 
-// Animazioni morbide, coerenti col look soft
 animations {
     window-open {
         duration-ms 350

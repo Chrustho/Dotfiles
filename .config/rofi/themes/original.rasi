@@ -1,4 +1,5 @@
-/* Rofi palette: original (Gruvbox material) */
+/* Rofi: tema original */
+
 * {
     bg:        #282828;
     bg-alt:    #32302f;

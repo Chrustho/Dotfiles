@@ -1,4 +1,5 @@
-/* Rofi palette: everforest */
+/* Rofi: tema everforest */
+
 * {
     bg:        #2d353b;
     bg-alt:    #343f44;

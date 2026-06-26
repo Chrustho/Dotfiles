@@ -1,5 +1,3 @@
-<div align="center">
-
 ```text
 ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
 ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝
@@ -9,103 +7,80 @@
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
 
-*Personal Wayland dotfiles based on Niri and the Kanagawa Dragon colorscheme.*
+Dotfiles del mio ambiente Wayland su Arch Linux, basato sul compositor Niri e su un sistema di temi commutabili a caldo.
 
----
+## Componenti
 
-![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
-![Niri](https://img.shields.io/badge/WM-Niri-C8C093?style=for-the-badge&logoColor=black)
-![Wayland](https://img.shields.io/badge/Wayland-FFBC42?style=for-the-badge&logo=wayland&logoColor=black)
-![Neovim](https://img.shields.io/badge/Editor-Neovim-57A464?style=for-the-badge&logo=neovim&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-C34043?style=for-the-badge)
+| Ambito | Programma | Formato |
+|---|---|---|
+| Compositor | Niri | KDL |
+| Status bar | Waybar | CSS + JSONC |
+| Launcher / menu | Rofi | Rasi |
+| Notifiche | Mako | conf |
+| Terminale | Ghostty, Alacritty | conf, TOML |
+| Lock / idle | Hyprlock, Hypridle | conf |
+| Sfondo animato | neowall | GLSL + vibe |
+| OSD volume/luminosità | SwayOSD | CSS |
+| System info | Fastfetch | JSONC |
+| Editor | Neovim | Lua |
+| Discord | Vencord (tema system24) | CSS |
 
-</div>
+## Sistema di temi
 
----
+Ogni programma ha la sua cartella `themes/` con una variante per palette. Lo switch avviene riscrivendo il file attivo e ricaricando il programma, senza riavviare la sessione.
 
-## Overview
+| Switcher | Cosa cambia | Scorciatoia |
+|---|---|---|
+| `niri-theme.sh` | Tema di sistema: Niri, sfondo, Mako e SwayOSD in un colpo. Imposta anche i gap della tiling per alcuni temi. | `Mod+Alt+T` |
+| `rofi-theme.sh` | Palette di Rofi | `Mod+Alt+R` |
+| `waybar-theme.sh` | Tema di Waybar | `Mod+Alt+B` |
 
-This repository contains the configuration files for my daily driver setup. It is a keyboard-centric Wayland environment built around the **Niri** compositor. The entire system is unified under the **Kanagawa Dragon** color palette for visual consistency across all applications. 
+Temi di sistema disponibili (Niri/Rofi/Mako, 18):
 
-## Structure
+```text
+original    cyberdeck   aero        ink
+everforest  rosepine    oxocarbon   synthwave
+deathstranding  dune    matrix      win95
+bauhaus     concrete    editorial   mocha
+poimandres  eldritch
+```
+
+Waybar ha 11 temi propri più le varianti `bridges/` e `gruvbox/`.
+
+## Struttura
 
 ```text
 ~
 ├── .config/
-│   ├── niri/           # Compositor config (KDL)
-│   ├── nvim/           # Neovim (Lua)
-│   ├── waybar/         # Status bar (CSS + JSON)
-│   ├── hyprlock/       # Lock screen (GLSL shaders + config)
-│   ├── rofi/           # App launcher (Rasi)
-│   ├── ghostty/        # Terminal emulator
-│   ├── mako/           # Notification daemon
-│   ├── fastfetch/      # System info display
-│   └── yazi/           # Terminal file manager
-│
+│   ├── niri/         # Compositor (config + dms/ + themes/)
+│   ├── waybar/       # Status bar (config, stile, themes/)
+│   ├── rofi/         # Launcher e menu (power, rete, clipboard)
+│   ├── mako/         # Notifiche
+│   ├── ghostty/      # Terminale + shaders
+│   ├── alacritty/    # Terminale alternativo
+│   ├── hypr/         # hyprlock + hypridle
+│   ├── neowall/      # Sfondo animato + shaders GLSL
+│   ├── swayosd/      # OSD
+│   ├── fastfetch/    # System info + sprites
+│   ├── Vencord/      # Tema Discord
+│   └── nvim/         # Neovim
 └── .local/
-    └── bin/            # Custom shell scripts
+    └── bin/          # Script: theme switcher, slideshow, powermenu, toggle sfondo
 ```
 
-## Colorscheme
+## Installazione
 
-The system uses the **[Kanagawa Dragon](https://github.com/rebelot/kanagawa.nvim)** palette.
+I dotfiles sono gestiti come repository git "bare", così i file restano nelle loro posizioni dentro `$HOME`.
 
-| Role        | Color     | Preview |
-|-------------|-----------|---------|
-| Background  | `#181616` | ![#181616](https://placehold.co/14x14/181616/181616.png) |
-| Surface     | `#1D1C19` | ![#1D1C19](https://placehold.co/14x14/1D1C19/1D1C19.png) |
-| Foreground  | `#C5C9C5` | ![#C5C9C5](https://placehold.co/14x14/C5C9C5/C5C9C5.png) |
-| Red         | `#C34043` | ![#C34043](https://placehold.co/14x14/C34043/C34043.png) |
-| Green       | `#76946A` | ![#76946A](https://placehold.co/14x14/76946A/76946A.png) |
-| Yellow      | `#C0A36E` | ![#C0A36E](https://placehold.co/14x14/C0A36E/C0A36E.png) |
-| Teal        | `#6A9589` | ![#6A9589](https://placehold.co/14x14/6A9589/6A9589.png) |
-| Violet      | `#957FB8` | ![#957FB8](https://placehold.co/14x14/957FB8/957FB8.png) |
-
-## Programs & Tools
-
-Here is a breakdown of the core components configured in this repository and what they do:
-
-* **[Niri](https://github.com/YaLTeR/niri):** The core window manager / Wayland compositor. Instead of standard grids, it tiles windows dynamically in an infinite horizontal strip that you can scroll through. It handles workspaces, window placement, and keyboard shortcuts.
-* **Neovim:** A terminal-based text editor. It is configured via Lua to act as a full IDE, utilizing LSP for code completion and diagnostics, Treesitter for syntax highlighting, and Telescope for fuzzy finding files.
-* **Waybar:** The system status bar. It displays real-time information such as active Niri workspaces, CPU/RAM usage, temperatures, network status, and a system tray.
-* **Hyprlock:** A Wayland screen locker. It locks the session when the system is idle or sleeping. This config includes custom GLSL shaders to render a dynamic background while locked.
-* **Rofi (rofi-wayland):** An application launcher. Triggered via keyboard shortcut, it provides a menu to search for and launch installed programs or execute commands.
-* **Ghostty:** A GPU-accelerated terminal emulator. It provides the command-line interface where all shell commands, Neovim, and Yazi are run.
-* **Mako:** A lightweight notification daemon for Wayland. It catches desktop notifications sent by applications and displays them as popups on the screen.
-* **Yazi:** A terminal-based file manager written in Rust. Used for fast file system navigation, file manipulation, and features built-in image and text previews.
-* **Fastfetch:** A command-line system information tool. It fetches and displays OS, hardware, and uptime details alongside an ASCII logo in the terminal.
-* **Custom Scripts (`.local/bin`):** Various POSIX-compliant shell scripts that handle repetitive tasks, volume/brightness control hooks, and system automation.
-
-## Installation
-
-**Note:** Dotfiles are inherently personal. It is highly recommended to read through the configuration files before applying them to your system to understand the keybindings and behaviors.
-
-### Dependencies (Arch Linux)
-
-```bash
-# Core packages
-sudo pacman -S niri waybar hyprlock rofi-wayland mako ghostty yazi fastfetch neovim
-
-# Utilities
-sudo pacman -S xdg-desktop-portal-gnome playerctl brightnessctl pipewire wireplumber
+```sh
+git clone --bare git@github.com:Chrustho/Dotfiles.git "$HOME/.dotfiles"
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotfiles checkout
+dotfiles config status.showUntrackedFiles no
 ```
 
-### Deployment
+Se `checkout` segnala dei file già esistenti, spostali altrove e ripeti il comando.
 
-Clone the repository and deploy the files. GNU Stow is recommended for managing symlinks.
+## Note
 
-```bash
-git clone [https://github.com/Chrustho/Dotfiles.git](https://github.com/Chrustho/Dotfiles.git) ~/Dotfiles
-cd ~/Dotfiles
-
-# Using GNU Stow (Recommended)
-stow --target=$HOME .
-
-# Manual Copy Alternative
-cp -r .config/* ~/.config/
-cp -r .local/bin/* ~/.local/bin/
-chmod +x ~/.local/bin/*
-```
-
-## License
-MIT
+I file in `.config/niri/dms/` sono generati da DankMaterialShell e non vanno modificati a mano.

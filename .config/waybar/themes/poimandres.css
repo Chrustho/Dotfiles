@@ -1,5 +1,4 @@
-/* === Waybar: poimandres (notturno teal-menta, sleek) === */
-/* Barra blu-petrolio, blocchi HUD menta arrotondati, accenti mint/blue. */
+/* Waybar: tema poimandres */
 
 @define-color p_base   #1B1E28;
 @define-color p_panel  #303340;
@@ -27,7 +26,6 @@ window#waybar {
     border-bottom: 1px solid @p_panel;
 }
 
-/* Nasconde le frecce powerline -> look flat, ordine widget invariato */
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
 #custom-c_arrow1, #custom-c_arrow2,
 #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
@@ -61,7 +59,6 @@ window#waybar {
     color: @p_mint;
 }
 
-/* Blocchi HUD menta arrotondati */
 #custom-launcher, #clock, #custom-power {
     background-color: @p_mint;
     color: @p_base;
@@ -73,7 +70,6 @@ window#waybar {
 #custom-power { margin-right: 6px; }
 #custom-launcher { margin-left: 6px; }
 
-/* Stati di allarme */
 #battery.warning { color: @p_blue; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {
     color: @p_danger;

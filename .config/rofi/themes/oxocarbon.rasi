@@ -1,4 +1,5 @@
-/* Rofi palette: oxocarbon (IBM Carbon) */
+/* Rofi: tema oxocarbon */
+
 * {
     bg:        #1b1b1b;
     bg-alt:    #262626;

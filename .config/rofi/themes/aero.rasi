@@ -1,4 +1,5 @@
-/* Rofi palette: aero (Frutiger cyan/aqua) */
+/* Rofi: tema aero */
+
 * {
     bg:        #0e2a33;
     bg-alt:    #143d49;

@@ -1,4 +1,5 @@
-/* Rofi palette: rose pine */
+/* Rofi: tema rosepine */
+
 * {
     bg:        #1f1d2e;
     bg-alt:    #26233a;

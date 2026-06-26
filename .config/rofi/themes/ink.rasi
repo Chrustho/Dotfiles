@@ -1,4 +1,5 @@
-/* Rofi palette: ink (Flexoki carta-inchiostro) */
+/* Rofi: tema ink */
+
 * {
     bg:        #1c1b1a;
     bg-alt:    #282726;

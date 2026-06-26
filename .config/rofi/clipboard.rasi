@@ -1,3 +1,5 @@
+/* Rofi: menu clipboard */
+
 @import "colors.rasi"
 
 configuration {
