@@ -7,7 +7,7 @@
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
 
-Dotfiles del mio ambiente Wayland su Arch Linux, basato sul compositor Niri e su un sistema di temi commutabili a caldo.
+Dotfiles del mio ambiente Wayland su Arch Linux, basato sul compositor Niri e su un sistema di temi.
 
 ## Componenti
 
@@ -31,7 +31,7 @@ Ogni programma ha la sua cartella `themes/` con una variante per palette. Lo swi
 
 | Switcher | Cosa cambia | Scorciatoia |
 |---|---|---|
-| `niri-theme.sh` | Tema di sistema: Niri, sfondo, Mako e SwayOSD in un colpo. Imposta anche i gap della tiling per alcuni temi. | `Mod+Alt+T` |
+| `niri-theme.sh` | Tema di sistema: Niri, sfondo, Mako e SwayOSD. | `Mod+Alt+T` |
 | `rofi-theme.sh` | Palette di Rofi | `Mod+Alt+R` |
 | `waybar-theme.sh` | Tema di Waybar | `Mod+Alt+B` |
 
@@ -80,18 +80,6 @@ dotfiles config status.showUntrackedFiles no
 
 Se `checkout` segnala dei file già esistenti, spostali altrove e ripeti il comando.
 
-## Gestione quotidiana
-
-Con l'alias `dotfiles` ci si lavora come una repo normale, ma con `$HOME` come work tree:
-
-```sh
-dotfiles status
-dotfiles add .config/niri/config.kdl
-dotfiles commit -m "messaggio"
-dotfiles push
-```
-
-`status.showUntrackedFiles no` tiene nascosto il resto di `$HOME`, quindi `status` mostra solo i file già tracciati. Per aggiungere un file nuovo va indicato per percorso esplicito.
 
 ## Dipendenze principali
 
