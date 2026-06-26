@@ -1,15 +1,15 @@
 window {
-    background: #1d1d22;
-    border: 2px solid #6f9ba3;
+    background: #1d2021;
+    border: 2px solid #89b482;
     border-radius: 0px;
 }
 #osd { padding: 2px 6px; margin: 0; }
-image { color: #cab4a1; margin-right: 10px; opacity: 1.0; }
-label { color: #cab4a1; font-weight: bold; }
+image { color: #ddc7a1; margin-right: 10px; opacity: 1.0; }
+label { color: #ddc7a1; font-weight: bold; }
 progressbar trough {
-    background: #34343c;
+    background: #32302f;
     border-radius: 0px;
     min-height: 4px;
     min-width: 140px;
 }
-progressbar progress { background: #6f9ba3; border-radius: 0px; }
+progressbar progress { background: #89b482; border-radius: 0px; }

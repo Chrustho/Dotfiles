@@ -1,0 +1,18 @@
+/* Rofi palette: synthwave / outrun */
+* {
+    bg:        #241b2f;
+    bg-alt:    #2d213f;
+    base-bg:   #1a1426;
+    window-bg: #1a1426e0;
+    fg-light:  #f7f2ff;
+    fg-dark:   #1a1426;
+    muted:     #6c5b8c;
+    red:       #ff2975;
+    orange:    #ff901f;
+    yellow:    #ffd319;
+    green:     #72f1b8;
+    aqua:      #03edf9;
+    blue:      #36a0ff;
+    purple:    #b893ce;
+    accent:    #f92aad;
+}

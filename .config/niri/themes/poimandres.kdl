@@ -1,0 +1,45 @@
+// === Tema: Poimandres / Notturno sleek teal-menta ===
+// Minimal-tech: sfondo blu-petrolio profondo, focus-ring sottile mint->blue,
+// angoli leggermente arrotondati, ombra discreta. Look pulito e futurista.
+// NB: i gaps stretti (26) li applica niri-theme.sh sul config base.
+
+layout {
+    background-color "transparent"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        on
+        width 2
+        active-gradient from="#5DE4C7" to="#89DDFF" angle=135 in="oklch shorter hue"
+        inactive-color "#303340"
+        urgent-color "#D0679D"
+    }
+
+    shadow {
+        on
+        softness 20
+        spread 0
+        offset x=0 y=4
+        color "#0D0F1799"
+        inactive-color "transparent"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 250
+        curve "ease-out-cubic"
+    }
+    window-close {
+        duration-ms 250
+        curve "ease-out-cubic"
+    }
+}

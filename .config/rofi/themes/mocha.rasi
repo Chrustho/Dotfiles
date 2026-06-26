@@ -1,0 +1,18 @@
+/* Rofi palette: mocha (espresso caldo, cornice caramello) */
+* {
+    bg:        #211C19;
+    bg-alt:    #2E2823;
+    base-bg:   #1A1613;
+    window-bg: #1A1613ee;
+    fg-light:  #E6DACE;
+    fg-dark:   #1A1613;
+    muted:     #8A7A6E;
+    red:       #C56B5A;
+    orange:    #D9B99B;
+    yellow:    #D9B99B;
+    green:     #8A9A6E;
+    aqua:      #8AA39B;
+    blue:      #7E94A3;
+    purple:    #B098A3;
+    accent:    #D9B99B;
+}

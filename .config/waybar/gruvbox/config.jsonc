@@ -1,0 +1,157 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 0,
+    "modules-left": [
+        "custom/launcher",
+        "custom/l_arrow1",
+        "niri/workspaces",
+        "custom/l_arrow2",
+        "custom/nightmode",
+        "custom/l_arrow3",
+        "custom/mako",
+        "custom/l_arrow4",
+        "idle_inhibitor",
+        "custom/l_arrow5",
+        "niri/window"
+    ],
+    "modules-center": [
+        "custom/c_arrow1",
+        "clock",
+        "custom/c_arrow2"
+    ],
+    "modules-right": [
+        "custom/r_arrow1",
+        "custom/clipboard",
+        "custom/r_arrow2",
+        "cpu",
+        "custom/r_arrow3",
+        "memory",
+        "custom/r_arrow4",
+        "pulseaudio",
+        "custom/r_arrow5",
+        "backlight",
+        "custom/r_arrow6",
+        "power-profiles-daemon",
+        "custom/r_arrow7",
+        "network",
+        "custom/r_arrow8",
+        "battery",
+        "custom/r_arrow9",
+        "tray",
+        "custom/r_arrow10",
+        "custom/power"
+    ],
+
+    "custom/l_arrow1": { "format": "", "tooltip": false },
+    "custom/l_arrow2": { "format": "", "tooltip": false },
+    "custom/l_arrow3": { "format": "", "tooltip": false },
+    "custom/l_arrow4": { "format": "", "tooltip": false },
+    "custom/l_arrow5": { "format": "", "tooltip": false },
+    
+    "custom/c_arrow1": { "format": "", "tooltip": false },
+    "custom/c_arrow2": { "format": "", "tooltip": false },
+  
+    "custom/r_arrow1": { "format": "", "tooltip": false },
+    "custom/r_arrow2": { "format": "", "tooltip": false },
+    "custom/r_arrow3": { "format": "", "tooltip": false },
+    "custom/r_arrow4": { "format": "", "tooltip": false },
+    "custom/r_arrow5": { "format": "", "tooltip": false },
+    "custom/r_arrow6": { "format": "", "tooltip": false },
+    "custom/r_arrow7": { "format": "", "tooltip": false },
+    "custom/r_arrow8": { "format": "", "tooltip": false },
+    "custom/r_arrow9": { "format": "", "tooltip": false },
+    "custom/r_arrow10": { "format": "", "tooltip": false },
+
+    "idle_inhibitor": {
+        "format": " {icon} ",
+        "format-icons": {
+            "activated": "",
+            "deactivated": "󰒲" 
+        },
+        "tooltip-format-activated": "Caffeina Attiva: Lo schermo non si spegnerà",
+        "tooltip-format-deactivated": "Caffeina Disattivata: Sospensione automatica in uso"
+    },
+    "custom/launcher": {
+        "format": "  ",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": { "active": "", "default": "" }
+    },
+    "niri/window": {
+        "format": " {}",
+        "max-length": 40,
+        "icon": true,
+        "icon-size": 16
+    },
+    "clock": {
+        "interval": 1,
+        "format": "  {:%H:%M:%S    %d/%m}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "custom/nightmode": {
+        "format": "  ",
+        "on-click": "pkill wlsunset || wlsunset -T 7500 &",
+        "tooltip": false
+    },
+    "custom/clipboard": {
+        "format": "  ",
+        "on-click": "cliphist list | rofi -dmenu -i -p '' -theme ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy",
+        "tooltip": false
+    },
+    "custom/mako": {
+        "format": "  ",
+        "on-click": "makoctl dismiss -a",
+        "on-click-right": "makoctl restore",
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 2,
+        "format": "   {usage}% ",
+        "on-click": "ghostty -e btop"
+    },
+    "memory": {
+        "interval": 2,
+        "format": "   {percentage}% ",
+        "on-click": "ghostty -e btop"
+    },
+    "pulseaudio": {
+        "format": " {icon}  {volume}% ",
+        "format-muted": "    Muted ",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "pavucontrol"
+    },
+    "backlight": {
+        "format": " {icon}  {percent}% ",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "power-profiles-daemon": {
+        "format": " {icon} ",
+        "format-icons": { "default": "", "performance": "", "balanced": "", "power-saver": "" }
+    },
+    "network": {
+        "format-wifi": "   {essid} ",
+        "format-ethernet": "   {ipaddr} ",
+        "format-disconnected": " ⚠ Offline ",
+        "on-click": "ghostty -e nmtui"
+    },
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": " {icon} {capacity}% ",
+        "format-charging": " 󰂄  {capacity}% ",
+        "format-plugged": " 󰚥  {capacity}% ",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "tray": {
+        "spacing": 8
+    },
+    "custom/power": {
+        "format": "   ",
+        "on-click": "~/.local/bin/powermenu.sh",
+        "tooltip": false
+    }
+}

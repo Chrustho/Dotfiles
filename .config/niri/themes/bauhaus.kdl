@@ -1,0 +1,46 @@
+// === Tema: Bauhaus / Neo-brutalist geometrico ===
+// Chiaro e modernista: carta calda, primari rosso/blu/giallo, bordo nero spesso,
+// ombra dura offset (firma brutalista), angoli netti.
+// NB: i gaps dedicati (42) li applica niri-theme.sh sul config base.
+
+layout {
+    background-color "transparent"
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 5
+        active-color "#2453D9"      // blu primario
+        inactive-color "#141210"    // nero inchiostro
+        urgent-color "#E63B2E"      // rosso primario
+    }
+
+    shadow {
+        on
+        softness 0
+        spread 0
+        offset x=7 y=7
+        color "#141210FF"           // drop shadow dura nera
+        inactive-color "#14121066"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+// Animazioni scattanti, coerenti col look secco/geometrico
+animations {
+    window-open {
+        duration-ms 150
+        curve "ease-out-quad"
+    }
+    window-close {
+        duration-ms 150
+        curve "ease-out-quad"
+    }
+}

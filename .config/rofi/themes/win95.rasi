@@ -1,0 +1,18 @@
+/* Rofi palette: win95 (90s OS brutalist, dark) */
+* {
+    bg:        #232828;
+    bg-alt:    #313737;
+    base-bg:   #15191a;
+    window-bg: #15191aee;
+    fg-light:  #c7c7bd;
+    fg-dark:   #15191a;
+    muted:     #6e7373;
+    red:       #b5443a;
+    orange:    #9a9a93;
+    yellow:    #c9b06a;
+    green:     #6f9b6a;
+    aqua:      #2f9e9e;
+    blue:      #3a5fb0;
+    purple:    #8a7fb0;
+    accent:    #2f9e9e;
+}

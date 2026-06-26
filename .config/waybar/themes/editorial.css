@@ -1,18 +1,18 @@
-/* === Waybar: Death Stranding (Beach / Timefall) === */
-/* Flat HUD desaturato: near-black, blocchi oro tenue, accenti chiral cyan. */
+/* === Waybar: editorial (soft greige raffinato, chiaro) === */
+/* Barra greige, blocchi HUD terracotta arrotondati, look editoriale. */
 
-@define-color ds_base   #1d1d22;
-@define-color ds_panel  #34343c;
-@define-color ds_text   #cab4a1;
-@define-color ds_muted  #6b6b73;
-@define-color ds_gold   #b5985f;
-@define-color ds_cyan   #6f9ba3;
-@define-color ds_danger #b5564f;
+@define-color e_base   #EAE6DF;
+@define-color e_panel  #DCD6CB;
+@define-color e_text   #2A2724;
+@define-color e_muted  #8C8579;
+@define-color e_terra  #C2603D;
+@define-color e_blue   #5E7C8C;
+@define-color e_danger #B5564F;
 
 * {
     border: none;
     border-radius: 0;
-    font-family: "Rajdhani", "Chakra Petch", "Share Tech Mono", "Iosevka Nerd Font", monospace;
+    font-family: "IosevkaTerm Nerd Font", monospace;
     font-size: 12pt;
     font-weight: 600;
     min-height: 0;
@@ -22,9 +22,9 @@
 }
 
 window#waybar {
-    background-color: @ds_base;
-    color: @ds_text;
-    border-bottom: 1px solid @ds_panel;
+    background-color: @e_base;
+    color: @e_text;
+    border-bottom: 1px solid @e_panel;
 }
 
 /* Nasconde le frecce powerline -> look flat, ordine widget invariato */
@@ -39,41 +39,42 @@ window#waybar {
     margin: 0;
 }
 
-/* Moduli testuali piatti */
 #custom-nightmode, #custom-mako, #custom-clipboard, #idle_inhibitor,
 #cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon,
 #network, #battery, #tray, #workspaces {
     background-color: transparent;
-    color: @ds_text;
+    color: @e_text;
     padding: 0 8px;
 }
 
 #window {
-    color: @ds_muted;
+    color: @e_muted;
     background: transparent;
     padding-left: 10px;
 }
 
 #workspaces button {
-    color: @ds_muted;
+    color: @e_muted;
     padding: 0 6px;
 }
 #workspaces button.active {
-    color: @ds_cyan;
+    color: @e_terra;
 }
 
-/* Blocchi HUD solidi alle estremita' e centro (richiamo agli elementi del gioco) */
+/* Blocchi HUD terracotta arrotondati (tocco soft) */
 #custom-launcher, #clock, #custom-power {
-    background-color: @ds_gold;
-    color: @ds_base;
+    background-color: @e_terra;
+    color: @e_base;
     font-weight: 700;
     padding: 0 14px;
+    margin: 4px 0;
+    border-radius: 6px;
 }
-#custom-power { padding-right: 16px; }
-#custom-launcher { padding-left: 16px; }
+#custom-power { margin-right: 6px; }
+#custom-launcher { margin-left: 6px; }
 
 /* Stati di allarme */
-#battery.warning { color: @ds_gold; }
+#battery.warning { color: @e_terra; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {
-    color: @ds_danger;
+    color: @e_danger;
 }

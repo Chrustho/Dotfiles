@@ -1,0 +1,18 @@
+/* Rofi palette: Death Stranding (Beach / Timefall, desaturato) */
+* {
+    bg:        #2a2a31;
+    bg-alt:    #34343c;
+    base-bg:   #1d1d22;
+    window-bg: #1d1d22e6;
+    fg-light:  #cab4a1;
+    fg-dark:   #1d1d22;
+    muted:     #6b6b73;
+    red:       #b5564f;
+    orange:    #b5985f;
+    yellow:    #c8a86a;
+    green:     #7f9b7a;
+    aqua:      #6f9ba3;
+    blue:      #5e8a93;
+    purple:    #9c8c7c;
+    accent:    #6f9ba3;
+}

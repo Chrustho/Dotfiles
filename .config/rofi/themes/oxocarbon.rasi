@@ -1,0 +1,18 @@
+/* Rofi palette: oxocarbon (IBM Carbon) */
+* {
+    bg:        #1b1b1b;
+    bg-alt:    #262626;
+    base-bg:   #161616;
+    window-bg: #161616e0;
+    fg-light:  #f2f4f8;
+    fg-dark:   #161616;
+    muted:     #525252;
+    red:       #ee5396;
+    orange:    #ff7eb6;
+    yellow:    #fae3b0;
+    green:     #42be65;
+    aqua:      #3ddbd9;
+    blue:      #33b1ff;
+    purple:    #be95ff;
+    accent:    #33b1ff;
+}

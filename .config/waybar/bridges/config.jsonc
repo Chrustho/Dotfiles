@@ -1,0 +1,81 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 0,
+    
+    "modules-left": [
+        "custom/os_label",
+        "custom/spacer",
+        "niri/window"
+    ],
+    "modules-center": [
+        "network"
+    ],
+    "modules-right": [
+        "cpu",
+        "custom/spacer",
+        "memory",
+        "custom/spacer",
+        "battery",
+        "custom/spacer",
+        "pulseaudio",
+        "custom/spacer",
+        "clock"
+    ],
+
+    /* --- BLOCCO SINISTRO --- */
+    "custom/os_label": {
+        "format": " ❖ BRIDGES_OS ",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+    "niri/window": {
+        "format": "<span color='#666666'>ACTIVE_PRCS:</span> {}",
+        "max-length": 50,
+        "icon": false
+    },
+
+    /* --- BLOCCO CENTRALE --- */
+    "network": {
+        "format-wifi": "<span color='#4dd0e1'>● CHIRAL_LINK: OPTIMAL</span>   <span color='#666666'>{essid}</span>",
+        "format-ethernet": "<span color='#4dd0e1'>● UCA_LINK: STABLE</span>   <span color='#666666'>{ipaddr}</span>",
+        "format-disconnected": "<span color='#d32f2f'>● CHIRAL_LINK: LOST</span>",
+        "tooltip": false
+    },
+
+    /* --- BLOCCO DESTRO --- */
+    "cpu": {
+        "interval": 2,
+        "format": "<span color='#666666'>CPU</span> {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 2,
+        "format": "<span color='#666666'>RAM</span> {percentage}%",
+        "tooltip": false
+    },
+    "battery": {
+        "format": "<span color='#666666'>PWR</span> {capacity}%",
+        "format-charging": "<span color='#fbc02d'>CHR</span> {capacity}%",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "<span color='#666666'>VOL</span> {volume}%",
+        "format-muted": "<span color='#d32f2f'>MUTED</span>",
+        "tooltip": false
+    },
+    
+    /* Il blocco orologio come nella reference 2: Giallo solido, doppia riga */
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S\n<span size='7pt' weight='bold'>%Y.%m.%d</span>}",
+        "tooltip": false
+    },
+
+    /* Spaziatore per dividere i testi senza usare margini complessi */
+    "custom/spacer": {
+        "format": "   |   ",
+        "tooltip": false
+    }
+}

@@ -1,13 +1,13 @@
-/* === Waybar: Death Stranding (Beach / Timefall) === */
-/* Flat HUD desaturato: near-black, blocchi oro tenue, accenti chiral cyan. */
+/* === Waybar: Dune === */
+/* Flat deserto sci-fi: sabbia scura, blocchi spice-gold, accenti spice-blue. */
 
-@define-color ds_base   #1d1d22;
-@define-color ds_panel  #34343c;
-@define-color ds_text   #cab4a1;
-@define-color ds_muted  #6b6b73;
-@define-color ds_gold   #b5985f;
-@define-color ds_cyan   #6f9ba3;
-@define-color ds_danger #b5564f;
+@define-color du_base   #15110c;
+@define-color du_panel  #2e2519;
+@define-color du_text   #e0c9a6;
+@define-color du_muted  #8a7355;
+@define-color du_gold   #d99a4e;
+@define-color du_blue   #5aa9e6;
+@define-color du_danger #a8472a;
 
 * {
     border: none;
@@ -22,12 +22,11 @@
 }
 
 window#waybar {
-    background-color: @ds_base;
-    color: @ds_text;
-    border-bottom: 1px solid @ds_panel;
+    background-color: @du_base;
+    color: @du_text;
+    border-bottom: 1px solid @du_panel;
 }
 
-/* Nasconde le frecce powerline -> look flat, ordine widget invariato */
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
 #custom-c_arrow1, #custom-c_arrow2,
 #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
@@ -39,41 +38,38 @@ window#waybar {
     margin: 0;
 }
 
-/* Moduli testuali piatti */
 #custom-nightmode, #custom-mako, #custom-clipboard, #idle_inhibitor,
 #cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon,
 #network, #battery, #tray, #workspaces {
     background-color: transparent;
-    color: @ds_text;
+    color: @du_text;
     padding: 0 8px;
 }
 
 #window {
-    color: @ds_muted;
+    color: @du_muted;
     background: transparent;
     padding-left: 10px;
 }
 
 #workspaces button {
-    color: @ds_muted;
+    color: @du_muted;
     padding: 0 6px;
 }
 #workspaces button.active {
-    color: @ds_cyan;
+    color: @du_blue;
 }
 
-/* Blocchi HUD solidi alle estremita' e centro (richiamo agli elementi del gioco) */
 #custom-launcher, #clock, #custom-power {
-    background-color: @ds_gold;
-    color: @ds_base;
+    background-color: @du_gold;
+    color: @du_base;
     font-weight: 700;
     padding: 0 14px;
 }
 #custom-power { padding-right: 16px; }
 #custom-launcher { padding-left: 16px; }
 
-/* Stati di allarme */
-#battery.warning { color: @ds_gold; }
+#battery.warning { color: @du_gold; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {
-    color: @ds_danger;
+    color: @du_danger;
 }

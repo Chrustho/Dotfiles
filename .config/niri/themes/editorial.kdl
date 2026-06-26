@@ -1,0 +1,46 @@
+// === Tema: Editorial / Soft greige raffinato ===
+// Chiaro e minimale: greige caldo, accento terracotta, focus-ring morbido,
+// angoli arrotondati, ombra soffusa. Look "design studio".
+// NB: i gaps (38) li applica niri-theme.sh sul config base.
+
+layout {
+    background-color "transparent"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        on
+        width 3
+        active-gradient from="#C2603D" to="#B0735A" angle=135 in="oklch shorter hue"
+        inactive-color "#C9C2B5"
+        urgent-color "#B5564F"
+    }
+
+    shadow {
+        on
+        softness 28
+        spread 2
+        offset x=0 y=5
+        color "#2A272433"           // ombra morbida traslucida
+        inactive-color "transparent"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
+
+// Animazioni morbide, coerenti col look soft
+animations {
+    window-open {
+        duration-ms 350
+        curve "ease-out-cubic"
+    }
+    window-close {
+        duration-ms 350
+        curve "ease-out-cubic"
+    }
+}

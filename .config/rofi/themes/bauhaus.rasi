@@ -1,0 +1,18 @@
+/* Rofi palette: bauhaus (primari su carta, cornice rossa) */
+* {
+    bg:        #EFE7D6;
+    bg-alt:    #E2D7C0;
+    base-bg:   #EFE7D6;
+    window-bg: #EFE7D6f2;
+    fg-light:  #1A1714;
+    fg-dark:   #EFE7D6;
+    muted:     #8A7F6B;
+    red:       #E63B2E;
+    orange:    #E63B2E;
+    yellow:    #F4C20D;
+    green:     #3E8E5A;
+    aqua:      #2EA39B;
+    blue:      #2453D9;
+    purple:    #7A3FB0;
+    accent:    #2453D9;
+}

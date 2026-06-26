@@ -1,0 +1,18 @@
+/* Rofi palette: poimandres (notturno teal-menta, cornice mint) */
+* {
+    bg:        #1B1E28;
+    bg-alt:    #303340;
+    base-bg:   #171922;
+    window-bg: #171922e6;
+    fg-light:  #E4F0FB;
+    fg-dark:   #1B1E28;
+    muted:     #767C9D;
+    red:       #D0679D;
+    orange:    #5DE4C7;
+    yellow:    #FFFAC2;
+    green:     #5FB3A1;
+    aqua:      #5DE4C7;
+    blue:      #89DDFF;
+    purple:    #ADD7FF;
+    accent:    #5DE4C7;
+}

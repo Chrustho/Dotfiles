@@ -1,0 +1,45 @@
+// === Tema: Eldritch / Cosmic-horror neon ===
+// Indaco profondo con neon verde/ciano/viola. Focus-ring vivido green->cyan,
+// angoli arrotondati, ombra con tinta indaco. Vivace e di carattere.
+// NB: i gaps (30) li applica niri-theme.sh sul config base.
+
+layout {
+    background-color "transparent"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        on
+        width 3
+        active-gradient from="#37F499" to="#04D1F9" angle=135 in="oklch shorter hue"
+        inactive-color "#3B4261"
+        urgent-color "#F0313E"
+    }
+
+    shadow {
+        on
+        softness 25
+        spread 2
+        offset x=0 y=5
+        color "#171928AA"
+        inactive-color "transparent"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 250
+        curve "ease-out-cubic"
+    }
+    window-close {
+        duration-ms 250
+        curve "ease-out-cubic"
+    }
+}

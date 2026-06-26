@@ -1,0 +1,18 @@
+/* Rofi palette: Matrix (verde fosforo) */
+* {
+    bg:        #050d05;
+    bg-alt:    #0a1f0a;
+    base-bg:   #000000;
+    window-bg: #000000ee;
+    fg-light:  #c8ffd0;
+    fg-dark:   #000000;
+    muted:     #1f6f2f;
+    red:       #ff3131;
+    orange:    #39ff7a;
+    yellow:    #7dff5e;
+    green:     #00ff41;
+    aqua:      #00ffaa;
+    blue:      #00ff41;
+    purple:    #39ff7a;
+    accent:    #00ff41;
+}

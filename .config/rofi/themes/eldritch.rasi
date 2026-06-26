@@ -1,0 +1,18 @@
+/* Rofi palette: eldritch (cosmic neon, cornice viola) */
+* {
+    bg:        #212337;
+    bg-alt:    #2D2F4A;
+    base-bg:   #171928;
+    window-bg: #171928e6;
+    fg-light:  #EBFAFA;
+    fg-dark:   #212337;
+    muted:     #7081D0;
+    red:       #F16C75;
+    orange:    #A48CF2;
+    yellow:    #F1FC79;
+    green:     #37F499;
+    aqua:      #04D1F9;
+    blue:      #04D1F9;
+    purple:    #A48CF2;
+    accent:    #37F499;
+}

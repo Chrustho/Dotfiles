@@ -1,0 +1,18 @@
+/* Rofi palette: cyberdeck (amber phosphor su nero) */
+* {
+    bg:        #0d0d0d;
+    bg-alt:    #1a1712;
+    base-bg:   #000000;
+    window-bg: #000000dd;
+    fg-light:  #f5e6c8;
+    fg-dark:   #000000;
+    muted:     #6b6151;
+    red:       #ff3b3b;
+    orange:    #ffb000;
+    yellow:    #ffd000;
+    green:     #00ff9c;
+    aqua:      #00e0c0;
+    blue:      #00bcd4;
+    purple:    #d0a0ff;
+    accent:    #ffb000;
+}

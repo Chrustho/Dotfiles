@@ -1,0 +1,18 @@
+/* Rofi palette: ink (Flexoki carta-inchiostro) */
+* {
+    bg:        #1c1b1a;
+    bg-alt:    #282726;
+    base-bg:   #100f0f;
+    window-bg: #100f0fdd;
+    fg-light:  #cecdc3;
+    fg-dark:   #100f0f;
+    muted:     #878580;
+    red:       #d14d41;
+    orange:    #da702c;
+    yellow:    #d0a215;
+    green:     #879a39;
+    aqua:      #3aa99f;
+    blue:      #4385be;
+    purple:    #8b7ec8;
+    accent:    #d14d41;
+}

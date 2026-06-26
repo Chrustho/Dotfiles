@@ -1,0 +1,45 @@
+// === Tema: Concrete / Brutalismo grezzo denso ===
+// Scuro e monocromatico: grigi cemento + unico accento arancio sicurezza.
+// Bordo spesso, ombra dura, angoli netti, look compatto.
+// NB: i gaps stretti (12) li applica niri-theme.sh sul config base.
+
+layout {
+    background-color "transparent"
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 4
+        active-color "#FF5A1F"      // arancio sicurezza
+        inactive-color "#3A3A38"    // grigio cemento
+        urgent-color "#FF5A1F"
+    }
+
+    shadow {
+        on
+        softness 0
+        spread 0
+        offset x=6 y=6
+        color "#000000FF"           // drop shadow dura
+        inactive-color "#00000080"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 130
+        curve "ease-out-quad"
+    }
+    window-close {
+        duration-ms 130
+        curve "ease-out-quad"
+    }
+}

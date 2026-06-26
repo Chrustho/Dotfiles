@@ -1,20 +1,22 @@
-/* === Waybar: Death Stranding (Beach / Timefall) === */
-/* Flat HUD desaturato: near-black, blocchi oro tenue, accenti chiral cyan. */
+/* === Waybar: concrete (brutalismo grezzo denso, scuro) === */
+/* Barra cemento, blocchi HUD grigio chrome con bevel 3D, accento arancio. */
 
-@define-color ds_base   #1d1d22;
-@define-color ds_panel  #34343c;
-@define-color ds_text   #cab4a1;
-@define-color ds_muted  #6b6b73;
-@define-color ds_gold   #b5985f;
-@define-color ds_cyan   #6f9ba3;
-@define-color ds_danger #b5564f;
+@define-color c_base    #161616;
+@define-color c_panel   #2B2B2B;
+@define-color c_text    #D6D2C8;
+@define-color c_muted   #6E6E68;
+@define-color c_chrome  #8A8A85;
+@define-color c_orange  #FF5A1F;
+@define-color c_danger  #E5533A;
+@define-color c_bevel_l #B5B5AE;
+@define-color c_bevel_d #0E0E0D;
 
 * {
     border: none;
     border-radius: 0;
-    font-family: "Rajdhani", "Chakra Petch", "Share Tech Mono", "Iosevka Nerd Font", monospace;
-    font-size: 12pt;
-    font-weight: 600;
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 11pt;
+    font-weight: 700;
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -22,9 +24,9 @@
 }
 
 window#waybar {
-    background-color: @ds_base;
-    color: @ds_text;
-    border-bottom: 1px solid @ds_panel;
+    background-color: @c_base;
+    color: @c_text;
+    border-bottom: 2px solid @c_panel;
 }
 
 /* Nasconde le frecce powerline -> look flat, ordine widget invariato */
@@ -39,41 +41,42 @@ window#waybar {
     margin: 0;
 }
 
-/* Moduli testuali piatti */
 #custom-nightmode, #custom-mako, #custom-clipboard, #idle_inhibitor,
 #cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon,
 #network, #battery, #tray, #workspaces {
     background-color: transparent;
-    color: @ds_text;
+    color: @c_text;
     padding: 0 8px;
 }
 
 #window {
-    color: @ds_muted;
+    color: @c_muted;
     background: transparent;
     padding-left: 10px;
 }
 
 #workspaces button {
-    color: @ds_muted;
+    color: @c_muted;
     padding: 0 6px;
 }
 #workspaces button.active {
-    color: @ds_cyan;
+    color: @c_orange;
 }
 
-/* Blocchi HUD solidi alle estremita' e centro (richiamo agli elementi del gioco) */
+/* Blocchi HUD grigi con bevel 3D (alto-sinistra chiaro, basso-destra scuro) */
 #custom-launcher, #clock, #custom-power {
-    background-color: @ds_gold;
-    color: @ds_base;
+    background-color: @c_chrome;
+    color: #161616;
     font-weight: 700;
-    padding: 0 14px;
+    padding: 0 13px;
+    border-top: 2px solid @c_bevel_l;
+    border-left: 2px solid @c_bevel_l;
+    border-bottom: 2px solid @c_bevel_d;
+    border-right: 2px solid @c_bevel_d;
 }
-#custom-power { padding-right: 16px; }
-#custom-launcher { padding-left: 16px; }
 
 /* Stati di allarme */
-#battery.warning { color: @ds_gold; }
+#battery.warning { color: @c_orange; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {
-    color: @ds_danger;
+    color: @c_danger;
 }

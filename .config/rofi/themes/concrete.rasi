@@ -1,0 +1,18 @@
+/* Rofi palette: concrete (grigi cemento, cornice arancio sicurezza) */
+* {
+    bg:        #1E1E1E;
+    bg-alt:    #2B2B2B;
+    base-bg:   #161616;
+    window-bg: #161616ee;
+    fg-light:  #D6D2C8;
+    fg-dark:   #161616;
+    muted:     #6E6E68;
+    red:       #E5533A;
+    orange:    #FF5A1F;
+    yellow:    #E0A23A;
+    green:     #7E8E5A;
+    aqua:      #6FA39B;
+    blue:      #5E86A3;
+    purple:    #9C8CA3;
+    accent:    #FF5A1F;
+}

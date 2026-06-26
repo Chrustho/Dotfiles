@@ -1,0 +1,18 @@
+/* Rofi palette: rose pine */
+* {
+    bg:        #1f1d2e;
+    bg-alt:    #26233a;
+    base-bg:   #191724;
+    window-bg: #191724dd;
+    fg-light:  #e0def4;
+    fg-dark:   #191724;
+    muted:     #6e6a86;
+    red:       #eb6f92;
+    orange:    #ebbcba;
+    yellow:    #f6c177;
+    green:     #95b1ac;
+    aqua:      #9ccfd8;
+    blue:      #31748f;
+    purple:    #c4a7e7;
+    accent:    #c4a7e7;
+}

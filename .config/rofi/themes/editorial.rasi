@@ -1,0 +1,18 @@
+/* Rofi palette: editorial (greige raffinato, cornice terracotta) */
+* {
+    bg:        #EAE6DF;
+    bg-alt:    #DCD6CB;
+    base-bg:   #EAE6DF;
+    window-bg: #EAE6DFf2;
+    fg-light:  #2A2724;
+    fg-dark:   #EAE6DF;
+    muted:     #8C8579;
+    red:       #B5564F;
+    orange:    #C2603D;
+    yellow:    #C8A86A;
+    green:     #7E8E6A;
+    aqua:      #5E7C8C;
+    blue:      #5E7C8C;
+    purple:    #9C8C9A;
+    accent:    #C2603D;
+}

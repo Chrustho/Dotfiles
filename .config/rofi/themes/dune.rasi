@@ -1,0 +1,18 @@
+/* Rofi palette: Dune (deserto sci-fi) */
+* {
+    bg:        #221a10;
+    bg-alt:    #2e2519;
+    base-bg:   #15110c;
+    window-bg: #15110ce6;
+    fg-light:  #e0c9a6;
+    fg-dark:   #15110c;
+    muted:     #8a7355;
+    red:       #a8472a;
+    orange:    #d99a4e;
+    yellow:    #e0b450;
+    green:     #9a9a4e;
+    aqua:      #5aa9e6;
+    blue:      #4a90c2;
+    purple:    #b07a55;
+    accent:    #d99a4e;
+}

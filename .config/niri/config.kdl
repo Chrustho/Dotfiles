@@ -54,10 +54,11 @@ output "HDMI-A-1" {
     position x=0 y=0
 }
 
-// --- Geometria layout (COSTANTE su tutti i temi) ---
+// --- Geometria layout ---
 // L'estetica (focus-ring, border, shadow, background-color) e' nel file tema
-// incluso in fondo a questo config. Qui resta solo cio' che NON deve cambiare,
-// inclusa la distanza tra le tile (gaps).
+// incluso in fondo a questo config. Il valore 'gaps' qui sotto e' il DEFAULT:
+// alcuni temi (bauhaus/concrete/editorial/mocha) impostano gap dedicati tramite
+// niri-theme.sh, che riscrive questa riga; gli altri temi tornano a 37.5.
 layout {
     gaps 37.5
     center-focused-column "never"
@@ -272,7 +273,7 @@ binds {
 }
 
 // --- Tema estetico attivo ---
-// Temi disponibili: original | cyberdeck | aero | ink | everforest | rosepine | oxocarbon | synthwave | deathstranding | dune | matrix | win95
+// Temi disponibili: original | cyberdeck | aero | ink | everforest | rosepine | oxocarbon | synthwave | deathstranding | dune | matrix | win95 | bauhaus | concrete | editorial | mocha | poimandres | eldritch
 // Cambia il nome del file per switchare. Niri ricarica automaticamente.
 // Oppure usa Mod+Alt+T (selettore rofi).
-include "themes/deathstranding.kdl"
+include "themes/original.kdl"
