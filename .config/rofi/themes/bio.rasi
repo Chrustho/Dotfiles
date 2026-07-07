@@ -1,0 +1,19 @@
+/* Rofi: tema bio */
+
+* {
+    bg:        #0C1A17;
+    bg-alt:    #152A24;
+    base-bg:   #06100E;
+    window-bg: #06100Edd;
+    fg-light:  #CDE8DF;
+    fg-dark:   #06100E;
+    muted:     #5E7C72;
+    red:       #E8736A;
+    orange:    #E0A86A;
+    yellow:    #C9E07C;
+    green:     #7CF08A;
+    aqua:      #4FE3C1;
+    blue:      #3A7BD5;
+    purple:    #9B8BE0;
+    accent:    #4FE3C1;
+}

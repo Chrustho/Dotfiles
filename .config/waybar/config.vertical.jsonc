@@ -1,0 +1,79 @@
+// Configurazione Waybar - layout VERTICALE (bordo sinistro)
+// Barra stretta a icone impilate: top = launcher/workspaces, centro = orologio,
+// fondo = sistema + power. Da usare con themes/vertical.css.
+
+{
+    "layer": "top",
+    "position": "left",
+    "width": 46,
+    "spacing": 0,
+    "reload_style_on_change": true,
+
+    "modules-left": [
+        "custom/launcher",
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "battery",
+        "custom/power"
+    ],
+
+    "custom/launcher": {
+        "format": "",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": { "active": "", "default": "" }
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%H\n%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": { "activated": "", "deactivated": "󰒲" },
+        "tooltip-format-activated": "Caffeina attiva",
+        "tooltip-format-deactivated": "Caffeina disattivata"
+    },
+    "cpu": {
+        "interval": 2,
+        "format": "",
+        "tooltip-format": "CPU {usage}%",
+        "on-click": "ghostty -e btop"
+    },
+    "memory": {
+        "interval": 2,
+        "format": "",
+        "tooltip-format": "RAM {percentage}%",
+        "on-click": "ghostty -e btop"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{icon}",
+        "format-charging": "󰂄",
+        "format-plugged": "󰚥",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}%"
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "~/.local/bin/powermenu.sh",
+        "tooltip": false
+    }
+}

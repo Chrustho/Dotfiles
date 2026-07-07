@@ -1,0 +1,94 @@
+/* Waybar: stile ROSE PINE POWERLINE (usa gli arrow come separatori) */
+
+@define-color base    #191724;
+@define-color surface #1f1d2e;
+@define-color overlay #26233a;
+@define-color text    #e0def4;
+@define-color subtle  #908caa;
+@define-color love    #eb6f92;
+@define-color gold    #f6c177;
+@define-color rose    #ebbcba;
+@define-color pine    #31748f;
+@define-color foam    #9ccfd8;
+@define-color iris    #c4a7e7;
+
+* {
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 12pt;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: @base;
+}
+
+/* testo scuro sui segmenti chiari */
+#custom-launcher, #custom-nightmode, #custom-mako, #idle_inhibitor, #clock,
+#custom-clipboard, #cpu, #memory, #pulseaudio, #backlight,
+#power-profiles-daemon, #network, #battery {
+    color: @base;
+    padding: 0 6px;
+}
+
+#window { color: @text; background: transparent; padding-left: 8px; }
+
+#workspaces { background: @overlay; }
+#workspaces button { color: @text; padding: 0 6px; }
+#workspaces button.active { color: #ffffff; }
+
+/* --- colori di sfondo dei segmenti --- */
+#custom-launcher { background: @foam; padding-left: 14px; }
+#custom-nightmode { background: @iris; }
+#custom-mako { background: @love; }
+#idle_inhibitor { background: @gold; }
+
+#clock { background: @gold; font-weight: 700; }
+
+#custom-clipboard { background: @gold; }
+#cpu { background: @pine; color: @text; }
+#memory { background: @foam; }
+#pulseaudio { background: @iris; }
+#backlight { background: @gold; }
+#power-profiles-daemon { background: @rose; }
+#network { background: @love; }
+#battery { background: @pine; color: @text; }
+#tray { background: @overlay; padding: 0 10px; }
+#custom-power { background: @love; color: @base; padding-right: 14px; }
+
+#battery.warning { color: @gold; }
+#battery.critical, #pulseaudio.muted, #network.disconnected { color: @base; }
+
+/* --- arrow (separatori powerline) --- */
+#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
+#custom-c_arrow1, #custom-c_arrow2,
+#custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
+#custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
+    font-size: 16pt;
+}
+
+/* sinistra: launcher > workspaces > nightmode > mako > idle > window */
+#custom-l_arrow1 { color: @foam;    background: @overlay; }
+#custom-l_arrow2 { color: @overlay; background: @iris; }
+#custom-l_arrow3 { color: @iris;    background: @love; }
+#custom-l_arrow4 { color: @love;    background: @gold; }
+#custom-l_arrow5 { color: @gold;    background: transparent; }
+
+/* centro: cappucci del clock */
+#custom-c_arrow1 { color: @gold; background: transparent; }
+#custom-c_arrow2 { color: @gold; background: transparent; }
+
+/* destra: clipboard > cpu > memory > pulse > backlight > power-prof > net > batt > tray > power */
+#custom-r_arrow1  { color: @gold;    background: transparent; }
+#custom-r_arrow2  { color: @pine;    background: @gold; }
+#custom-r_arrow3  { color: @foam;    background: @pine; }
+#custom-r_arrow4  { color: @iris;    background: @foam; }
+#custom-r_arrow5  { color: @gold;    background: @iris; }
+#custom-r_arrow6  { color: @rose;    background: @gold; }
+#custom-r_arrow7  { color: @love;    background: @rose; }
+#custom-r_arrow8  { color: @pine;    background: @love; }
+#custom-r_arrow9  { color: @overlay; background: @pine; }
+#custom-r_arrow10 { color: @love;    background: @overlay; }

@@ -1,0 +1,64 @@
+// Niri: tema gruvmaterial (Gruvbox Material soft)
+// Focus discreto: anello sottile 1px. Feature particolare: tab-indicator a
+// gradiente + ombra morbida che danno profondita' al posto dell'anello marcato.
+
+layout {
+    background-color "transparent"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        on
+        width 1
+        active-color "#d8a657cc"
+        inactive-color "#45403d"
+        urgent-color "#ea6962"
+    }
+
+    // Feature distintiva: indicatore delle tab a gradiente, dentro la colonna
+    tab-indicator {
+        width 4
+        gap 6
+        length total-proportion=0.6
+        position "left"
+        place-within-column
+        corner-radius 4
+        gaps-between-tabs 4
+        active-gradient from="#d8a657" to="#89b482" angle=135 in="oklch shorter hue"
+        inactive-color "#45403d"
+        urgent-color "#ea6962"
+    }
+
+    // Profondita' morbida al posto dell'anello spesso
+    shadow {
+        on
+        softness 28
+        spread 3
+        offset x=0 y=4
+        color "#1d2021aa"
+        inactive-color "transparent"
+    }
+
+    // Suggerimento a gradiente quando si sposta/insersce una finestra
+    insert-hint {
+        gradient from="#d8a65766" to="#89b48266" angle=45 in="oklch shorter hue"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 360
+        curve "ease-out-expo"
+    }
+    window-close {
+        duration-ms 250
+        curve "ease-out-quad"
+    }
+}

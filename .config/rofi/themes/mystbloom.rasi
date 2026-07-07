@@ -1,0 +1,19 @@
+/* Rofi: palette mystbloom (petrichor) */
+
+* {
+    bg:        #141416;
+    bg-alt:    #3d3744;
+    base-bg:   #141416;
+    window-bg: #141416ee;
+    fg-light:  #eeeeee;
+    fg-dark:   #141416;
+    muted:     #eeeeee80;
+    red:       #a3697d;
+    orange:    #d8c5a0;
+    yellow:    #d1bea5;
+    green:     #9aaa9e;
+    aqua:      #8a9ca0;
+    blue:      #9f8ac6;
+    purple:    #cda2d4;
+    accent:    #cda2d4;
+}

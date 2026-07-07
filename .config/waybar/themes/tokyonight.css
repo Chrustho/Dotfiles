@@ -1,0 +1,68 @@
+/* Waybar: stile TOKYONIGHT (isole arrotondate, palette storm) */
+
+@define-color bg     #1a1b26;
+@define-color panel  #24283b;
+@define-color text   #c0caf5;
+@define-color sub    #565f89;
+@define-color blue   #7aa2f7;
+@define-color purple #bb9af7;
+@define-color red    #f7768e;
+@define-color yellow #e0af68;
+
+* {
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 12pt;
+    font-weight: 600;
+    border: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+window#waybar {
+    background: transparent;
+    color: @text;
+}
+
+.modules-left, .modules-center, .modules-right {
+    background-color: @bg;
+    border: 1px solid @panel;
+    border-radius: 14px;
+    margin: 5px 0;
+    padding: 0 4px;
+}
+
+#custom-launcher, #workspaces, #custom-nightmode, #custom-mako, #custom-clipboard,
+#idle_inhibitor, #window, #cpu, #memory, #pulseaudio, #backlight,
+#power-profiles-daemon, #network, #battery, #tray, #custom-power {
+    background: transparent;
+    color: @text;
+    padding: 0 8px;
+}
+
+#window { color: @sub; padding-left: 10px; }
+
+#workspaces button { color: @sub; padding: 0 6px; }
+#workspaces button.active { color: @blue; }
+
+#custom-launcher { color: @purple; padding-left: 14px; font-size: 14pt; }
+#clock {
+    color: @bg;
+    background-color: @blue;
+    font-weight: 700;
+    border-radius: 10px;
+    margin: 5px 4px;
+    padding: 0 14px;
+}
+#custom-power { color: @red; padding-right: 14px; }
+
+#battery.warning { color: @yellow; }
+#battery.critical, #pulseaudio.muted, #network.disconnected { color: @red; }
+
+#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
+#custom-c_arrow1, #custom-c_arrow2,
+#custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
+#custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
+    color: transparent; background: transparent; font-size: 0; padding: 0; margin: 0;
+}

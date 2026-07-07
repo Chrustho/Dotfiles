@@ -1,0 +1,19 @@
+/* Rofi: palette dechor (petrichor) */
+
+* {
+    bg:        #0E0E0E;
+    bg-alt:    #44444c;
+    base-bg:   #0E0E0E;
+    window-bg: #0E0E0Eee;
+    fg-light:  #c7c9cc;
+    fg-dark:   #0E0E0E;
+    muted:     #c7c9cc80;
+    red:       #9c6b7a;
+    orange:    #e0cca8;
+    yellow:    #c4afa2;
+    green:     #899087;
+    aqua:      #86a3a6;
+    blue:      #8d96bd;
+    purple:    #b694b6;
+    accent:    #c7c9cc;
+}

@@ -2,7 +2,7 @@
 
 # Switcher palette rofi
 
-THEME=$(printf 'original\ncyberdeck\naero\nink\neverforest\nrosepine\noxocarbon\nsynthwave\ndeathstranding\ndune\nmatrix\nwin95\nbauhaus\nconcrete\neditorial\nmocha\npoimandres\neldritch' \
+THEME=$(printf 'original\ncyberdeck\naero\nink\neverforest\nbio\nrosepine\noxocarbon\nsynthwave\ngruvmaterial\ndeathstranding\ndune\nmatrix\nwin95\nbauhaus\nconcrete\neditorial\nmocha\npoimandres\neldritch\nneochor\nperiwinkle\ndechor\nmellow\nmystbloom\noh-lucy\npetrichor' \
     | rofi -dmenu -i -p ' Rofi theme')
 [ -z "$THEME" ] && exit 0
 

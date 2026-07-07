@@ -1,0 +1,19 @@
+/* Rofi: palette periwinkle (petrichor) */
+
+* {
+    bg:        #28242d;
+    bg-alt:    #3d3744;
+    base-bg:   #28242d;
+    window-bg: #28242dee;
+    fg-light:  #eeeeee;
+    fg-dark:   #28242d;
+    muted:     #eeeeee80;
+    red:       #a3697d;
+    orange:    #d8c5a0;
+    yellow:    #c4afa8;
+    green:     #9aaa9e;
+    aqua:      #8a9ca0;
+    blue:      #9894c8;
+    purple:    #b694b6;
+    accent:    #9894c8;
+}

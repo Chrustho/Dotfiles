@@ -1,0 +1,64 @@
+/* Waybar: layout DOCK (Gruvbox Material soft) */
+/* Da usare con config.dock.jsonc */
+
+@define-color gm_base   #1d2021;
+@define-color gm_panel  #32302f;
+@define-color gm_text   #d4be98;
+@define-color gm_muted  #7c6f64;
+@define-color gm_yellow #d8a657;
+@define-color gm_aqua   #89b482;
+@define-color gm_red    #ea6962;
+
+* {
+    border: none;
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 12pt;
+    font-weight: 600;
+    min-height: 0;
+    box-shadow: none;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+/* Unica isola centrale a pillola */
+.modules-center {
+    background-color: @gm_base;
+    border: 1px solid @gm_panel;
+    border-radius: 20px;
+    padding: 0 6px;
+    margin: 3px 0;
+}
+
+#custom-launcher, #workspaces, #clock, #pulseaudio, #battery, #custom-power {
+    background-color: transparent;
+    color: @gm_text;
+    padding: 0 10px;
+}
+
+#custom-launcher {
+    color: @gm_yellow;
+    font-size: 14pt;
+    padding-left: 14px;
+}
+
+#workspaces button { color: @gm_muted; padding: 0 5px; }
+#workspaces button.active { color: @gm_aqua; }
+
+#clock {
+    color: @gm_base;
+    background-color: @gm_yellow;
+    font-weight: 700;
+    border-radius: 14px;
+    margin: 6px 6px;
+    padding: 0 14px;
+}
+
+#custom-power {
+    color: @gm_red;
+    padding-right: 14px;
+}
+
+#battery.warning { color: @gm_yellow; }
+#battery.critical, #pulseaudio.muted { color: @gm_red; }

@@ -1,0 +1,55 @@
+/* Waybar: layout FLOATING (pill unica arrotondata) - da usare con config.floating.jsonc */
+
+@define-color bg    #1b1e2b;
+@define-color panel #2a2e42;
+@define-color text  #cdd3f0;
+@define-color sub   #5b6078;
+@define-color accent #a6b4ff;
+@define-color red   #ec7086;
+@define-color yellow #e5b168;
+
+* {
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 12pt;
+    font-weight: 600;
+    border: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* la barra intera = una singola pill flottante */
+window#waybar {
+    background-color: @bg;
+    color: @text;
+    border: 1px solid @panel;
+    border-radius: 18px;
+}
+
+#custom-launcher, #workspaces, #custom-nightmode, #custom-mako, #custom-clipboard,
+#idle_inhibitor, #window, #clock, #cpu, #memory, #pulseaudio, #backlight,
+#power-profiles-daemon, #network, #battery, #tray, #custom-power {
+    background: transparent;
+    color: @text;
+    padding: 0 8px;
+}
+
+#window { color: @sub; padding-left: 10px; }
+
+#workspaces button { color: @sub; padding: 0 6px; }
+#workspaces button.active { color: @accent; }
+
+#custom-launcher { color: @accent; padding-left: 16px; font-size: 14pt; }
+#clock {
+    color: @bg;
+    background-color: @accent;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 5px 4px;
+    padding: 0 14px;
+}
+#custom-power { color: @red; padding-right: 16px; }
+
+#battery.warning { color: @yellow; }
+#battery.critical, #pulseaudio.muted, #network.disconnected { color: @red; }

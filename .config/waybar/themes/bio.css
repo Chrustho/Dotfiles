@@ -1,0 +1,82 @@
+/* Waybar: tema bio */
+
+@define-color b_base   #06100E;
+@define-color b_panel  #0C1A17;
+@define-color b_text   #CDE8DF;
+@define-color b_glow   #4FE3C1;
+@define-color b_green  #7CF08A;
+@define-color b_muted  #5E7C72;
+@define-color b_danger #E8736A;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 12pt;
+    font-weight: 600;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    /* bagliore bioluminescente diffuso */
+    text-shadow: 0 0 5px rgba(79, 227, 193, 0.45);
+}
+
+window#waybar {
+    background-color: @b_base;
+    color: @b_text;
+    border-bottom: 1px solid @b_panel;
+}
+
+#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
+#custom-c_arrow1, #custom-c_arrow2,
+#custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
+#custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
+    color: transparent;
+    background: transparent;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+    text-shadow: none;
+}
+
+#custom-nightmode, #custom-mako, #custom-clipboard, #idle_inhibitor,
+#cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon,
+#network, #battery, #tray, #workspaces {
+    background-color: transparent;
+    color: @b_text;
+    padding: 0 8px;
+}
+
+#window {
+    color: @b_muted;
+    background: transparent;
+    padding-left: 10px;
+}
+
+#workspaces button {
+    color: @b_muted;
+    padding: 0 6px;
+}
+#workspaces button.active {
+    color: @b_glow;
+    text-shadow: 0 0 8px @b_glow;
+}
+
+#custom-launcher, #clock, #custom-power {
+    background-color: @b_glow;
+    color: @b_base;
+    font-weight: 700;
+    padding: 0 14px;
+    margin: 4px 0;
+    border-radius: 12px;
+    text-shadow: none;
+}
+#custom-power { margin-right: 6px; }
+#custom-launcher { margin-left: 6px; }
+
+#battery.warning { color: @b_green; }
+#battery.critical, #pulseaudio.muted, #network.disconnected {
+    color: @b_danger;
+    text-shadow: 0 0 6px @b_danger;
+}

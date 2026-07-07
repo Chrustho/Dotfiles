@@ -1,0 +1,59 @@
+/* Waybar: stile GLASS (glassmorphism, isole translucide flottanti) */
+/* Da usare con la config flat (waybar-theme.sh). Arrow nascosti. */
+
+* {
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 12pt;
+    font-weight: 600;
+    border: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+window#waybar {
+    background: transparent;
+    color: #f0f0f5;
+}
+
+/* le tre sezioni diventano isole di vetro smerigliato */
+.modules-left, .modules-center, .modules-right {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    margin: 5px 0;
+    padding: 0 4px;
+}
+
+#custom-launcher, #workspaces, #custom-nightmode, #custom-mako, #custom-clipboard,
+#idle_inhibitor, #window, #clock, #cpu, #memory, #pulseaudio, #backlight,
+#power-profiles-daemon, #network, #battery, #tray, #custom-power {
+    background: transparent;
+    color: #eaeaf0;
+    padding: 0 8px;
+}
+
+#window { color: rgba(255, 255, 255, 0.55); padding-left: 10px; }
+
+#workspaces button { color: rgba(255, 255, 255, 0.4); padding: 0 6px; }
+#workspaces button.active { color: #ffffff; }
+
+#custom-launcher, #clock, #custom-power {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    margin: 5px 4px;
+    padding: 0 14px;
+    font-weight: 700;
+}
+
+#battery.warning { color: #ffd479; }
+#battery.critical, #pulseaudio.muted, #network.disconnected { color: #ff6b6b; }
+
+#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
+#custom-c_arrow1, #custom-c_arrow2,
+#custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
+#custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
+    color: transparent; background: transparent; font-size: 0; padding: 0; margin: 0;
+}

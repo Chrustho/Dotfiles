@@ -1,0 +1,62 @@
+/* Waybar: layout SPLIT (tre isole in basso) - da usare con config.split.jsonc */
+
+@define-color base   #1a1720;
+@define-color island #241f2e;
+@define-color panel  #352d42;
+@define-color text   #e4dcec;
+@define-color sub    #7a6f88;
+@define-color accent #d3a0e0;
+@define-color red    #eb6f92;
+@define-color yellow #f6c177;
+
+* {
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 12pt;
+    font-weight: 600;
+    border: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+window#waybar {
+    background: transparent;
+    color: @text;
+}
+
+/* le tre sezioni = tre isole distinte */
+.modules-left, .modules-center, .modules-right {
+    background-color: @island;
+    border: 1px solid @panel;
+    border-radius: 16px;
+    padding: 0 6px;
+    margin: 2px 0;
+}
+
+#custom-launcher, #workspaces, #custom-nightmode, #custom-mako, #custom-clipboard,
+#idle_inhibitor, #window, #clock, #cpu, #memory, #pulseaudio, #backlight,
+#power-profiles-daemon, #network, #battery, #tray, #custom-power {
+    background: transparent;
+    color: @text;
+    padding: 0 8px;
+}
+
+#window { color: @sub; padding-left: 8px; }
+
+#workspaces button { color: @sub; padding: 0 6px; }
+#workspaces button.active { color: @accent; }
+
+#custom-launcher { color: @accent; padding-left: 12px; font-size: 14pt; }
+#clock {
+    color: @base;
+    background-color: @accent;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 4px 2px;
+    padding: 0 16px;
+}
+#custom-power { color: @red; padding-right: 12px; }
+
+#battery.warning { color: @yellow; }
+#battery.critical, #pulseaudio.muted, #network.disconnected { color: @red; }

@@ -1,0 +1,19 @@
+/* Rofi: palette mellow (petrichor) */
+
+* {
+    bg:        #161617;
+    bg-alt:    #424246;
+    base-bg:   #161617;
+    window-bg: #161617ee;
+    fg-light:  #c9c7cd;
+    fg-dark:   #161617;
+    muted:     #c9c7cd80;
+    red:       #f5a191;
+    orange:    #f0c5a9;
+    yellow:    #e6b99d;
+    green:     #90b99f;
+    aqua:      #ea83a5;
+    blue:      #aca1cf;
+    purple:    #e29eca;
+    accent:    #aca1cf;
+}

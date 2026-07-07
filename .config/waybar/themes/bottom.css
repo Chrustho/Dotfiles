@@ -1,0 +1,46 @@
+/* Waybar: layout BOTTOM (barra piena in basso) - da usare con config.bottom.jsonc */
+
+@define-color base  #16161e;
+@define-color text  #d4d4dc;
+@define-color sub   #6a6a82;
+@define-color accent #9aa7e8;
+@define-color red   #e06c75;
+@define-color yellow #e0af68;
+
+* {
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 12pt;
+    font-weight: 600;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+window#waybar {
+    background-color: @base;
+    color: @text;
+    border-top: 1px solid #26263a;
+}
+
+#custom-launcher, #workspaces, #custom-nightmode, #custom-mako, #custom-clipboard,
+#idle_inhibitor, #window, #clock, #cpu, #memory, #pulseaudio, #backlight,
+#power-profiles-daemon, #network, #battery, #tray, #custom-power {
+    background: transparent;
+    color: @text;
+    padding: 0 8px;
+}
+
+#window { color: @sub; padding-left: 10px; }
+
+#workspaces button { color: @sub; padding: 0 6px; }
+#workspaces button.active { color: @accent; }
+
+#custom-launcher { color: @accent; padding-left: 14px; font-size: 14pt; }
+#clock { color: @text; font-weight: 700; }
+#custom-power { color: @red; padding-right: 14px; }
+
+#battery.warning { color: @yellow; }
+#battery.critical, #pulseaudio.muted, #network.disconnected { color: @red; }

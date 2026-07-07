@@ -1,0 +1,42 @@
+// Niri: tema bio
+
+layout {
+    background-color "transparent"
+
+    border {
+        off
+    }
+
+    focus-ring {
+        on
+        width 3
+        active-gradient from="#4FE3C1" to="#7CF08A" angle=135 in="oklch shorter hue"
+        inactive-color "#274039"
+        urgent-color "#E8736A"
+    }
+
+    shadow {
+        on
+        softness 30
+        spread 5
+        offset x=0 y=8
+        color "#02100B66"
+        inactive-color "transparent"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 18
+    clip-to-geometry true
+}
+
+animations {
+    window-open {
+        duration-ms 350
+        curve "ease-out-quad"
+    }
+    window-close {
+        duration-ms 250
+        curve "ease-out-quad"
+    }
+}

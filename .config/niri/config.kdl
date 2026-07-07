@@ -55,7 +55,7 @@ output "HDMI-A-1" {
 }
 
 layout {
-    gaps 37.5
+    gaps 20
     center-focused-column "never"
     always-center-single-column
 
@@ -107,6 +107,7 @@ window-rule {
 
 binds {
     Mod+Shift+Apostrophe { show-hotkey-overlay; }
+    Mod+Backslash hotkey-overlay-title="Tutte le scorciatoie" { spawn "~/.local/bin/keybinds.sh"; }
 
     Mod+T hotkey-overlay-title="Terminal" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Launcher" { spawn "rofi" "-show" "drun"; }
@@ -118,9 +119,16 @@ binds {
 
     Super+Escape hotkey-overlay-title="Lock Screen" { spawn "hyprlock"; }
     Mod+Alt+W hotkey-overlay-title="Sfondo" { spawn "~/.local/bin/toggle_sfondo.sh"; }
+    Mod+Alt+Period hotkey-overlay-title="Shader successivo" { spawn "~/.local/bin/cicla_shader.sh" "next"; }
+    Mod+Alt+Comma hotkey-overlay-title="Shader precedente" { spawn "~/.local/bin/cicla_shader.sh" "prev"; }
     Mod+Alt+T hotkey-overlay-title="Cambia tema Niri" { spawn "~/.local/bin/niri-theme.sh"; }
     Mod+Alt+R hotkey-overlay-title="Cambia tema Rofi" { spawn "~/.local/bin/rofi-theme.sh"; }
+    Mod+Alt+F hotkey-overlay-title="Forma Rofi" { spawn "~/.local/bin/rofi-layout.sh"; }
     Mod+Alt+B hotkey-overlay-title="Cambia tema Waybar" { spawn "~/.local/bin/waybar-theme.sh"; }
+    Mod+Alt+S hotkey-overlay-title="Tutte le scorciatoie" { spawn "~/.local/bin/keybinds.sh"; }
+    Mod+Alt+G hotkey-overlay-title="Selettore sfondo" { spawn "~/.local/bin/wallpaper-picker.sh"; }
+    Mod+Alt+L hotkey-overlay-title="Layout Waybar" { spawn "~/.local/bin/waybar-layout.sh"; }
+    Mod+Alt+H hotkey-overlay-title="Stile Hyprlock" { spawn "~/.local/bin/hyprlock-theme.sh"; }
     Mod+A hotkey-overlay-title="Waybar" { spawn "killall" "-SIGUSR1" "waybar"; }
     Mod+Shift+B hotkey-overlay-title="Bluetooth Manager" { spawn "blueman-manager"; }
     Mod+Shift+N hotkey-overlay-title="Network Manager" { spawn "networkmanager_dmenu"; }
@@ -255,4 +263,4 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-include "themes/original.kdl"
+include "themes/oh-lucy.kdl"

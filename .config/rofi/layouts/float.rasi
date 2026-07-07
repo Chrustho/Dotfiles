@@ -1,0 +1,106 @@
+/* Rofi layout: FLOAT (card piccola centrata, stile Spotlight) */
+
+@import "colors.rasi"
+
+configuration {
+    modi: "drun,run";
+    font: "IosevkaTerm Nerd Font 14";
+    show-icons: true;
+    icon-theme: "Neuwaita";
+    display-drun: " ";
+    display-run: " ";
+    drun-display-format: "{name}";
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+* {
+    background-color: transparent;
+    text-color: @fg-light;
+}
+
+window {
+    transparency: "real";
+    fullscreen: true;
+    background-color: @window-bg;
+    border: 0px;
+    padding: 0px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ dummy, wrapper, dummy ];
+}
+
+dummy { expand: true; }
+
+wrapper {
+    orientation: vertical;
+    expand: false;
+    margin: 0px calc(50% - 240px);
+    background-color: @base-bg;
+    border: 2px solid;
+    border-color: @accent;
+    border-radius: 20px;
+    padding: 8px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @bg-alt;
+    padding: 14px 18px;
+    spacing: 12px;
+    border-radius: 14px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent;
+    font: "IosevkaTerm Nerd Font Bold 15";
+    vertical-align: 0.5;
+}
+
+entry {
+    placeholder: "Cerca...";
+    placeholder-color: @muted;
+    text-color: @fg-light;
+    vertical-align: 0.5;
+}
+
+listview {
+    background-color: transparent;
+    padding: 10px 4px 4px 4px;
+    columns: 1;
+    lines: 8;
+    spacing: 4px;
+    scrollbar: false;
+    fixed-height: true;
+}
+
+element {
+    padding: 10px 12px;
+    spacing: 12px;
+    border-radius: 12px;
+}
+
+element normal.normal, element alternate.normal {
+    background-color: transparent;
+    text-color: @fg-light;
+}
+
+element selected.normal, element selected.active {
+    background-color: @accent;
+    text-color: @fg-dark;
+}
+
+element-icon {
+    size: 26px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+    highlight: bold;
+}

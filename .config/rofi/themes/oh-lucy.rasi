@@ -1,0 +1,19 @@
+/* Rofi: palette oh-lucy (petrichor) */
+
+* {
+    bg:        #1B1D26;
+    bg-alt:    #515761;
+    base-bg:   #1B1D26;
+    window-bg: #1B1D26ee;
+    fg-light:  #D7D7D7;
+    fg-dark:   #1B1D26;
+    muted:     #D7D7D780;
+    red:       #FB7DA7;
+    orange:    #E39A65;
+    yellow:    #E3CF65;
+    green:     #74C7A4;
+    aqua:      #6CAEC0;
+    blue:      #8DBBD3;
+    purple:    #AF98E6;
+    accent:    #BBBBBB;
+}

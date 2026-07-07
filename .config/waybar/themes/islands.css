@@ -1,0 +1,79 @@
+/* Waybar: tema ISOLE FLOTTANTI (palette Gruvbox Material soft) */
+/* Da usare con config.islands.jsonc */
+
+@define-color gm_base   #1d2021;
+@define-color gm_panel  #32302f;
+@define-color gm_text   #d4be98;
+@define-color gm_muted  #7c6f64;
+@define-color gm_yellow #d8a657;
+@define-color gm_aqua   #89b482;
+@define-color gm_blue   #7daea3;
+@define-color gm_red    #ea6962;
+
+* {
+    border: none;
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 12pt;
+    font-weight: 600;
+    min-height: 0;
+    box-shadow: none;
+}
+
+/* Barra trasparente: si vedono solo le isole */
+window#waybar {
+    background-color: transparent;
+}
+
+/* Le tre isole = le sezioni della barra */
+.modules-left, .modules-center, .modules-right {
+    background-color: @gm_base;
+    border: 1px solid @gm_panel;
+    border-radius: 16px;
+    padding: 0 6px;
+    margin: 3px 0;
+}
+
+/* Moduli interni: trasparenti, ereditano lo sfondo dell'isola */
+#custom-launcher, #workspaces, #custom-nightmode, #custom-mako, #idle_inhibitor,
+#window, #clock, #custom-clipboard, #cpu, #memory, #pulseaudio,
+#backlight, #power-profiles-daemon, #network, #battery, #tray, #custom-power {
+    background-color: transparent;
+    color: @gm_text;
+    padding: 0 8px;
+}
+
+#window {
+    color: @gm_muted;
+    padding-left: 8px;
+}
+
+#workspaces button {
+    color: @gm_muted;
+    padding: 0 6px;
+}
+#workspaces button.active {
+    color: @gm_aqua;
+}
+
+#custom-launcher {
+    color: @gm_yellow;
+    font-size: 14pt;
+    padding-left: 14px;
+}
+#clock {
+    color: @gm_base;
+    background-color: @gm_yellow;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 5px 4px;
+    padding: 0 16px;
+}
+#custom-power {
+    color: @gm_red;
+    padding-right: 14px;
+}
+
+#battery.warning { color: @gm_yellow; }
+#battery.critical, #pulseaudio.muted, #network.disconnected {
+    color: @gm_red;
+}

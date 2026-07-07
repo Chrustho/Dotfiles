@@ -1,0 +1,19 @@
+/* Rofi: palette neochor (petrichor) */
+
+* {
+    bg:        #242729;
+    bg-alt:    #44444c;
+    base-bg:   #242729;
+    window-bg: #242729ee;
+    fg-light:  #dedede;
+    fg-dark:   #242729;
+    muted:     #dedede80;
+    red:       #9c6b7a;
+    orange:    #e0cca8;
+    yellow:    #c4afa2;
+    green:     #8a9887;
+    aqua:      #86a3a6;
+    blue:      #8d96bd;
+    purple:    #b694b6;
+    accent:    #8a9887;
+}

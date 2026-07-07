@@ -1,0 +1,31 @@
+// Niri: tema periwinkle (petrichor)
+
+layout {
+    background-color "#28242d"
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 2
+        active-color "#9894c8"
+        inactive-color "#3d3744"
+        urgent-color "#a3697d"
+    }
+
+    shadow {
+        on
+        softness 20
+        spread 2
+        offset x=0 y=5
+        draw-behind-window false
+        color "#0007"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}

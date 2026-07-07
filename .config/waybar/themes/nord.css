@@ -1,0 +1,54 @@
+/* Waybar: stile NORD (freddo, minimale, piatto) */
+
+@define-color base  #2e3440;
+@define-color panel #3b4252;
+@define-color text  #d8dee9;
+@define-color sub   #616e88;
+@define-color frost #88c0d0;
+@define-color red   #bf616a;
+@define-color yellow #ebcb8b;
+
+* {
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 12pt;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+window#waybar {
+    background-color: @base;
+    color: @text;
+    border-bottom: 1px solid @panel;
+}
+
+#custom-launcher, #workspaces, #custom-nightmode, #custom-mako, #custom-clipboard,
+#idle_inhibitor, #window, #clock, #cpu, #memory, #pulseaudio, #backlight,
+#power-profiles-daemon, #network, #battery, #tray, #custom-power {
+    background: transparent;
+    color: @text;
+    padding: 0 8px;
+}
+
+#window { color: @sub; padding-left: 10px; }
+
+#workspaces button { color: @sub; padding: 0 6px; }
+#workspaces button.active { color: @frost; }
+
+#custom-launcher { color: @frost; padding-left: 14px; font-size: 14pt; }
+#clock { color: @text; font-weight: 700; }
+#custom-power { color: @red; padding-right: 14px; }
+
+#battery.warning { color: @yellow; }
+#battery.critical, #pulseaudio.muted, #network.disconnected { color: @red; }
+
+#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
+#custom-c_arrow1, #custom-c_arrow2,
+#custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
+#custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
+    color: transparent; background: transparent; font-size: 0; padding: 0; margin: 0;
+}

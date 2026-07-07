@@ -1,0 +1,31 @@
+// Niri: tema mellow (petrichor)
+
+layout {
+    background-color "#161617"
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 2
+        active-color "#aca1cf"
+        inactive-color "#424246"
+        urgent-color "#f5a191"
+    }
+
+    shadow {
+        on
+        softness 20
+        spread 2
+        offset x=0 y=5
+        draw-behind-window false
+        color "#0007"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}

@@ -1,0 +1,101 @@
+/* Waybar: tema dechor (petrichor) */
+
+@define-color background #0E0E0E;
+@define-color foreground #c7c9cc;
+@define-color accent     #c7c9cc;
+@define-color color1     #9c6b7a;
+@define-color color3     #c4afa2;
+@define-color color8     #44444c;
+
+* {
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    transition: none;
+}
+
+window#waybar,
+tooltip,
+tooltip label {
+    background-color: alpha(@background, 0.9);
+    color: @foreground;
+}
+tooltip label { margin: -5px -3px; }
+
+/* separatori powerline: non usati nel look piatto di petrichor */
+#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
+#custom-c_arrow1, #custom-c_arrow2,
+#custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
+#custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
+    color: transparent;
+    background: transparent;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#custom-launcher,
+#clock,
+#custom-power,
+#custom-nightmode,
+#custom-mako,
+#custom-clipboard,
+#idle_inhibitor,
+#cpu,
+#memory,
+#pulseaudio,
+#backlight,
+#power-profiles-daemon,
+#network,
+#battery,
+#window,
+window#waybar.empty #window {
+    padding: 0 12px;
+    background-color: transparent;
+    color: @foreground;
+}
+
+#tray {
+    padding: 0 9px;
+    background-color: shade(@background, 1.7);
+}
+
+#workspaces button {
+    padding: 0 4px;
+    background-color: transparent;
+    color: shade(@foreground, 0.5);
+}
+#workspaces button.active,
+#workspaces button.focused {
+    color: @foreground;
+}
+
+#battery.warning { color: @color3; }
+#battery.critical,
+#pulseaudio.muted,
+#network.disconnected {
+    color: @color1;
+}
+
+#custom-launcher:hover,
+#clock:hover,
+#custom-power:hover,
+#custom-nightmode:hover,
+#custom-mako:hover,
+#custom-clipboard:hover,
+#idle_inhibitor:hover,
+#cpu:hover,
+#memory:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#power-profiles-daemon:hover,
+#network:hover,
+#battery:hover,
+#workspaces button:hover {
+    background-color: shade(@background, 1.7);
+}

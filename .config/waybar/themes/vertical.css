@@ -1,0 +1,69 @@
+/* Waybar: layout VERTICALE (Gruvbox Material soft) */
+/* Da usare con config.vertical.jsonc */
+
+@define-color gm_base   #1d2021;
+@define-color gm_panel  #32302f;
+@define-color gm_text   #d4be98;
+@define-color gm_muted  #7c6f64;
+@define-color gm_yellow #d8a657;
+@define-color gm_aqua   #89b482;
+@define-color gm_red    #ea6962;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 15pt;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+window#waybar {
+    background-color: @gm_base;
+    color: @gm_text;
+    border-right: 1px solid @gm_panel;
+}
+
+#custom-launcher, #idle_inhibitor, #cpu, #memory, #pulseaudio, #battery {
+    background-color: transparent;
+    color: @gm_text;
+    padding: 12px 0;
+}
+
+#custom-launcher {
+    color: @gm_yellow;
+    font-size: 18pt;
+    padding: 16px 0;
+}
+
+#workspaces {
+    margin: 8px 0;
+}
+#workspaces button {
+    color: @gm_muted;
+    padding: 6px 0;
+}
+#workspaces button.active {
+    color: @gm_aqua;
+}
+
+#clock {
+    background-color: @gm_yellow;
+    color: @gm_base;
+    font-size: 14pt;
+    font-weight: 700;
+    padding: 10px 0;
+    margin: 10px 6px;
+    border-radius: 12px;
+}
+
+#custom-power {
+    color: @gm_red;
+    font-size: 17pt;
+    padding: 16px 0 18px 0;
+}
+
+#battery.warning { color: @gm_yellow; }
+#battery.critical, #pulseaudio.muted { color: @gm_red; }

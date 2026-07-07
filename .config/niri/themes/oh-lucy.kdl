@@ -1,0 +1,31 @@
+// Niri: tema oh-lucy (petrichor)
+
+layout {
+    background-color "#1B1D26"
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 2
+        active-color "#BBBBBB"
+        inactive-color "#515761"
+        urgent-color "#FB7DA7"
+    }
+
+    shadow {
+        on
+        softness 20
+        spread 2
+        offset x=0 y=5
+        draw-behind-window false
+        color "#0007"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}

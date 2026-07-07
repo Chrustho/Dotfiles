@@ -1,0 +1,31 @@
+// Niri: tema neochor (petrichor)
+
+layout {
+    background-color "#242729"
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 2
+        active-color "#8a9887"
+        inactive-color "#44444c"
+        urgent-color "#9c6b7a"
+    }
+
+    shadow {
+        on
+        softness 20
+        spread 2
+        offset x=0 y=5
+        draw-behind-window false
+        color "#0007"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}

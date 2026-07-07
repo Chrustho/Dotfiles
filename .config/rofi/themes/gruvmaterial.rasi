@@ -1,0 +1,19 @@
+/* Rofi: tema gruvmaterial (Gruvbox Material soft) */
+
+* {
+    bg:        #282828;
+    bg-alt:    #32302f;
+    base-bg:   #1d2021;
+    window-bg: #1d2021e6;
+    fg-light:  #d4be98;
+    fg-dark:   #1d2021;
+    muted:     #7c6f64;
+    red:       #ea6962;
+    orange:    #e78a4e;
+    yellow:    #d8a657;
+    green:     #a9b665;
+    aqua:      #89b482;
+    blue:      #7daea3;
+    purple:    #d3869b;
+    accent:    #d8a657;
+}

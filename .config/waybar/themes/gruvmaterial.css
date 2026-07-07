@@ -1,0 +1,75 @@
+/* Waybar: tema gruvmaterial (Gruvbox Material soft) - barra piena */
+
+@define-color gm_base   #1d2021;
+@define-color gm_panel  #32302f;
+@define-color gm_text   #d4be98;
+@define-color gm_muted  #7c6f64;
+@define-color gm_yellow #d8a657;
+@define-color gm_aqua   #89b482;
+@define-color gm_blue   #7daea3;
+@define-color gm_red    #ea6962;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 12pt;
+    font-weight: 600;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+window#waybar {
+    background-color: @gm_base;
+    color: @gm_text;
+    border-bottom: 1px solid @gm_panel;
+}
+
+#custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
+#custom-c_arrow1, #custom-c_arrow2,
+#custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
+#custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
+    color: transparent;
+    background: transparent;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#custom-nightmode, #custom-mako, #custom-clipboard, #idle_inhibitor,
+#cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon,
+#network, #battery, #tray, #workspaces {
+    background-color: transparent;
+    color: @gm_text;
+    padding: 0 8px;
+}
+
+#window {
+    color: @gm_muted;
+    background: transparent;
+    padding-left: 10px;
+}
+
+#workspaces button {
+    color: @gm_muted;
+    padding: 0 6px;
+}
+#workspaces button.active {
+    color: @gm_aqua;
+}
+
+#custom-launcher, #clock, #custom-power {
+    background-color: @gm_yellow;
+    color: @gm_base;
+    font-weight: 700;
+    padding: 0 14px;
+}
+#custom-power { padding-right: 16px; }
+#custom-launcher { padding-left: 16px; }
+
+#battery.warning { color: @gm_yellow; }
+#battery.critical, #pulseaudio.muted, #network.disconnected {
+    color: @gm_red;
+}

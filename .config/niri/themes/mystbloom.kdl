@@ -1,0 +1,31 @@
+// Niri: tema mystbloom (petrichor)
+
+layout {
+    background-color "#141416"
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 2
+        active-color "#cda2d4"
+        inactive-color "#3d3744"
+        urgent-color "#a3697d"
+    }
+
+    shadow {
+        on
+        softness 20
+        spread 2
+        offset x=0 y=5
+        draw-behind-window false
+        color "#0007"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
