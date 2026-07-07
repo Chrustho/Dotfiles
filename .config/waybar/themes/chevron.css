@@ -15,7 +15,7 @@
     border: none;
     border-radius: 0;
     font-family: "IosevkaTerm Nerd Font", monospace;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 600;
     min-height: 0;
     margin: 0;
@@ -33,37 +33,37 @@ window#waybar {
 #custom-clipboard, #memory, #backlight, #network, #tray {
     background-color: @seg_a;
     color: @text;
-    padding: 0 8px;
+    padding: 0 9px;
 }
 #workspaces, #custom-mako,
 #cpu, #pulseaudio, #power-profiles-daemon, #battery {
     background-color: @seg_b;
     color: @text;
-    padding: 0 8px;
+    padding: 0 9px;
 }
 
 #window {
     background-color: transparent;
     color: @muted;
-    padding-left: 10px;
+    padding-left: 12px;
 }
 
-#workspaces button { color: @muted; padding: 0 6px; }
+#workspaces button { color: @muted; padding: 0 7px; }
 #workspaces button.active { color: @aqua; }
 
-#custom-launcher { color: @accent; font-size: 14pt; padding-left: 14px; }
+#custom-launcher { color: @accent; font-size: 16pt; padding-left: 16px; }
 
 /* Clock e power: segmenti accento con cap a punta */
 #clock {
     background-color: @accent;
     color: @seg_a;
     font-weight: 700;
-    padding: 0 12px;
+    padding: 0 14px;
 }
 #custom-power {
     background-color: @accent;
     color: @seg_a;
-    padding-right: 14px;
+    padding-right: 16px;
 }
 
 /* --- Frecce: attivate (font-size > 0) --- */
@@ -71,7 +71,7 @@ window#waybar {
 #custom-c_arrow1, #custom-c_arrow2,
 #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
 #custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
-    font-size: 17pt;
+    font-size: 20pt;
     padding: 0;
     margin: 0;
 }

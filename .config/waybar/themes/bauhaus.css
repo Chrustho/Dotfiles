@@ -13,7 +13,7 @@
     border: none;
     border-radius: 0;
     font-family: "IosevkaTerm Nerd Font", monospace;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 700;
     min-height: 0;
     margin: 0;
@@ -43,18 +43,18 @@ window#waybar {
 #network, #battery, #tray, #workspaces {
     background-color: transparent;
     color: @b_text;
-    padding: 0 8px;
+    padding: 0 9px;
 }
 
 #window {
     color: @b_muted;
     background: transparent;
-    padding-left: 10px;
+    padding-left: 12px;
 }
 
 #workspaces button {
     color: @b_muted;
-    padding: 0 6px;
+    padding: 0 7px;
 }
 #workspaces button.active {
     color: @b_red;
@@ -64,12 +64,12 @@ window#waybar {
     background-color: @b_blue;
     color: @b_base;
     font-weight: 700;
-    padding: 0 14px;
+    padding: 0 16px;
     border-top: 2px solid @b_ink;
     border-bottom: 2px solid @b_ink;
 }
-#custom-power { padding-right: 16px; }
-#custom-launcher { padding-left: 16px; }
+#custom-power { padding-right: 18px; }
+#custom-launcher { padding-left: 18px; }
 
 #battery.warning { color: @b_yellow; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {

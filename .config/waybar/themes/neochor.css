@@ -9,7 +9,7 @@
 
 * {
     font-family: "IosevkaTerm Nerd Font", monospace;
-    font-size: 13px;
+    font-size: 15px;
     border: none;
     border-radius: 0;
     min-height: 0;
@@ -25,7 +25,7 @@ tooltip label {
     background-color: alpha(@background, 0.9);
     color: @foreground;
 }
-tooltip label { margin: -5px -3px; }
+tooltip label { margin: -6px -3px; }
 
 /* separatori powerline: non usati nel look piatto di petrichor */
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
@@ -55,18 +55,18 @@ tooltip label { margin: -5px -3px; }
 #battery,
 #window,
 window#waybar.empty #window {
-    padding: 0 12px;
+    padding: 0 14px;
     background-color: transparent;
     color: @foreground;
 }
 
 #tray {
-    padding: 0 9px;
+    padding: 0 10px;
     background-color: shade(@background, 1.7);
 }
 
 #workspaces button {
-    padding: 0 4px;
+    padding: 0 5px;
     background-color: transparent;
     color: shade(@foreground, 0.5);
 }

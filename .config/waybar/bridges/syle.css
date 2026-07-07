@@ -10,7 +10,7 @@
     border-radius: 0;
 
     font-family: "Share Tech Mono", "Rajdhani", "SpaceMono Nerd Font", monospace;
-    font-size: 10pt;
+    font-size: 12pt;
     font-weight: 700;
     min-height: 0;
     margin: 0;
@@ -37,12 +37,12 @@ window#waybar {
 #custom-os_label {
     background-color: @ds_yellow;
     color: #000000;
-    padding: 0 15px;
-    font-size: 11pt;
+    padding: 0 17px;
+    font-size: 13pt;
 }
 
 #clock {
     background-color: @ds_yellow;
     color: #000000;
-    padding: 2px 15px 0 15px;
+    padding: 2px 17px 0 17px;
 }

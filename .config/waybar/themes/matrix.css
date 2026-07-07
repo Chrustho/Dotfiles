@@ -11,13 +11,13 @@
     border: none;
     border-radius: 0;
     font-family: "Share Tech Mono", "Iosevka Nerd Font", monospace;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 600;
     min-height: 0;
     margin: 0;
     padding: 0;
     box-shadow: none;
-    text-shadow: 0 0 4px @mx_text;
+    text-shadow: 0 0 5px @mx_text;
 }
 
 window#waybar {
@@ -43,18 +43,18 @@ window#waybar {
 #network, #battery, #tray, #workspaces {
     background-color: transparent;
     color: @mx_text;
-    padding: 0 8px;
+    padding: 0 9px;
 }
 
 #window {
     color: @mx_muted;
     background: transparent;
-    padding-left: 10px;
+    padding-left: 12px;
 }
 
 #workspaces button {
     color: @mx_muted;
-    padding: 0 6px;
+    padding: 0 7px;
 }
 #workspaces button.active {
     color: @mx_bright;
@@ -64,11 +64,11 @@ window#waybar {
     background-color: @mx_text;
     color: @mx_base;
     font-weight: 700;
-    padding: 0 14px;
+    padding: 0 16px;
     text-shadow: none;
 }
-#custom-power { padding-right: 16px; }
-#custom-launcher { padding-left: 16px; }
+#custom-power { padding-right: 18px; }
+#custom-launcher { padding-left: 18px; }
 
 #battery.warning { color: @mx_bright; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {

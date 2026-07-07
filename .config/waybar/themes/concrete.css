@@ -14,7 +14,7 @@
     border: none;
     border-radius: 0;
     font-family: "IosevkaTerm Nerd Font", monospace;
-    font-size: 11pt;
+    font-size: 13pt;
     font-weight: 700;
     min-height: 0;
     margin: 0;
@@ -44,18 +44,18 @@ window#waybar {
 #network, #battery, #tray, #workspaces {
     background-color: transparent;
     color: @c_text;
-    padding: 0 8px;
+    padding: 0 9px;
 }
 
 #window {
     color: @c_muted;
     background: transparent;
-    padding-left: 10px;
+    padding-left: 12px;
 }
 
 #workspaces button {
     color: @c_muted;
-    padding: 0 6px;
+    padding: 0 7px;
 }
 #workspaces button.active {
     color: @c_orange;
@@ -65,7 +65,7 @@ window#waybar {
     background-color: @c_chrome;
     color: #161616;
     font-weight: 700;
-    padding: 0 13px;
+    padding: 0 15px;
     border-top: 2px solid @c_bevel_l;
     border-left: 2px solid @c_bevel_l;
     border-bottom: 2px solid @c_bevel_d;

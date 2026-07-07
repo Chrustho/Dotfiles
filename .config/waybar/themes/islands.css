@@ -13,7 +13,7 @@
 * {
     border: none;
     font-family: "IosevkaTerm Nerd Font", monospace;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 600;
     min-height: 0;
     box-shadow: none;
@@ -28,8 +28,8 @@ window#waybar {
 .modules-left, .modules-center, .modules-right {
     background-color: @gm_base;
     border: 1px solid @gm_panel;
-    border-radius: 16px;
-    padding: 0 6px;
+    border-radius: 18px;
+    padding: 0 7px;
     margin: 3px 0;
 }
 
@@ -39,17 +39,17 @@ window#waybar {
 #backlight, #power-profiles-daemon, #network, #battery, #tray, #custom-power {
     background-color: transparent;
     color: @gm_text;
-    padding: 0 8px;
+    padding: 0 9px;
 }
 
 #window {
     color: @gm_muted;
-    padding-left: 8px;
+    padding-left: 9px;
 }
 
 #workspaces button {
     color: @gm_muted;
-    padding: 0 6px;
+    padding: 0 7px;
 }
 #workspaces button.active {
     color: @gm_aqua;
@@ -57,20 +57,20 @@ window#waybar {
 
 #custom-launcher {
     color: @gm_yellow;
-    font-size: 14pt;
-    padding-left: 14px;
+    font-size: 16pt;
+    padding-left: 16px;
 }
 #clock {
     color: @gm_base;
     background-color: @gm_yellow;
     font-weight: 700;
-    border-radius: 12px;
-    margin: 5px 4px;
-    padding: 0 16px;
+    border-radius: 14px;
+    margin: 6px 5px;
+    padding: 0 18px;
 }
 #custom-power {
     color: @gm_red;
-    padding-right: 14px;
+    padding-right: 16px;
 }
 
 #battery.warning { color: @gm_yellow; }

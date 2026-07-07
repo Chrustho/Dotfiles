@@ -13,7 +13,7 @@
     border: none;
     border-radius: 0;
     font-family: "IosevkaTerm Nerd Font", monospace;
-    font-size: 15pt;
+    font-size: 17pt;
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -29,21 +29,21 @@ window#waybar {
 #custom-launcher, #idle_inhibitor, #cpu, #memory, #pulseaudio, #battery {
     background-color: transparent;
     color: @gm_text;
-    padding: 12px 0;
+    padding: 14px 0;
 }
 
 #custom-launcher {
     color: @gm_yellow;
-    font-size: 18pt;
-    padding: 16px 0;
+    font-size: 21pt;
+    padding: 18px 0;
 }
 
 #workspaces {
-    margin: 8px 0;
+    margin: 9px 0;
 }
 #workspaces button {
     color: @gm_muted;
-    padding: 6px 0;
+    padding: 7px 0;
 }
 #workspaces button.active {
     color: @gm_aqua;
@@ -52,17 +52,17 @@ window#waybar {
 #clock {
     background-color: @gm_yellow;
     color: @gm_base;
-    font-size: 14pt;
+    font-size: 16pt;
     font-weight: 700;
-    padding: 10px 0;
-    margin: 10px 6px;
-    border-radius: 12px;
+    padding: 12px 0;
+    margin: 12px 7px;
+    border-radius: 14px;
 }
 
 #custom-power {
     color: @gm_red;
-    font-size: 17pt;
-    padding: 16px 0 18px 0;
+    font-size: 20pt;
+    padding: 18px 0 21px 0;
 }
 
 #battery.warning { color: @gm_yellow; }

@@ -1,31 +1,33 @@
-/* Waybar: stile */
+/* Waybar: tema oh-lucy (petrichor) */
 
-@define-color ds_base   #1d1d22;
-@define-color ds_panel  #34343c;
-@define-color ds_text   #cab4a1;
-@define-color ds_muted  #6b6b73;
-@define-color ds_gold   #b5985f;
-@define-color ds_cyan   #6f9ba3;
-@define-color ds_danger #b5564f;
+@define-color background #1B1D26;
+@define-color foreground #D7D7D7;
+@define-color accent     #BBBBBB;
+@define-color color1     #FB7DA7;
+@define-color color3     #E3CF65;
+@define-color color8     #515761;
 
 * {
+    font-family: "IosevkaTerm Nerd Font", monospace;
+    font-size: 15px;
     border: none;
     border-radius: 0;
-    font-family: "Rajdhani", "Chakra Petch", "Share Tech Mono", "Iosevka Nerd Font", monospace;
-    font-size: 12pt;
-    font-weight: 600;
     min-height: 0;
     margin: 0;
     padding: 0;
     box-shadow: none;
+    transition: none;
 }
 
-window#waybar {
-    background-color: @ds_base;
-    color: @ds_text;
-    border-bottom: 1px solid @ds_panel;
+window#waybar,
+tooltip,
+tooltip label {
+    background-color: alpha(@background, 0.9);
+    color: @foreground;
 }
+tooltip label { margin: -6px -3px; }
 
+/* separatori powerline: non usati nel look piatto di petrichor */
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,
 #custom-c_arrow1, #custom-c_arrow2,
 #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
@@ -37,38 +39,63 @@ window#waybar {
     margin: 0;
 }
 
-#custom-nightmode, #custom-mako, #custom-clipboard, #idle_inhibitor,
-#cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon,
-#network, #battery, #tray, #workspaces {
-    background-color: transparent;
-    color: @ds_text;
+#custom-launcher,
+#clock,
+#custom-power,
+#custom-nightmode,
+#custom-mako,
+#custom-clipboard,
+#idle_inhibitor,
+#cpu,
+#memory,
+#pulseaudio,
+#backlight,
+#power-profiles-daemon,
+#network,
+#battery,
+#window,
+window#waybar.empty #window {
     padding: 0 8px;
+    background-color: transparent;
+    color: @foreground;
 }
 
-#window {
-    color: @ds_muted;
-    background: transparent;
-    padding-left: 10px;
+#tray {
+    padding: 0 6px;
+    background-color: shade(@background, 1.7);
 }
 
 #workspaces button {
-    color: @ds_muted;
-    padding: 0 6px;
+    padding: 0 3px;
+    background-color: transparent;
+    color: shade(@foreground, 0.5);
 }
-#workspaces button.active {
-    color: @ds_cyan;
+#workspaces button.active,
+#workspaces button.focused {
+    color: @foreground;
 }
 
-#custom-launcher, #clock, #custom-power {
-    background-color: @ds_gold;
-    color: @ds_base;
-    font-weight: 700;
-    padding: 0 14px;
+#battery.warning { color: @color3; }
+#battery.critical,
+#pulseaudio.muted,
+#network.disconnected {
+    color: @color1;
 }
-#custom-power { padding-right: 16px; }
-#custom-launcher { padding-left: 16px; }
 
-#battery.warning { color: @ds_gold; }
-#battery.critical, #pulseaudio.muted, #network.disconnected {
-    color: @ds_danger;
+#custom-launcher:hover,
+#clock:hover,
+#custom-power:hover,
+#custom-nightmode:hover,
+#custom-mako:hover,
+#custom-clipboard:hover,
+#idle_inhibitor:hover,
+#cpu:hover,
+#memory:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#power-profiles-daemon:hover,
+#network:hover,
+#battery:hover,
+#workspaces button:hover {
+    background-color: shade(@background, 1.7);
 }

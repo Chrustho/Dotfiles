@@ -10,7 +10,7 @@
 
 * {
     font-family: "IosevkaTerm Nerd Font", monospace;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 500;
     border: none;
     border-radius: 0;
@@ -31,17 +31,17 @@ window#waybar {
 #power-profiles-daemon, #network, #battery, #tray, #custom-power {
     background: transparent;
     color: @text;
-    padding: 0 8px;
+    padding: 0 9px;
 }
 
-#window { color: @sub; padding-left: 10px; }
+#window { color: @sub; padding-left: 12px; }
 
-#workspaces button { color: @sub; padding: 0 6px; }
+#workspaces button { color: @sub; padding: 0 7px; }
 #workspaces button.active { color: @frost; }
 
-#custom-launcher { color: @frost; padding-left: 14px; font-size: 14pt; }
+#custom-launcher { color: @frost; padding-left: 16px; font-size: 16pt; }
 #clock { color: @text; font-weight: 700; }
-#custom-power { color: @red; padding-right: 14px; }
+#custom-power { color: @red; padding-right: 16px; }
 
 #battery.warning { color: @yellow; }
 #battery.critical, #pulseaudio.muted, #network.disconnected { color: @red; }

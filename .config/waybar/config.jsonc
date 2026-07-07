@@ -3,7 +3,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 32,
+    "height": 37,
     "spacing": 0,
     "reload_style_on_change": true,
     "modules-left": [
@@ -89,7 +89,7 @@
         "format": " {}",
         "max-length": 40,
         "icon": true,
-        "icon-size": 16
+        "icon-size": 18
     },
     "clock": {
         "interval": 1,
@@ -150,7 +150,7 @@
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "tray": {
-        "spacing": 8
+        "spacing": 9
     },
     "custom/power": {
         "format": "   ",

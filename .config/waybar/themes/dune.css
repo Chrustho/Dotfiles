@@ -12,7 +12,7 @@
     border: none;
     border-radius: 0;
     font-family: "Rajdhani", "Chakra Petch", "Share Tech Mono", "Iosevka Nerd Font", monospace;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 600;
     min-height: 0;
     margin: 0;
@@ -42,18 +42,18 @@ window#waybar {
 #network, #battery, #tray, #workspaces {
     background-color: transparent;
     color: @du_text;
-    padding: 0 8px;
+    padding: 0 9px;
 }
 
 #window {
     color: @du_muted;
     background: transparent;
-    padding-left: 10px;
+    padding-left: 12px;
 }
 
 #workspaces button {
     color: @du_muted;
-    padding: 0 6px;
+    padding: 0 7px;
 }
 #workspaces button.active {
     color: @du_blue;
@@ -63,10 +63,10 @@ window#waybar {
     background-color: @du_gold;
     color: @du_base;
     font-weight: 700;
-    padding: 0 14px;
+    padding: 0 16px;
 }
-#custom-power { padding-right: 16px; }
-#custom-launcher { padding-left: 16px; }
+#custom-power { padding-right: 18px; }
+#custom-launcher { padding-left: 18px; }
 
 #battery.warning { color: @du_gold; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {

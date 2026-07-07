@@ -11,7 +11,7 @@
 
 * {
     font-family: "IosevkaTerm Nerd Font", monospace;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 600;
     border: none;
     min-height: 0;
@@ -28,9 +28,9 @@ window#waybar {
 .modules-left, .modules-center, .modules-right {
     background-color: @bg;
     border: 1px solid @panel;
-    border-radius: 14px;
-    margin: 5px 0;
-    padding: 0 4px;
+    border-radius: 16px;
+    margin: 6px 0;
+    padding: 0 5px;
 }
 
 #custom-launcher, #workspaces, #custom-nightmode, #custom-mako, #custom-clipboard,
@@ -38,24 +38,24 @@ window#waybar {
 #power-profiles-daemon, #network, #battery, #tray, #custom-power {
     background: transparent;
     color: @text;
-    padding: 0 8px;
+    padding: 0 9px;
 }
 
-#window { color: @sub; padding-left: 10px; }
+#window { color: @sub; padding-left: 12px; }
 
-#workspaces button { color: @sub; padding: 0 6px; }
+#workspaces button { color: @sub; padding: 0 7px; }
 #workspaces button.active { color: @blue; }
 
-#custom-launcher { color: @purple; padding-left: 14px; font-size: 14pt; }
+#custom-launcher { color: @purple; padding-left: 16px; font-size: 16pt; }
 #clock {
     color: @bg;
     background-color: @blue;
     font-weight: 700;
-    border-radius: 10px;
-    margin: 5px 4px;
-    padding: 0 14px;
+    border-radius: 12px;
+    margin: 6px 5px;
+    padding: 0 16px;
 }
-#custom-power { color: @red; padding-right: 14px; }
+#custom-power { color: @red; padding-right: 16px; }
 
 #battery.warning { color: @yellow; }
 #battery.critical, #pulseaudio.muted, #network.disconnected { color: @red; }

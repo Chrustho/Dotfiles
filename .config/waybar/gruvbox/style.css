@@ -17,7 +17,7 @@
     border: none;
     border-radius: 0;
     font-family: "IosevkaTerm Nerd Font", "SpaceMono Nerd Font", sans-serif;
-    font-size: 12pt;
+    font-size: 14pt;
     min-height: 0;
     margin: 0;
     padding: 0;
@@ -29,18 +29,18 @@ window#waybar {
 
 #custom-launcher, #workspaces, #clock, #custom-nightmode, #custom-clipboard, #custom-mako, #idle_inhibitor, #cpu, #memory, #pulseaudio, #backlight, #power-profiles-daemon, #network, #battery, #tray {
     color: @fg_dark;
-    padding: 0 4px;
+    padding: 0 5px;
 }
 
 #window {
     color: @fg_light;
     background: transparent;
-    padding-left: 8px;
+    padding-left: 9px;
 }
 
 #workspaces button {
     color: @fg_light;
-    padding: 0 4px;
+    padding: 0 5px;
 }
 #workspaces button.active {
     color: #ffffff;
@@ -62,10 +62,10 @@ window#waybar {
 #power-profiles-daemon { background: @orange; }
 #network { background: @red; }
 #battery { background: @green; }
-#tray { background: @bg_alt; padding: 0 10px; }
+#tray { background: @bg_alt; padding: 0 12px; }
 
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5, #custom-c_arrow1, #custom-c_arrow2, #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5, #custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
-    font-size: 16pt;
+    font-size: 18pt;
 }
 
 #custom-l_arrow1 { color: @blue; background: @bg_alt; }
@@ -91,5 +91,5 @@ window#waybar {
 #custom-power {
     background: @red;
     color: @bg;
-    padding-right: 8px;
+    padding-right: 9px;
 }

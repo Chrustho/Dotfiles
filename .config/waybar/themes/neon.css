@@ -10,7 +10,7 @@
 
 * {
     font-family: "IosevkaTerm Nerd Font", monospace;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 700;
     border: none;
     border-radius: 0;
@@ -31,22 +31,22 @@ window#waybar {
 #power-profiles-daemon, #network, #battery, #tray, #custom-power {
     background: transparent;
     color: @cyan;
-    padding: 0 8px;
-    text-shadow: 0 0 6px currentColor;
+    padding: 0 9px;
+    text-shadow: 0 0 7px currentColor;
 }
 
-#window { color: @green; padding-left: 10px; }
+#window { color: @green; padding-left: 12px; }
 
-#workspaces button { color: #3a4a5a; padding: 0 6px; text-shadow: none; }
-#workspaces button.active { color: @pink; text-shadow: 0 0 8px @pink; }
+#workspaces button { color: #3a4a5a; padding: 0 7px; text-shadow: none; }
+#workspaces button.active { color: @pink; text-shadow: 0 0 9px @pink; }
 
-#custom-launcher { color: @green; padding-left: 14px; font-size: 14pt; }
+#custom-launcher { color: @green; padding-left: 16px; font-size: 16pt; }
 #clock { color: @pink; }
-#custom-power { color: @pink; padding-right: 14px; }
+#custom-power { color: @pink; padding-right: 16px; }
 
 #battery.warning { color: @yellow; }
 #battery.critical, #pulseaudio.muted, #network.disconnected {
-    color: @pink; text-shadow: 0 0 10px @pink;
+    color: @pink; text-shadow: 0 0 12px @pink;
 }
 
 #custom-l_arrow1, #custom-l_arrow2, #custom-l_arrow3, #custom-l_arrow4, #custom-l_arrow5,

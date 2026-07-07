@@ -14,7 +14,7 @@
 
 * {
     font-family: "IosevkaTerm Nerd Font", monospace;
-    font-size: 12pt;
+    font-size: 14pt;
     border: none;
     border-radius: 0;
     min-height: 0;
@@ -31,17 +31,17 @@ window#waybar {
 #custom-clipboard, #cpu, #memory, #pulseaudio, #backlight,
 #power-profiles-daemon, #network, #battery {
     color: @base;
-    padding: 0 6px;
+    padding: 0 7px;
 }
 
-#window { color: @text; background: transparent; padding-left: 8px; }
+#window { color: @text; background: transparent; padding-left: 9px; }
 
 #workspaces { background: @overlay; }
-#workspaces button { color: @text; padding: 0 6px; }
+#workspaces button { color: @text; padding: 0 7px; }
 #workspaces button.active { color: #ffffff; }
 
 /* --- colori di sfondo dei segmenti --- */
-#custom-launcher { background: @foam; padding-left: 14px; }
+#custom-launcher { background: @foam; padding-left: 16px; }
 #custom-nightmode { background: @iris; }
 #custom-mako { background: @love; }
 #idle_inhibitor { background: @gold; }
@@ -56,8 +56,8 @@ window#waybar {
 #power-profiles-daemon { background: @rose; }
 #network { background: @love; }
 #battery { background: @pine; color: @text; }
-#tray { background: @overlay; padding: 0 10px; }
-#custom-power { background: @love; color: @base; padding-right: 14px; }
+#tray { background: @overlay; padding: 0 12px; }
+#custom-power { background: @love; color: @base; padding-right: 16px; }
 
 #battery.warning { color: @gold; }
 #battery.critical, #pulseaudio.muted, #network.disconnected { color: @base; }
@@ -67,7 +67,7 @@ window#waybar {
 #custom-c_arrow1, #custom-c_arrow2,
 #custom-r_arrow1, #custom-r_arrow2, #custom-r_arrow3, #custom-r_arrow4, #custom-r_arrow5,
 #custom-r_arrow6, #custom-r_arrow7, #custom-r_arrow8, #custom-r_arrow9, #custom-r_arrow10 {
-    font-size: 16pt;
+    font-size: 18pt;
 }
 
 /* sinistra: launcher > workspaces > nightmode > mako > idle > window */
