@@ -1,11 +1,11 @@
-/* Waybar: tema oh-lucy (petrichor) */
+/* Waybar: tema petrichor (petrichor) */
 
-@define-color background #1B1D26;
-@define-color foreground #D7D7D7;
-@define-color accent     #BBBBBB;
-@define-color color1     #FB7DA7;
-@define-color color3     #E3CF65;
-@define-color color8     #515761;
+@define-color background #0E0E0E;
+@define-color foreground #c7c9cc;
+@define-color accent     #899087;
+@define-color color1     #9c6b7a;
+@define-color color3     #c4afa2;
+@define-color color8     #44444c;
 
 * {
     font-family: "IosevkaTerm Nerd Font", monospace;
@@ -55,18 +55,18 @@ tooltip label { margin: -6px -3px; }
 #battery,
 #window,
 window#waybar.empty #window {
-    padding: 0 8px;
+    padding: 0 14px;
     background-color: transparent;
     color: @foreground;
 }
 
 #tray {
-    padding: 0 6px;
+    padding: 0 10px;
     background-color: shade(@background, 1.7);
 }
 
 #workspaces button {
-    padding: 0 3px;
+    padding: 0 5px;
     background-color: transparent;
     color: shade(@foreground, 0.5);
 }

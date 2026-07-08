@@ -263,4 +263,4 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-include "themes/oh-lucy.kdl"
+include "themes/petrichor.kdl"

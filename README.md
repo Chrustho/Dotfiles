@@ -7,7 +7,7 @@
 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 ```
 
-Dotfiles del mio ambiente Wayland su Arch Linux, basato sul compositor Niri e su un sistema di temi.
+Configurazione del mio ambiente Wayland su Arch Linux. Il cuore è il compositor Niri, e sopra ci gira un sistema di temi che tocca quasi tutti i programmi della sessione con una scorciatoia sola.
 
 ## Componenti
 
@@ -15,61 +15,74 @@ Dotfiles del mio ambiente Wayland su Arch Linux, basato sul compositor Niri e su
 |---|---|---|
 | Compositor | Niri | KDL |
 | Status bar | Waybar | CSS + JSONC |
-| Launcher / menu | Rofi | Rasi |
+| Launcher e menu | Rofi | Rasi |
 | Notifiche | Mako | conf |
-| Terminale | Ghostty, Alacritty | conf, TOML |
-| Lock / idle | Hyprlock, Hypridle | conf |
-| Sfondo animato | neowall | GLSL + vibe |
 | OSD volume/luminosità | SwayOSD | CSS |
+| Terminali | Ghostty, Alacritty | conf, TOML |
+| Lock e idle | Hyprlock, Hypridle | conf |
+| Sfondo animato | neowall, awww | GLSL |
 | System info | Fastfetch | JSONC |
 | Editor | Neovim | Lua |
-| Discord | Vencord (tema system24) | CSS |
+| Discord | Vencord | CSS |
+
+Gli script che tengono insieme il tutto stanno in `~/.local/bin`: gli switcher dei temi, il selettore di sfondi, il power menu e la rotazione degli shader.
 
 ## Sistema di temi
 
-Ogni programma ha la sua cartella `themes/` con una variante per palette. Lo switch avviene riscrivendo il file attivo e ricaricando il programma, senza riavviare la sessione.
+Ogni programma ha una cartella `themes/` con un file per palette. Cambiare tema vuol dire riscrivere il file attivo con quello scelto e ricaricare il programma, senza mai riavviare la sessione. Niri e Rofi fanno il reload da soli; Mako, SwayOSD e Waybar vengono ricaricati dallo script.
 
-| Switcher | Cosa cambia | Scorciatoia |
+Lo switcher di Niri è quello principale. Quando scegli un tema di sistema cambia in cascata Niri, lo sfondo, le notifiche di Mako e l'OSD di SwayOSD. Rofi, Waybar e Hyprlock hanno switcher separati, così puoi mescolare le combinazioni.
+
+| Scorciatoia | Script | Cosa cambia |
 |---|---|---|
-| `niri-theme.sh` | Tema di sistema: Niri, sfondo, Mako e SwayOSD. | `Mod+Alt+T` |
-| `rofi-theme.sh` | Palette di Rofi | `Mod+Alt+R` |
-| `waybar-theme.sh` | Tema di Waybar | `Mod+Alt+B` |
+| `Mod+Alt+T` | `niri-theme.sh` | Tema di sistema: Niri, sfondo, Mako, SwayOSD |
+| `Mod+Alt+R` | `rofi-theme.sh` | Palette di Rofi |
+| `Mod+Alt+F` | `rofi-layout.sh` | Forma della finestra di Rofi |
+| `Mod+Alt+B` | `waybar-theme.sh` | Tema di Waybar |
+| `Mod+Alt+L` | `waybar-layout.sh` | Layout della barra (posizione e forma) |
+| `Mod+Alt+H` | `hyprlock-theme.sh` | Stile della schermata di lock |
+| `Mod+Alt+G` | `wallpaper-picker.sh` | Sfondo, scelto a mano |
 
-Temi di sistema disponibili (Niri/Rofi/Mako, 18):
+I 27 temi di sistema condivisi da Niri, Rofi, Mako e SwayOSD:
 
 ```text
 original    cyberdeck   aero        ink
-everforest  rosepine    oxocarbon   synthwave
-deathstranding  dune    matrix      win95
-bauhaus     concrete    editorial   mocha
-poimandres  eldritch
+everforest  bio         rosepine    oxocarbon
+synthwave   gruvmaterial deathstranding dune
+matrix      win95       bauhaus     concrete
+editorial   mocha       poimandres  eldritch
+neochor     periwinkle  dechor      mellow
+mystbloom   oh-lucy     petrichor
 ```
 
-Waybar ha 11 temi propri più le varianti `bridges/` e `gruvbox/`.
+Gli ultimi sette (da `neochor` a `petrichor`) sono la famiglia "petrichor": palette piatte, bordi sottili, angoli vivi. Erano già in Niri e Rofi da un po', mentre Mako e SwayOSD si fermavano ai venti temi più vecchi. Ora anche loro coprono tutti e 27, quindi scegliendo uno di questi temi le notifiche e l'OSD si adeguano invece di restare indietro.
+
+Waybar tiene una sua lista a parte. Oltre ai temi che coincidono con quelli di sistema porta alcune varianti sue: `gruvbox`, `chevron`, `glass`, `neon`, `catppuccin`, `nord`, `tokyonight`, `rosepine-power`. Il layout della barra è indipendente dal colore: `bottom`, `dock`, `floating`, `islands`, `split`, `vertical`.
 
 ## Struttura
 
 ```text
 ~
 ├── .config/
-│   ├── niri/         # Compositor (config + dms/ + themes/)
-│   ├── waybar/       # Status bar (config, stile, themes/)
+│   ├── niri/         # Compositor: config.kdl + themes/
+│   ├── waybar/       # Barra: config, style.css, themes/, layout
 │   ├── rofi/         # Launcher e menu (power, rete, clipboard)
-│   ├── mako/         # Notifiche
+│   ├── mako/         # Notifiche + themes/
+│   ├── swayosd/      # OSD volume/luminosità + themes/
 │   ├── ghostty/      # Terminale + shaders
 │   ├── alacritty/    # Terminale alternativo
 │   ├── hypr/         # hyprlock + hypridle
 │   ├── neowall/      # Sfondo animato + shaders GLSL
-│   ├── swayosd/      # OSD
 │   ├── fastfetch/    # System info + sprites
 │   ├── Vencord/      # Tema Discord
 │   └── nvim/         # Neovim
 └── .local/
-    └── bin/          # Script: theme switcher, slideshow, powermenu, toggle sfondo
+    └── bin/          # Switcher, slideshow, power menu, toggle sfondo
 ```
 
 ## Installazione
 
+Il repo è un bare repo con il work-tree sulla home, quindi i file vivono direttamente in `~/.config` senza una cartella di checkout separata.
 
 ```sh
 git clone --bare git@github.com:Chrustho/Dotfiles.git "$HOME/.dotfiles"
@@ -78,24 +91,30 @@ dotfiles checkout
 dotfiles config status.showUntrackedFiles no
 ```
 
-Se `checkout` segnala dei file già esistenti, spostali altrove e ripeti il comando.
-
+Se `checkout` si lamenta di file già presenti, spostali altrove e ripeti il comando.
 
 ## Dipendenze principali
 
-Pacchetti attesi nella sessione (avviati da `niri/config.kdl`):
+Pacchetti attesi nella sessione, avviati da `niri/config.kdl`:
 
 - `niri`, `waybar`, `rofi`, `mako`, `swayosd`
 - `xwayland-satellite` per le app X11
 - `neowall` e `awww` (con `awww-daemon`) per lo sfondo
 - `hypridle` e `hyprlock` per idle e lock
-- `cliphist` + `wl-clipboard` per la cronologia degli appunti
-- `blueman` per il bluetooth applet
-- terminali: `ghostty`, `alacritty`
+- `cliphist` con `wl-clipboard` per la cronologia degli appunti
+- `blueman` per l'applet bluetooth
+- i terminali `ghostty` e `alacritty`
 
-I temi assumono il font **IosevkaTerm Nerd Font**.
+I temi danno per scontato il font **IosevkaTerm Nerd Font**.
 
 ## Aggiungere un tema
 
-Un tema vive in una variante per programma: `niri/themes/<nome>.kdl`, `rofi/themes/<nome>.rasi`, `mako/themes/<nome>.conf` e, se serve, `waybar/themes/<nome>.css`. Dopo aver creato i file va aggiunto il nome alla lista dentro lo switcher corrispondente in `.local/bin/`.
+Un tema è un file per programma con lo stesso nome nelle rispettive cartelle `themes/`:
 
+- `niri/themes/<nome>.kdl`
+- `rofi/themes/<nome>.rasi`
+- `mako/themes/<nome>.conf`
+- `swayosd/themes/<nome>.css`
+- `waybar/themes/<nome>.css`, se vuoi che compaia anche nella barra
+
+Le palette dei quattro file di sistema usano gli stessi colori, quindi conviene partire dal `.rasi` di Rofi (ha già bg, foreground, accento e i colori di stato) e riportarli negli altri. Alla fine aggiungi il nome alla lista dentro lo switcher corrispondente in `.local/bin/`, altrimenti non appare nel menu.

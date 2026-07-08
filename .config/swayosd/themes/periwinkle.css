@@ -1,0 +1,15 @@
+window {
+    background: #28242d;
+    border: 2px solid #9894c8;
+    border-radius: 0px;
+}
+#osd { padding: 2px 6px; margin: 0; }
+image { color: #eeeeee; margin-right: 10px; opacity: 1.0; }
+label { color: #eeeeee; font-weight: bold; }
+progressbar trough {
+    background: #3d3744;
+    border-radius: 0px;
+    min-height: 4px;
+    min-width: 140px;
+}
+progressbar progress { background: #9894c8; border-radius: 0px; }
