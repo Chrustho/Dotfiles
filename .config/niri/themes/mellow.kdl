@@ -1,7 +1,7 @@
 // Niri: tema mellow (petrichor)
 
 layout {
-    background-color "#161617"
+    background-color "transparent"
 
     focus-ring {
         off

@@ -1,7 +1,7 @@
 // Niri: tema periwinkle (petrichor)
 
 layout {
-    background-color "#28242d"
+    background-color "transparent"
 
     focus-ring {
         off

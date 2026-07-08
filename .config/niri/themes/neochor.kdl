@@ -1,7 +1,7 @@
 // Niri: tema neochor (petrichor)
 
 layout {
-    background-color "#242729"
+    background-color "transparent"
 
     focus-ring {
         off

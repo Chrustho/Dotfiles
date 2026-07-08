@@ -1,7 +1,7 @@
 // Niri: tema mystbloom (petrichor)
 
 layout {
-    background-color "#141416"
+    background-color "transparent"
 
     focus-ring {
         off
